@@ -20,4 +20,15 @@ data class UserPostEntity(
     @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0L,
-) : BaseEntity()
+) : BaseEntity() {
+
+    companion object {
+        fun fromPostEntity(postEntity: PostEntity): UserPostEntity {
+            return UserPostEntity(
+                postId = postEntity.id,
+                userId = postEntity.userId,
+            )
+        }
+    }
+
+}
