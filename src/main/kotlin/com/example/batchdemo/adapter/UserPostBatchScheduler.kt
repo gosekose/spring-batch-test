@@ -19,10 +19,7 @@ class UserPostBatchScheduler(
     fun saveUserPostInsertJob() {
         log.info("job start!")
 
-        val jobParameterMap = mapOf(
-            "requestDate" to JobParameter(OffsetDateTime.now().toString(), String::class.java)
-        )
-        val jobParameters = JobParameters(jobParameterMap)
+        val jobParameters = JobParameters()
 
         try {
             jobLauncher.run(job, jobParameters)

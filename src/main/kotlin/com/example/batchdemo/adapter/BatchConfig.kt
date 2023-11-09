@@ -13,7 +13,6 @@ import org.springframework.batch.item.ItemProcessor
 import org.springframework.batch.item.ItemWriter
 import org.springframework.batch.item.database.JpaPagingItemReader
 import org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.transaction.PlatformTransactionManager
@@ -22,6 +21,7 @@ import org.springframework.transaction.PlatformTransactionManager
 class BatchConfig(
     private val entityManagerFactory: EntityManagerFactory,
     private val userPostEntityRepository: UserPostEntityRepository,
+    private val batchStatusEntityRepository: BatchStatusEntityRepository,
 ) : DefaultBatchConfiguration() {
 
     @Bean
@@ -39,19 +39,23 @@ class BatchConfig(
     ): Step {
         return StepBuilder(USER_POST_INSERT_STEP, jobRepository)
             .chunk<PostEntity, UserPostEntity>(CHUNK_SIZE, transactionManager)
-            .reader(applyReader(null))
-            .processor(applyProcessor(null))
-            .writer(applyWriter(null))
+            .reader(applyReader(batchStatusEntityRepository))
+            .processor(applyProcessor())
+            .writer(applyWriter(batchStatusEntityRepository))
             .build()
     }
 
     @Bean
     @StepScope
-    fun applyReader(@Value("#{jobParameters[requestDate]}") requestDate: String?): JpaPagingItemReader<PostEntity> {
+    fun applyReader(batchStatusEntityRepository: BatchStatusEntityRepository): JpaPagingItemReader<PostEntity> {
+        val lastSuccessfulLocalDateTime = batchStatusEntityRepository.findBatchStatusEntityByBatchJobName(BatchJobName.USER_POST_ENTITY)
+            .lastSuccessfulLocalDateTime
+
         log.info("reader start")
         return JpaPagingItemReaderBuilder<PostEntity>()
             .name(USER_POST_INSERT_READER)
             .entityManagerFactory(entityManagerFactory)
+            .parameterValues(mapOf(LAST_SUCCESSFUL_LOCAL_DATE_TIME to lastSuccessfulLocalDateTime))
             .pageSize(CHUNK_SIZE)
             .queryString(SELECT_P_FROM_POST)
             .build()
@@ -59,7 +63,7 @@ class BatchConfig(
 
     @Bean
     @StepScope
-    fun applyProcessor(@Value("#{jobParameters[requestDate]}") requestDate: String?): ItemProcessor<PostEntity, UserPostEntity> {
+    fun applyProcessor(): ItemProcessor<PostEntity, UserPostEntity> {
         log.info("process start")
         return ItemProcessor<PostEntity, UserPostEntity> { post ->
             UserPostEntity.fromPostEntity(post)
@@ -68,18 +72,28 @@ class BatchConfig(
 
     @Bean
     @StepScope
-    fun applyWriter(@Value("#{jobParameters[requestDate]}") requestDate: String?): ItemWriter<UserPostEntity> {
+    fun applyWriter(batchStatusEntityRepository: BatchStatusEntityRepository): ItemWriter<UserPostEntity> {
         log.info("writer start")
         return ItemWriter<UserPostEntity> { item ->
             userPostEntityRepository.saveAll(item.toList())
+
+            if (!item.isEmpty) {
+                val lastSuccessLocalDateTime = item.maxOf { it.createdAt }
+
+                val batchStatusEntity = batchStatusEntityRepository.findBatchStatusEntityByBatchJobName(BatchJobName.USER_POST_ENTITY)
+                val batchStatusEntityToUpdate = BatchStatusEntity.from(batchStatusEntity, lastSuccessLocalDateTime)
+
+                batchStatusEntityRepository.save(batchStatusEntityToUpdate)
+            }
         }
     }
 
     companion object : Logger() {
         const val CHUNK_SIZE = 3
+        const val LAST_SUCCESSFUL_LOCAL_DATE_TIME = "lastSuccessfulLocalDateTime"
         const val USER_POST_INSERT_JOB = "userPostInsertJob"
         const val USER_POST_INSERT_STEP = "userPostInsertStep"
         const val USER_POST_INSERT_READER = "userPostInsertReader"
-        const val SELECT_P_FROM_POST = "select p from PostEntity p"
+        const val SELECT_P_FROM_POST = "SELECT p FROM PostEntity p WHERE p.createdAt >= :lastSuccessfulLocalDateTime"
     }
 }
