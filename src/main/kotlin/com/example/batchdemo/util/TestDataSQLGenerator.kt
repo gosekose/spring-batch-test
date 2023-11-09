@@ -12,7 +12,7 @@ fun main() {
             created_at    datetime(6)                         not null,
             modified_at    datetime(6)                        not null,
             user_id       bigint                              not null,
-            post_category enum ('ts', 'go', 'java', 'kotlin') not null,
+            post_category enum ('TS', 'GO', 'JAVA', 'KOTLIN') not null,
             title         varchar(255)                        not null,
             content       varchar(255)                        not null
         );
@@ -34,10 +34,10 @@ fun main() {
     File("test-sql.sql").writeText(ddlQuery)
 
     val postCategories = listOf(
-        "ts",
-        "go",
-        "java",
-        "kotlin"
+        "TS",
+        "GO",
+        "JAVA",
+        "KOTLIN"
     )
 
     val titles = listOf(

@@ -21,6 +21,7 @@ import org.springframework.transaction.PlatformTransactionManager
 @Configuration
 class BatchConfig(
     private val entityManagerFactory: EntityManagerFactory,
+    private val userPostEntityRepository: UserPostEntityRepository,
 ) : DefaultBatchConfiguration() {
 
     @Bean
@@ -46,7 +47,7 @@ class BatchConfig(
 
     @Bean
     @StepScope
-    fun applyReader(@Value("#{jobParameters[REQUEST_DATE]}") requestDate: String?): JpaPagingItemReader<PostEntity> {
+    fun applyReader(@Value("#{jobParameters[requestDate]}") requestDate: String?): JpaPagingItemReader<PostEntity> {
         log.info("reader start")
         return JpaPagingItemReaderBuilder<PostEntity>()
             .name(USER_POST_INSERT_READER)
@@ -58,7 +59,7 @@ class BatchConfig(
 
     @Bean
     @StepScope
-    fun applyProcessor(@Value("#{jobParameters[REQUEST_DATE]}") requestDate: String?): ItemProcessor<PostEntity, UserPostEntity> {
+    fun applyProcessor(@Value("#{jobParameters[requestDate]}") requestDate: String?): ItemProcessor<PostEntity, UserPostEntity> {
         log.info("process start")
         return ItemProcessor<PostEntity, UserPostEntity> { post ->
             UserPostEntity.fromPostEntity(post)
@@ -69,7 +70,8 @@ class BatchConfig(
     @StepScope
     fun applyWriter(@Value("#{jobParameters[requestDate]}") requestDate: String?): ItemWriter<UserPostEntity> {
         log.info("writer start")
-        return ItemWriter<UserPostEntity> {
+        return ItemWriter<UserPostEntity> { item ->
+            userPostEntityRepository.saveAll(item.toList())
         }
     }
 
@@ -78,6 +80,6 @@ class BatchConfig(
         const val USER_POST_INSERT_JOB = "userPostInsertJob"
         const val USER_POST_INSERT_STEP = "userPostInsertStep"
         const val USER_POST_INSERT_READER = "userPostInsertReader"
-        const val SELECT_P_FROM_POST = "select p from post"
+        const val SELECT_P_FROM_POST = "select p from PostEntity p"
     }
 }

@@ -10,20 +10,25 @@ import org.springframework.stereotype.Component
 import java.time.OffsetDateTime
 
 @Component
-class UserPostBatchScheduler {
-
-    private lateinit var jobLauncher: JobLauncher
-    private lateinit var job: Job
+class UserPostBatchScheduler(
+    private val jobLauncher: JobLauncher,
+    private val job: Job
+) {
 
     @Scheduled(fixedDelay = 30000)
     fun saveUserPostInsertJob() {
         log.info("job start!")
 
         val jobParameterMap = mapOf(
-            REQUEST_DATE to JobParameter(OffsetDateTime.now().toString(), String::class.java)
+            "requestDate" to JobParameter(OffsetDateTime.now().toString(), String::class.java)
         )
         val jobParameters = JobParameters(jobParameterMap)
-        jobLauncher.run(job, jobParameters)
+
+        try {
+            jobLauncher.run(job, jobParameters)
+        } catch (e: Exception) {
+            log.error("job fail!!!")
+        }
 
         log.info("job finished!")
     }

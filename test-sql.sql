@@ -1,8023 +1,10000 @@
-create table post
-(
-    id            bigint auto_increment primary key,
-    created_at    datetime(6)                         not null,
-    modified_at   datetime(6)                         not null,
-    user_id       bigint                              not null,
-    post_category enum ('ts', 'go', 'java', 'kotlin') not null,
-    title         varchar(255)                        not null,
-    content       varchar(255)                        not null
+insert into post (id, created_at, modified_at, user_id, post_category, title, content)
+values (
+    1, 
+    '2023-11-09T15:50:31.558093', 
+    '2023-11-09T15:50:31.558184', 
+    5190, 
+    'KOTLIN', 
+    '예술', 
+    '8341dd'
 );
-
-create table user_post
-(
-    id          bigint auto_increment primary key,
-    created_at  datetime(6) not null,
-    modified_at datetime(6) not null,
-    user_id     bigint      not null,
-    post_id     bigint      not null
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    2, 
+    '2023-11-09T15:50:31.661805', 
+    '2023-11-09T15:50:31.661854', 
+    2594, 
+    'GO', 
+    '야구', 
+    '7e5a6a'
 );
-
-create index idx_user_post_userId
-    on user_post (user_id);
-
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (1,
-        '2023-11-07T03:56:51.268535',
-        '2023-11-07T03:56:51.268622',
-        8622,
-        'ts',
-        '달',
-        '6e6e6b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (2,
-        '2023-11-07T03:56:51.484714',
-        '2023-11-07T03:56:51.484765',
-        7768,
-        'ts',
-        '운동',
-        '90cc4e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (3,
-        '2023-11-07T03:56:51.487370',
-        '2023-11-07T03:56:51.487389',
-        8961,
-        'ts',
-        '배구',
-        '084b39');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (4,
-        '2023-11-07T03:56:51.488183',
-        '2023-11-07T03:56:51.488198',
-        5316,
-        'java',
-        '열차',
-        '6ac883');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (5,
-        '2023-11-07T03:56:51.488803',
-        '2023-11-07T03:56:51.488814',
-        7138,
-        'ts',
-        '물',
-        'a6f424');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (6,
-        '2023-11-07T03:56:51.490176',
-        '2023-11-07T03:56:51.490196',
-        9314,
-        'java',
-        '과학',
-        '17a380');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (7,
-        '2023-11-07T03:56:51.491063',
-        '2023-11-07T03:56:51.491074',
-        6346,
-        'kotlin',
-        '현재',
-        'd55b89');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (8,
-        '2023-11-07T03:56:51.492794',
-        '2023-11-07T03:56:51.492814',
-        7800,
-        'ts',
-        '노인',
-        '05e676');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (9,
-        '2023-11-07T03:56:51.494100',
-        '2023-11-07T03:56:51.494116',
-        8149,
-        'ts',
-        '나라',
-        '754983');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (10,
-        '2023-11-07T03:56:51.496765',
-        '2023-11-07T03:56:51.496789',
-        6334,
-        'go',
-        '축제',
-        'e4be0e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (11,
-        '2023-11-07T03:56:51.499495',
-        '2023-11-07T03:56:51.499516',
-        9379,
-        'kotlin',
-        '도전',
-        'd33bcd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (12,
-        '2023-11-07T03:56:51.499996',
-        '2023-11-07T03:56:51.500005',
-        5551,
-        'kotlin',
-        '컴퓨터',
-        '6df0be');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (13,
-        '2023-11-07T03:56:51.500558',
-        '2023-11-07T03:56:51.500569',
-        4081,
-        'java',
-        '눈',
-        '4a78a1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (14,
-        '2023-11-07T03:56:51.502262',
-        '2023-11-07T03:56:51.502290',
-        8931,
-        'kotlin',
-        '세계',
-        '435953');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (15,
-        '2023-11-07T03:56:51.505675',
-        '2023-11-07T03:56:51.505718',
-        2525,
-        'java',
-        '군인',
-        'd28298');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (16,
-        '2023-11-07T03:56:51.506080',
-        '2023-11-07T03:56:51.506090',
-        8809,
-        'go',
-        '요리',
-        '7ba45c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (17,
-        '2023-11-07T03:56:51.507549',
-        '2023-11-07T03:56:51.507650',
-        2377,
-        'java',
-        '과학자',
-        '6af769');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (18,
-        '2023-11-07T03:56:51.510730',
-        '2023-11-07T03:56:51.510755',
-        4293,
-        'kotlin',
-        '평화',
-        '6c472d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (19,
-        '2023-11-07T03:56:51.511113',
-        '2023-11-07T03:56:51.511122',
-        879,
-        'java',
-        '과학',
-        'fcee23');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (20,
-        '2023-11-07T03:56:51.511370',
-        '2023-11-07T03:56:51.511378',
-        5234,
-        'kotlin',
-        '바람',
-        'b7e86a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (21,
-        '2023-11-07T03:56:51.514326',
-        '2023-11-07T03:56:51.514348',
-        862,
-        'java',
-        '세계',
-        '28f2c5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (22,
-        '2023-11-07T03:56:51.515390',
-        '2023-11-07T03:56:51.515405',
-        2954,
-        'go',
-        '성인',
-        '44f9ac');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (23,
-        '2023-11-07T03:56:51.515733',
-        '2023-11-07T03:56:51.515744',
-        5276,
-        'ts',
-        '과학자',
-        '2cd320');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (24,
-        '2023-11-07T03:56:51.520376',
-        '2023-11-07T03:56:51.520638',
-        2302,
-        'java',
-        '컴퓨터',
-        '9489d3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (25,
-        '2023-11-07T03:56:51.522776',
-        '2023-11-07T03:56:51.522960',
-        1592,
-        'ts',
-        '과학',
-        'afde39');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (26,
-        '2023-11-07T03:56:51.526613',
-        '2023-11-07T03:56:51.526659',
-        5916,
-        'ts',
-        '별',
-        '64404e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (27,
-        '2023-11-07T03:56:51.527216',
-        '2023-11-07T03:56:51.527228',
-        8721,
-        'kotlin',
-        '발견',
-        'e28010');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (28,
-        '2023-11-07T03:56:51.527512',
-        '2023-11-07T03:56:51.527520',
-        4582,
-        'kotlin',
-        '건축가',
-        '33ab98');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (29,
-        '2023-11-07T03:56:51.534438',
-        '2023-11-07T03:56:51.534482',
-        2079,
-        'ts',
-        '성인',
-        'a3f49d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (30,
-        '2023-11-07T03:56:51.539745',
-        '2023-11-07T03:56:51.539766',
-        7590,
-        'go',
-        '달',
-        '364e55');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (31,
-        '2023-11-07T03:56:51.540239',
-        '2023-11-07T03:56:51.540249',
-        462,
-        'ts',
-        '배',
-        'ff1e37');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (32,
-        '2023-11-07T03:56:51.542742',
-        '2023-11-07T03:56:51.542770',
-        9117,
-        'java',
-        '달',
-        '3e3cbf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (33,
-        '2023-11-07T03:56:51.544428',
-        '2023-11-07T03:56:51.544490',
-        4653,
-        'go',
-        '평화',
-        'ce99a3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (34,
-        '2023-11-07T03:56:51.545805',
-        '2023-11-07T03:56:51.545868',
-        9763,
-        'ts',
-        '청소년',
-        '4fa682');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (35,
-        '2023-11-07T03:56:51.546891',
-        '2023-11-07T03:56:51.546910',
-        4327,
-        'go',
-        '아동',
-        '3307da');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (36,
-        '2023-11-07T03:56:51.547249',
-        '2023-11-07T03:56:51.547260',
-        5765,
-        'go',
-        '여행가',
-        '36e69d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (37,
-        '2023-11-07T03:56:51.547514',
-        '2023-11-07T03:56:51.547522',
-        5572,
-        'go',
-        '물',
-        '885c76');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (38,
-        '2023-11-07T03:56:51.547730',
-        '2023-11-07T03:56:51.547738',
-        2131,
-        'go',
-        '나라',
-        '8a1694');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (39,
-        '2023-11-07T03:56:51.551254',
-        '2023-11-07T03:56:51.551305',
-        2593,
-        'go',
-        '변호사',
-        '5faa5a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (40,
-        '2023-11-07T03:56:51.554869',
-        '2023-11-07T03:56:51.554895',
-        7651,
-        'java',
-        '노년',
-        'cde137');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (41,
-        '2023-11-07T03:56:51.555618',
-        '2023-11-07T03:56:51.555651',
-        8725,
-        'java',
-        '글',
-        'e2b041');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (42,
-        '2023-11-07T03:56:51.559063',
-        '2023-11-07T03:56:51.559086',
-        125,
-        'kotlin',
-        '선생님',
-        '248638');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (43,
-        '2023-11-07T03:56:51.559404',
-        '2023-11-07T03:56:51.559412',
-        3294,
-        'go',
-        '파일럿',
-        'e17a80');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (44,
-        '2023-11-07T03:56:51.559626',
-        '2023-11-07T03:56:51.559633',
-        8553,
-        'go',
-        '강',
-        '3d319d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (45,
-        '2023-11-07T03:56:51.559800',
-        '2023-11-07T03:56:51.559808',
-        7122,
-        'ts',
-        '엔지니어',
-        '91ad09');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (46,
-        '2023-11-07T03:56:51.560802',
-        '2023-11-07T03:56:51.560830',
-        1828,
-        'java',
-        '도전',
-        '1a280b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (47,
-        '2023-11-07T03:56:51.562248',
-        '2023-11-07T03:56:51.562267',
-        9987,
-        'ts',
-        '회사',
-        '968382');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (48,
-        '2023-11-07T03:56:51.563147',
-        '2023-11-07T03:56:51.563217',
-        8545,
-        'ts',
-        '사랑',
-        'bbc4ce');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (49,
-        '2023-11-07T03:56:51.565013',
-        '2023-11-07T03:56:51.565035',
-        9122,
-        'java',
-        '음식',
-        '7658d5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (50,
-        '2023-11-07T03:56:51.565385',
-        '2023-11-07T03:56:51.565397',
-        9518,
-        'java',
-        '연구',
-        'aa6579');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (51,
-        '2023-11-07T03:56:51.565565',
-        '2023-11-07T03:56:51.565642',
-        7010,
-        'ts',
-        '하늘',
-        '542498');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (52,
-        '2023-11-07T03:56:51.565824',
-        '2023-11-07T03:56:51.565831',
-        5090,
-        'ts',
-        '청소년',
-        'a6e148');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (53,
-        '2023-11-07T03:56:51.566067',
-        '2023-11-07T03:56:51.566074',
-        1107,
-        'ts',
-        '역사',
-        'f9f31b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (54,
-        '2023-11-07T03:56:51.566260',
-        '2023-11-07T03:56:51.566268',
-        4004,
-        'java',
-        '하늘',
-        'e5da6a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (55,
-        '2023-11-07T03:56:51.566441',
-        '2023-11-07T03:56:51.566493',
-        1052,
-        'kotlin',
-        '나무',
-        '4d123c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (56,
-        '2023-11-07T03:56:51.566681',
-        '2023-11-07T03:56:51.566728',
-        1142,
-        'java',
-        '직장',
-        '0126b2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (57,
-        '2023-11-07T03:56:51.567584',
-        '2023-11-07T03:56:51.567639',
-        701,
-        'kotlin',
-        '비행기',
-        '5ea956');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (58,
-        '2023-11-07T03:56:51.568819',
-        '2023-11-07T03:56:51.568854',
-        5232,
-        'kotlin',
-        '야구',
-        'da34a8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (59,
-        '2023-11-07T03:56:51.569787',
-        '2023-11-07T03:56:51.569804',
-        3675,
-        'java',
-        '달',
-        '91b587');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (60,
-        '2023-11-07T03:56:51.570076',
-        '2023-11-07T03:56:51.570084',
-        812,
-        'go',
-        '바다',
-        '3ef6e8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (61,
-        '2023-11-07T03:56:51.570243',
-        '2023-11-07T03:56:51.570250',
-        1231,
-        'kotlin',
-        '현재',
-        'fde67e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (62,
-        '2023-11-07T03:56:51.570421',
-        '2023-11-07T03:56:51.570473',
-        9443,
-        'go',
-        '과거',
-        '0c6f3e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (63,
-        '2023-11-07T03:56:51.570665',
-        '2023-11-07T03:56:51.570674',
-        5628,
-        'go',
-        '선원',
-        'ae9276');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (64,
-        '2023-11-07T03:56:51.570837',
-        '2023-11-07T03:56:51.570847',
-        2009,
-        'java',
-        '세계',
-        '260b82');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (65,
-        '2023-11-07T03:56:51.571045',
-        '2023-11-07T03:56:51.571051',
-        5420,
-        'ts',
-        '과학자',
-        '024fee');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (66,
-        '2023-11-07T03:56:51.571177',
-        '2023-11-07T03:56:51.571193',
-        3622,
-        'java',
-        '마을',
-        '9a2471');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (67,
-        '2023-11-07T03:56:51.572366',
-        '2023-11-07T03:56:51.572399',
-        9448,
-        'java',
-        '비행기',
-        '926faf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (68,
-        '2023-11-07T03:56:51.575351',
-        '2023-11-07T03:56:51.575432',
-        1310,
-        'kotlin',
-        '하늘',
-        '189c84');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (69,
-        '2023-11-07T03:56:51.575985',
-        '2023-11-07T03:56:51.576001',
-        920,
-        'go',
-        '우주',
-        '9ddd7d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (70,
-        '2023-11-07T03:56:51.576198',
-        '2023-11-07T03:56:51.576205',
-        4352,
-        'kotlin',
-        '자동차',
-        '124765');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (71,
-        '2023-11-07T03:56:51.576402',
-        '2023-11-07T03:56:51.576416',
-        6914,
-        'kotlin',
-        '스마트폰',
-        'e98327');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (72,
-        '2023-11-07T03:56:51.576587',
-        '2023-11-07T03:56:51.576592',
-        4860,
-        'java',
-        '글',
-        '4da466');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (73,
-        '2023-11-07T03:56:51.576856',
-        '2023-11-07T03:56:51.576863',
-        4226,
-        'java',
-        '자동차',
-        '900c5a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (74,
-        '2023-11-07T03:56:51.577023',
-        '2023-11-07T03:56:51.577030',
-        3572,
-        'go',
-        '별',
-        'aecb1c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (75,
-        '2023-11-07T03:56:51.577183',
-        '2023-11-07T03:56:51.577198',
-        5033,
-        'java',
-        '도전',
-        'c4e264');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (76,
-        '2023-11-07T03:56:51.577415',
-        '2023-11-07T03:56:51.577422',
-        4482,
-        'go',
-        '자동차',
-        'dadf5c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (77,
-        '2023-11-07T03:56:51.582337',
-        '2023-11-07T03:56:51.582492',
-        2288,
-        'ts',
-        '아동',
-        'f93af5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (78,
-        '2023-11-07T03:56:51.584598',
-        '2023-11-07T03:56:51.584698',
-        6196,
-        'go',
-        '나라',
-        'd4150c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (79,
-        '2023-11-07T03:56:51.585323',
-        '2023-11-07T03:56:51.585347',
-        6526,
-        'kotlin',
-        '작가',
-        '9948da');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (80,
-        '2023-11-07T03:56:51.585902',
-        '2023-11-07T03:56:51.585923',
-        5005,
-        'kotlin',
-        '달',
-        'ab22f4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (81,
-        '2023-11-07T03:56:51.586318',
-        '2023-11-07T03:56:51.586336',
-        294,
-        'java',
-        '교통',
-        '4351a5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (82,
-        '2023-11-07T03:56:51.586923',
-        '2023-11-07T03:56:51.586945',
-        3617,
-        'kotlin',
-        '축제',
-        '2ae11a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (83,
-        '2023-11-07T03:56:51.587465',
-        '2023-11-07T03:56:51.587485',
-        8095,
-        'ts',
-        '열차',
-        '481d81');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (84,
-        '2023-11-07T03:56:51.588308',
-        '2023-11-07T03:56:51.588330',
-        491,
-        'kotlin',
-        '영화',
-        '0597d3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (85,
-        '2023-11-07T03:56:51.588686',
-        '2023-11-07T03:56:51.588695',
-        7624,
-        'ts',
-        '가족',
-        'a6a9e9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (86,
-        '2023-11-07T03:56:51.588839',
-        '2023-11-07T03:56:51.588888',
-        6150,
-        'kotlin',
-        '음악',
-        'a14af4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (87,
-        '2023-11-07T03:56:51.589646',
-        '2023-11-07T03:56:51.589671',
-        929,
-        'go',
-        '소망',
-        '490b92');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (88,
-        '2023-11-07T03:56:51.590315',
-        '2023-11-07T03:56:51.590429',
-        4404,
-        'ts',
-        '행복',
-        '17c8a5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (89,
-        '2023-11-07T03:56:51.591152',
-        '2023-11-07T03:56:51.591260',
-        7515,
-        'kotlin',
-        '발명',
-        '7c6672');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (90,
-        '2023-11-07T03:56:51.591854',
-        '2023-11-07T03:56:51.591946',
-        7625,
-        'ts',
-        '새',
-        '3c1501');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (91,
-        '2023-11-07T03:56:51.592467',
-        '2023-11-07T03:56:51.592489',
-        7417,
-        'kotlin',
-        '강',
-        '6fb890');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (92,
-        '2023-11-07T03:56:51.593101',
-        '2023-11-07T03:56:51.593128',
-        5491,
-        'ts',
-        '예술',
-        'aec644');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (93,
-        '2023-11-07T03:56:51.605946',
-        '2023-11-07T03:56:51.610368',
-        3295,
-        'ts',
-        '파일럿',
-        '123d2f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (94,
-        '2023-11-07T03:56:51.616979',
-        '2023-11-07T03:56:51.617037',
-        1404,
-        'ts',
-        '미소',
-        '7ccfb4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (95,
-        '2023-11-07T03:56:51.620241',
-        '2023-11-07T03:56:51.620270',
-        6214,
-        'java',
-        '축구',
-        '2da71e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (96,
-        '2023-11-07T03:56:51.620647',
-        '2023-11-07T03:56:51.620704',
-        3143,
-        'java',
-        '빛',
-        'b77503');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (97,
-        '2023-11-07T03:56:51.620911',
-        '2023-11-07T03:56:51.620919',
-        1227,
-        'java',
-        '빛',
-        'ef5461');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (98,
-        '2023-11-07T03:56:51.621088',
-        '2023-11-07T03:56:51.621308',
-        4854,
-        'java',
-        '여행가',
-        '8c684c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (99,
-        '2023-11-07T03:56:51.621504',
-        '2023-11-07T03:56:51.622033',
-        5727,
-        'kotlin',
-        '스마트폰',
-        '7338bd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (100,
-        '2023-11-07T03:56:51.622340',
-        '2023-11-07T03:56:51.622899',
-        3482,
-        'go',
-        '연구',
-        'b581bc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (101,
-        '2023-11-07T03:56:51.623240',
-        '2023-11-07T03:56:51.623248',
-        3408,
-        'ts',
-        '직장',
-        'e29ec5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (102,
-        '2023-11-07T03:56:51.623429',
-        '2023-11-07T03:56:51.623508',
-        2119,
-        'ts',
-        '그림',
-        'f62bab');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (103,
-        '2023-11-07T03:56:51.623724',
-        '2023-11-07T03:56:51.625183',
-        2628,
-        'go',
-        '달',
-        'bbb75e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (104,
-        '2023-11-07T03:56:51.626330',
-        '2023-11-07T03:56:51.626353',
-        5988,
-        'java',
-        '자동차',
-        '4b6700');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (105,
-        '2023-11-07T03:56:51.628056',
-        '2023-11-07T03:56:51.628095',
-        2608,
-        'java',
-        '청소년',
-        '292626');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (106,
-        '2023-11-07T03:56:51.628792',
-        '2023-11-07T03:56:51.628812',
-        3913,
-        'java',
-        '인터넷',
-        'c11f9b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (107,
-        '2023-11-07T03:56:51.629093',
-        '2023-11-07T03:56:51.629099',
-        790,
-        'java',
-        '요리',
-        '0269d1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (108,
-        '2023-11-07T03:56:51.629333',
-        '2023-11-07T03:56:51.629340',
-        3705,
-        'java',
-        '스마트폰',
-        '5f196e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (109,
-        '2023-11-07T03:56:51.629512',
-        '2023-11-07T03:56:51.629519',
-        3388,
-        'java',
-        '배구',
-        'a867dc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (110,
-        '2023-11-07T03:56:51.629661',
-        '2023-11-07T03:56:51.629666',
-        3168,
-        'go',
-        '태양',
-        'a8b3f9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (111,
-        '2023-11-07T03:56:51.629776',
-        '2023-11-07T03:56:51.629780',
-        5417,
-        'ts',
-        '꿈',
-        '287831');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (112,
-        '2023-11-07T03:56:51.629916',
-        '2023-11-07T03:56:51.630047',
-        4003,
-        'ts',
-        '문화',
-        '155509');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (113,
-        '2023-11-07T03:56:51.630859',
-        '2023-11-07T03:56:51.631032',
-        5827,
-        'java',
-        '의사',
-        '53a72d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (114,
-        '2023-11-07T03:56:51.631461',
-        '2023-11-07T03:56:51.631483',
-        6381,
-        'java',
-        '꽃',
-        '6b4a68');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (115,
-        '2023-11-07T03:56:51.631686',
-        '2023-11-07T03:56:51.632165',
-        788,
-        'kotlin',
-        '나라',
-        '511db3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (116,
-        '2023-11-07T03:56:51.632915',
-        '2023-11-07T03:56:51.634391',
-        4322,
-        'kotlin',
-        '탐험',
-        '790f23');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (117,
-        '2023-11-07T03:56:51.634940',
-        '2023-11-07T03:56:51.634948',
-        2718,
-        'ts',
-        '여가',
-        '645e2f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (118,
-        '2023-11-07T03:56:51.635102',
-        '2023-11-07T03:56:51.635106',
-        7170,
-        'go',
-        '현재',
-        'a13ce6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (119,
-        '2023-11-07T03:56:51.635254',
-        '2023-11-07T03:56:51.635259',
-        7312,
-        'java',
-        '작가',
-        'fb3249');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (120,
-        '2023-11-07T03:56:51.635413',
-        '2023-11-07T03:56:51.635418',
-        3603,
-        'kotlin',
-        '의사',
-        '841099');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (121,
-        '2023-11-07T03:56:51.635519',
-        '2023-11-07T03:56:51.635524',
-        6935,
-        'go',
-        '컴퓨터',
-        'b06ee4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (122,
-        '2023-11-07T03:56:51.635658',
-        '2023-11-07T03:56:51.635663',
-        386,
-        'kotlin',
-        '비행기',
-        'ade010');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (123,
-        '2023-11-07T03:56:51.635804',
-        '2023-11-07T03:56:51.635809',
-        1962,
-        'java',
-        '별',
-        '625202');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (124,
-        '2023-11-07T03:56:51.635992',
-        '2023-11-07T03:56:51.635996',
-        2486,
-        'go',
-        '행복',
-        'f1ca4c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (125,
-        '2023-11-07T03:56:51.636140',
-        '2023-11-07T03:56:51.636144',
-        2312,
-        'ts',
-        '비행기',
-        '9de285');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (126,
-        '2023-11-07T03:56:51.636237',
-        '2023-11-07T03:56:51.636242',
-        1007,
-        'java',
-        '새',
-        '16cfc9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (127,
-        '2023-11-07T03:56:51.636365',
-        '2023-11-07T03:56:51.636369',
-        8097,
-        'java',
-        '나무',
-        '10ce6e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (128,
-        '2023-11-07T03:56:51.636888',
-        '2023-11-07T03:56:51.637',
-        7834,
-        'kotlin',
-        '배구',
-        '4290be');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (129,
-        '2023-11-07T03:56:51.639509',
-        '2023-11-07T03:56:51.639564',
-        5120,
-        'ts',
-        '수학',
-        '612d0b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (130,
-        '2023-11-07T03:56:51.643502',
-        '2023-11-07T03:56:51.643560',
-        8870,
-        'kotlin',
-        '열차',
-        'd29c6e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (131,
-        '2023-11-07T03:56:51.643814',
-        '2023-11-07T03:56:51.643820',
-        8169,
-        'ts',
-        '건축가',
-        'c91285');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (132,
-        '2023-11-07T03:56:51.644042',
-        '2023-11-07T03:56:51.644048',
-        4137,
-        'go',
-        '여행',
-        '03a0f7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (133,
-        '2023-11-07T03:56:51.644158',
-        '2023-11-07T03:56:51.644163',
-        8366,
-        'go',
-        '배구',
-        'e5d246');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (134,
-        '2023-11-07T03:56:51.644268',
-        '2023-11-07T03:56:51.644271',
-        9076,
-        'kotlin',
-        '스마트폰',
-        '178269');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (135,
-        '2023-11-07T03:56:51.644383',
-        '2023-11-07T03:56:51.644386',
-        843,
-        'java',
-        '미래',
-        '299b05');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (136,
-        '2023-11-07T03:56:51.644473',
-        '2023-11-07T03:56:51.644477',
-        5414,
-        'ts',
-        '배구',
-        'ed4492');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (137,
-        '2023-11-07T03:56:51.645284',
-        '2023-11-07T03:56:51.645313',
-        4722,
-        'java',
-        '미래',
-        '00a743');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (138,
-        '2023-11-07T03:56:51.646410',
-        '2023-11-07T03:56:51.646432',
-        868,
-        'java',
-        '자동차',
-        '8f78ee');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (139,
-        '2023-11-07T03:56:51.646786',
-        '2023-11-07T03:56:51.646793',
-        898,
-        'kotlin',
-        '산책',
-        'be85e5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (140,
-        '2023-11-07T03:56:51.646921',
-        '2023-11-07T03:56:51.646924',
-        9640,
-        'java',
-        '그림',
-        '99d45f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (141,
-        '2023-11-07T03:56:51.647231',
-        '2023-11-07T03:56:51.647240',
-        1433,
-        'kotlin',
-        '산책',
-        'd140a7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (142,
-        '2023-11-07T03:56:51.647415',
-        '2023-11-07T03:56:51.647421',
-        5642,
-        'java',
-        '노인',
-        'ac78f1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (143,
-        '2023-11-07T03:56:51.647529',
-        '2023-11-07T03:56:51.647532',
-        7784,
-        'kotlin',
-        '음악',
-        'a5aecb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (144,
-        '2023-11-07T03:56:51.647632',
-        '2023-11-07T03:56:51.647635',
-        6956,
-        'kotlin',
-        '군인',
-        '77107c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (145,
-        '2023-11-07T03:56:51.647723',
-        '2023-11-07T03:56:51.647726',
-        9541,
-        'go',
-        '야구',
-        'c19e1c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (146,
-        '2023-11-07T03:56:51.647806',
-        '2023-11-07T03:56:51.647809',
-        2127,
-        'java',
-        '강',
-        '0f4a08');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (147,
-        '2023-11-07T03:56:51.648025',
-        '2023-11-07T03:56:51.648031',
-        539,
-        'kotlin',
-        '게임',
-        'd082b7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (148,
-        '2023-11-07T03:56:51.648126',
-        '2023-11-07T03:56:51.648131',
-        2587,
-        'java',
-        '성인',
-        '68248c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (149,
-        '2023-11-07T03:56:51.648220',
-        '2023-11-07T03:56:51.648223',
-        3813,
-        'ts',
-        '경찰',
-        '87c937');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (150,
-        '2023-11-07T03:56:51.648306',
-        '2023-11-07T03:56:51.648310',
-        2184,
-        'kotlin',
-        '강',
-        '7b1121');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (151,
-        '2023-11-07T03:56:51.648389',
-        '2023-11-07T03:56:51.648392',
-        439,
-        'ts',
-        '스마트폰',
-        '09efb7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (152,
-        '2023-11-07T03:56:51.648474',
-        '2023-11-07T03:56:51.648477',
-        3967,
-        'go',
-        '운동',
-        'c8a45a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (153,
-        '2023-11-07T03:56:51.648562',
-        '2023-11-07T03:56:51.648565',
-        211,
-        'java',
-        '별',
-        '54cbac');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (154,
-        '2023-11-07T03:56:51.648651',
-        '2023-11-07T03:56:51.648655',
-        4409,
-        'go',
-        '가족',
-        '2de39d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (155,
-        '2023-11-07T03:56:51.648736',
-        '2023-11-07T03:56:51.648739',
-        7297,
-        'java',
-        '취미',
-        'eda0d6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (156,
-        '2023-11-07T03:56:51.648810',
-        '2023-11-07T03:56:51.648816',
-        2050,
-        'ts',
-        '글',
-        '07d1bf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (157,
-        '2023-11-07T03:56:51.648894',
-        '2023-11-07T03:56:51.648898',
-        2550,
-        'java',
-        '채소',
-        'e3325a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (158,
-        '2023-11-07T03:56:51.648978',
-        '2023-11-07T03:56:51.648981',
-        5600,
-        'kotlin',
-        '작가',
-        'cdfafc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (159,
-        '2023-11-07T03:56:51.649126',
-        '2023-11-07T03:56:51.649131',
-        5324,
-        'java',
-        '학교',
-        '2bb416');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (160,
-        '2023-11-07T03:56:51.650402',
-        '2023-11-07T03:56:51.650419',
-        5580,
-        'java',
-        '작가',
-        '6ab4e6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (161,
-        '2023-11-07T03:56:51.661840',
-        '2023-11-07T03:56:51.661862',
-        8063,
-        'ts',
-        '친구',
-        'df4e08');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (162,
-        '2023-11-07T03:56:51.677465',
-        '2023-11-07T03:56:51.677493',
-        85,
-        'java',
-        '젊음',
-        'ff4c5b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (163,
-        '2023-11-07T03:56:51.680939',
-        '2023-11-07T03:56:51.680961',
-        988,
-        'ts',
-        '과학자',
-        'aa81aa');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (164,
-        '2023-11-07T03:56:51.681248',
-        '2023-11-07T03:56:51.681253',
-        5483,
-        'go',
-        '기쁨',
-        '03f74e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (165,
-        '2023-11-07T03:56:51.681349',
-        '2023-11-07T03:56:51.681354',
-        8237,
-        'java',
-        '희망',
-        'fd2041');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (166,
-        '2023-11-07T03:56:51.681432',
-        '2023-11-07T03:56:51.681435',
-        4354,
-        'kotlin',
-        '회사',
-        '008af6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (167,
-        '2023-11-07T03:56:51.681516',
-        '2023-11-07T03:56:51.681519',
-        7534,
-        'kotlin',
-        '사랑',
-        '1f662c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (168,
-        '2023-11-07T03:56:51.681614',
-        '2023-11-07T03:56:51.681618',
-        1166,
-        'go',
-        '회사',
-        '869369');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (169,
-        '2023-11-07T03:56:51.681702',
-        '2023-11-07T03:56:51.681705',
-        6297,
-        'go',
-        '미소',
-        '59b0fd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (170,
-        '2023-11-07T03:56:51.681787',
-        '2023-11-07T03:56:51.681792',
-        8736,
-        'java',
-        '요리',
-        '143dd6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (171,
-        '2023-11-07T03:56:51.681868',
-        '2023-11-07T03:56:51.681872',
-        7978,
-        'ts',
-        '도전',
-        'a8f0fd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (172,
-        '2023-11-07T03:56:51.681962',
-        '2023-11-07T03:56:51.681965',
-        7325,
-        'ts',
-        '과학',
-        '6cc038');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (173,
-        '2023-11-07T03:56:51.682040',
-        '2023-11-07T03:56:51.682042',
-        4595,
-        'go',
-        '그림',
-        '168541');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (174,
-        '2023-11-07T03:56:51.682120',
-        '2023-11-07T03:56:51.682124',
-        5924,
-        'go',
-        '엔지니어',
-        '046188');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (175,
-        '2023-11-07T03:56:51.682196',
-        '2023-11-07T03:56:51.682199',
-        6135,
-        'ts',
-        '빛',
-        'd111da');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (176,
-        '2023-11-07T03:56:51.682270',
-        '2023-11-07T03:56:51.682272',
-        6904,
-        'go',
-        '소방관',
-        '6923db');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (177,
-        '2023-11-07T03:56:51.682504',
-        '2023-11-07T03:56:51.682510',
-        9248,
-        'kotlin',
-        '글',
-        '01bc73');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (178,
-        '2023-11-07T03:56:51.682701',
-        '2023-11-07T03:56:51.682707',
-        3859,
-        'kotlin',
-        '문화',
-        'e7b48f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (179,
-        '2023-11-07T03:56:51.682827',
-        '2023-11-07T03:56:51.682832',
-        3386,
-        'java',
-        '건축가',
-        '5ba88a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (180,
-        '2023-11-07T03:56:51.682911',
-        '2023-11-07T03:56:51.682914',
-        1610,
-        'java',
-        '하늘',
-        '1732cd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (181,
-        '2023-11-07T03:56:51.683008',
-        '2023-11-07T03:56:51.683012',
-        8361,
-        'ts',
-        '평화',
-        '4d37e1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (182,
-        '2023-11-07T03:56:51.683115',
-        '2023-11-07T03:56:51.683117',
-        3408,
-        'go',
-        '비행기',
-        'b7fe7c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (183,
-        '2023-11-07T03:56:51.684569',
-        '2023-11-07T03:56:51.685004',
-        2326,
-        'kotlin',
-        '연구',
-        '423e64');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (184,
-        '2023-11-07T03:56:51.686281',
-        '2023-11-07T03:56:51.686379',
-        872,
-        'go',
-        '노인',
-        '43493f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (185,
-        '2023-11-07T03:56:51.686529',
-        '2023-11-07T03:56:51.686532',
-        96,
-        'kotlin',
-        '도시',
-        '63de8a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (186,
-        '2023-11-07T03:56:51.686611',
-        '2023-11-07T03:56:51.686614',
-        9966,
-        'ts',
-        '젊음',
-        'a99bde');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (187,
-        '2023-11-07T03:56:51.686696',
-        '2023-11-07T03:56:51.686698',
-        9193,
-        'go',
-        '가족',
-        '581cc9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (188,
-        '2023-11-07T03:56:51.686786',
-        '2023-11-07T03:56:51.686788',
-        9008,
-        'kotlin',
-        '하늘',
-        '7bb2ed');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (189,
-        '2023-11-07T03:56:51.686865',
-        '2023-11-07T03:56:51.686867',
-        2496,
-        'go',
-        '자동차',
-        '72260f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (190,
-        '2023-11-07T03:56:51.686941',
-        '2023-11-07T03:56:51.686943',
-        7255,
-        'kotlin',
-        '스포츠',
-        '74c86d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (191,
-        '2023-11-07T03:56:51.687008',
-        '2023-11-07T03:56:51.687012',
-        7129,
-        'java',
-        '비행기',
-        '62ccce');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (192,
-        '2023-11-07T03:56:51.687090',
-        '2023-11-07T03:56:51.687096',
-        1399,
-        'kotlin',
-        '과학',
-        '3ca0c2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (193,
-        '2023-11-07T03:56:51.687171',
-        '2023-11-07T03:56:51.687173',
-        1118,
-        'kotlin',
-        '선원',
-        'b6f547');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (194,
-        '2023-11-07T03:56:51.687316',
-        '2023-11-07T03:56:51.687318',
-        9038,
-        'kotlin',
-        '아동',
-        'd68165');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (195,
-        '2023-11-07T03:56:51.687412',
-        '2023-11-07T03:56:51.687414',
-        767,
-        'kotlin',
-        '세계',
-        'fbc11b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (196,
-        '2023-11-07T03:56:51.687479',
-        '2023-11-07T03:56:51.687481',
-        1372,
-        'go',
-        '꿈',
-        'bbb09b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (197,
-        '2023-11-07T03:56:51.687556',
-        '2023-11-07T03:56:51.687559',
-        3728,
-        'java',
-        '글',
-        '976207');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (198,
-        '2023-11-07T03:56:51.687638',
-        '2023-11-07T03:56:51.687640',
-        6986,
-        'kotlin',
-        '엔지니어',
-        'fc427e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (199,
-        '2023-11-07T03:56:51.687750',
-        '2023-11-07T03:56:51.687752',
-        1015,
-        'ts',
-        '노년',
-        'fd3d9e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (200,
-        '2023-11-07T03:56:51.687827',
-        '2023-11-07T03:56:51.687829',
-        5395,
-        'ts',
-        '바다',
-        '193758');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (201,
-        '2023-11-07T03:56:51.687896',
-        '2023-11-07T03:56:51.687898',
-        5251,
-        'go',
-        '통신',
-        '38e755');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (202,
-        '2023-11-07T03:56:51.687969',
-        '2023-11-07T03:56:51.687972',
-        8211,
-        'ts',
-        '나라',
-        '679d53');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (203,
-        '2023-11-07T03:56:51.688044',
-        '2023-11-07T03:56:51.688133',
-        5448,
-        'ts',
-        '기쁨',
-        '067cb7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (204,
-        '2023-11-07T03:56:51.688469',
-        '2023-11-07T03:56:51.688523',
-        5849,
-        'ts',
-        '건축가',
-        '89ccb9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (205,
-        '2023-11-07T03:56:51.694205',
-        '2023-11-07T03:56:51.695084',
-        7683,
-        'java',
-        '운동',
-        'f4c09d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (206,
-        '2023-11-07T03:56:51.697163',
-        '2023-11-07T03:56:51.697257',
-        4240,
-        'go',
-        '산',
-        'eeb81e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (207,
-        '2023-11-07T03:56:51.699207',
-        '2023-11-07T03:56:51.699284',
-        9709,
-        'go',
-        '파일럿',
-        '7a8e25');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (208,
-        '2023-11-07T03:56:51.699685',
-        '2023-11-07T03:56:51.699687',
-        8865,
-        'kotlin',
-        '노인',
-        '7452de');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (209,
-        '2023-11-07T03:56:51.699792',
-        '2023-11-07T03:56:51.699794',
-        2509,
-        'go',
-        '통신',
-        'a7edbf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (210,
-        '2023-11-07T03:56:51.699876',
-        '2023-11-07T03:56:51.699877',
-        6736,
-        'go',
-        '선원',
-        'f04f3b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (211,
-        '2023-11-07T03:56:51.700009',
-        '2023-11-07T03:56:51.700011',
-        7935,
-        'ts',
-        '아동',
-        '17cc74');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (212,
-        '2023-11-07T03:56:51.700142',
-        '2023-11-07T03:56:51.700144',
-        929,
-        'java',
-        '가족',
-        '223e4c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (213,
-        '2023-11-07T03:56:51.700214',
-        '2023-11-07T03:56:51.700216',
-        7747,
-        'ts',
-        '여가',
-        '79fc2e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (214,
-        '2023-11-07T03:56:51.700281',
-        '2023-11-07T03:56:51.700283',
-        2165,
-        'ts',
-        '나무',
-        'e8fda8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (215,
-        '2023-11-07T03:56:51.700365',
-        '2023-11-07T03:56:51.700366',
-        9782,
-        'ts',
-        '성인',
-        '7dc759');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (216,
-        '2023-11-07T03:56:51.700424',
-        '2023-11-07T03:56:51.700426',
-        3504,
-        'go',
-        '역사',
-        '714286');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (217,
-        '2023-11-07T03:56:51.700513',
-        '2023-11-07T03:56:51.700514',
-        5629,
-        'ts',
-        '나무',
-        '0c05bd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (218,
-        '2023-11-07T03:56:51.700577',
-        '2023-11-07T03:56:51.700578',
-        5525,
-        'java',
-        '스마트폰',
-        'a5e73e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (219,
-        '2023-11-07T03:56:51.700638',
-        '2023-11-07T03:56:51.700640',
-        4547,
-        'kotlin',
-        '공부',
-        'aee3ae');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (220,
-        '2023-11-07T03:56:51.700701',
-        '2023-11-07T03:56:51.700703',
-        1894,
-        'ts',
-        '수학',
-        '0c2c4f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (221,
-        '2023-11-07T03:56:51.700758',
-        '2023-11-07T03:56:51.700759',
-        2448,
-        'java',
-        '탐험',
-        'c0c258');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (222,
-        '2023-11-07T03:56:51.701084',
-        '2023-11-07T03:56:51.701086',
-        53,
-        'java',
-        '과학',
-        'a82d6b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (223,
-        '2023-11-07T03:56:51.702643',
-        '2023-11-07T03:56:51.702648',
-        8571,
-        'ts',
-        '사랑',
-        '0e4cec');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (224,
-        '2023-11-07T03:56:51.702868',
-        '2023-11-07T03:56:51.702870',
-        7361,
-        'kotlin',
-        '배구',
-        '96c75a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (225,
-        '2023-11-07T03:56:51.702964',
-        '2023-11-07T03:56:51.702966',
-        1597,
-        'java',
-        '미소',
-        '68a864');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (226,
-        '2023-11-07T03:56:51.703054',
-        '2023-11-07T03:56:51.703055',
-        5230,
-        'kotlin',
-        '배',
-        '69b541');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (227,
-        '2023-11-07T03:56:51.703159',
-        '2023-11-07T03:56:51.703161',
-        2585,
-        'java',
-        '마을',
-        '7dd766');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (228,
-        '2023-11-07T03:56:51.703231',
-        '2023-11-07T03:56:51.703232',
-        3962,
-        'kotlin',
-        '가족',
-        '345872');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (229,
-        '2023-11-07T03:56:51.703296',
-        '2023-11-07T03:56:51.703298',
-        232,
-        'java',
-        '마을',
-        '70b68d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (230,
-        '2023-11-07T03:56:51.703419',
-        '2023-11-07T03:56:51.703421',
-        3103,
-        'kotlin',
-        '청소년',
-        'a7525b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (231,
-        '2023-11-07T03:56:51.703480',
-        '2023-11-07T03:56:51.703481',
-        487,
-        'ts',
-        '게임',
-        'f81d2e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (232,
-        '2023-11-07T03:56:51.703553',
-        '2023-11-07T03:56:51.703554',
-        5574,
-        'go',
-        '축구',
-        '968c57');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (233,
-        '2023-11-07T03:56:51.703623',
-        '2023-11-07T03:56:51.703669',
-        4272,
-        'go',
-        '군인',
-        '042807');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (234,
-        '2023-11-07T03:56:51.703744',
-        '2023-11-07T03:56:51.703776',
-        7578,
-        'go',
-        '과학자',
-        '8155aa');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (235,
-        '2023-11-07T03:56:51.704030',
-        '2023-11-07T03:56:51.704034',
-        9491,
-        'kotlin',
-        '컴퓨터',
-        'fadb88');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (236,
-        '2023-11-07T03:56:51.705716',
-        '2023-11-07T03:56:51.705761',
-        9582,
-        'java',
-        '우주',
-        '85048a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (237,
-        '2023-11-07T03:56:51.705983',
-        '2023-11-07T03:56:51.705985',
-        8470,
-        'go',
-        '마을',
-        'a8bece');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (238,
-        '2023-11-07T03:56:51.706079',
-        '2023-11-07T03:56:51.706080',
-        7613,
-        'java',
-        '태양',
-        '2112fc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (239,
-        '2023-11-07T03:56:51.706156',
-        '2023-11-07T03:56:51.706158',
-        4379,
-        'ts',
-        '농구',
-        '1eef32');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (240,
-        '2023-11-07T03:56:51.706230',
-        '2023-11-07T03:56:51.706232',
-        2153,
-        'ts',
-        '아동',
-        '2e41b9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (241,
-        '2023-11-07T03:56:51.706297',
-        '2023-11-07T03:56:51.706298',
-        9501,
-        'java',
-        '현재',
-        'ffd7ba');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (242,
-        '2023-11-07T03:56:51.706364',
-        '2023-11-07T03:56:51.706365',
-        5295,
-        'ts',
-        '물',
-        '715923');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (243,
-        '2023-11-07T03:56:51.706466',
-        '2023-11-07T03:56:51.706468',
-        9144,
-        'kotlin',
-        '나라',
-        'f04af0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (244,
-        '2023-11-07T03:56:51.706534',
-        '2023-11-07T03:56:51.706535',
-        9474,
-        'ts',
-        '우주',
-        '1d60d0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (245,
-        '2023-11-07T03:56:51.706599',
-        '2023-11-07T03:56:51.706600',
-        4314,
-        'kotlin',
-        '작가',
-        '7d4212');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (246,
-        '2023-11-07T03:56:51.706657',
-        '2023-11-07T03:56:51.706658',
-        3867,
-        'go',
-        '도시',
-        'f3fbe8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (247,
-        '2023-11-07T03:56:51.706772',
-        '2023-11-07T03:56:51.706773',
-        6966,
-        'kotlin',
-        '나무',
-        'f9a46f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (248,
-        '2023-11-07T03:56:51.706851',
-        '2023-11-07T03:56:51.706852',
-        1494,
-        'ts',
-        '행복',
-        '67835f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (249,
-        '2023-11-07T03:56:51.706924',
-        '2023-11-07T03:56:51.706925',
-        6034,
-        'kotlin',
-        '평화',
-        '71ad36');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (250,
-        '2023-11-07T03:56:51.707026',
-        '2023-11-07T03:56:51.707028',
-        9311,
-        'java',
-        '비행기',
-        '4dfa4b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (251,
-        '2023-11-07T03:56:51.707298',
-        '2023-11-07T03:56:51.707314',
-        5064,
-        'ts',
-        '스마트폰',
-        '2813dd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (252,
-        '2023-11-07T03:56:51.708612',
-        '2023-11-07T03:56:51.708620',
-        4638,
-        'java',
-        '경찰',
-        'e1d071');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (253,
-        '2023-11-07T03:56:51.709147',
-        '2023-11-07T03:56:51.709151',
-        6456,
-        'kotlin',
-        '군인',
-        '7668b3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (254,
-        '2023-11-07T03:56:51.709353',
-        '2023-11-07T03:56:51.709355',
-        4609,
-        'kotlin',
-        '농구',
-        'be8ae1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (255,
-        '2023-11-07T03:56:51.709460',
-        '2023-11-07T03:56:51.709462',
-        7409,
-        'java',
-        '선원',
-        '2f60aa');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (256,
-        '2023-11-07T03:56:51.709544',
-        '2023-11-07T03:56:51.709572',
-        7928,
-        'go',
-        '회사',
-        'f38ee8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (257,
-        '2023-11-07T03:56:51.709711',
-        '2023-11-07T03:56:51.709713',
-        8617,
-        'go',
-        '직장',
-        '6e6bf3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (258,
-        '2023-11-07T03:56:51.709791',
-        '2023-11-07T03:56:51.709793',
-        8572,
-        'java',
-        '여행가',
-        '68dacf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (259,
-        '2023-11-07T03:56:51.709874',
-        '2023-11-07T03:56:51.709876',
-        9828,
-        'java',
-        '발견',
-        '27fbdd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (260,
-        '2023-11-07T03:56:51.710119',
-        '2023-11-07T03:56:51.710122',
-        7268,
-        'java',
-        '채소',
-        'ce184a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (261,
-        '2023-11-07T03:56:51.710313',
-        '2023-11-07T03:56:51.710315',
-        1557,
-        'go',
-        '회사',
-        '679f2c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (262,
-        '2023-11-07T03:56:51.710436',
-        '2023-11-07T03:56:51.710438',
-        3590,
-        'go',
-        '과학',
-        'a52376');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (263,
-        '2023-11-07T03:56:51.710507',
-        '2023-11-07T03:56:51.710508',
-        7924,
-        'kotlin',
-        '교통',
-        '31ab08');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (264,
-        '2023-11-07T03:56:51.710575',
-        '2023-11-07T03:56:51.710576',
-        5657,
-        'java',
-        '도시',
-        '7568df');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (265,
-        '2023-11-07T03:56:51.710710',
-        '2023-11-07T03:56:51.710712',
-        5636,
-        'go',
-        '성인',
-        'aa4f26');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (266,
-        '2023-11-07T03:56:51.710779',
-        '2023-11-07T03:56:51.710781',
-        9398,
-        'ts',
-        '하늘',
-        '4df6b5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (267,
-        '2023-11-07T03:56:51.711468',
-        '2023-11-07T03:56:51.711473',
-        1210,
-        'go',
-        '산책',
-        '9e30b6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (268,
-        '2023-11-07T03:56:51.711595',
-        '2023-11-07T03:56:51.711596',
-        4893,
-        'java',
-        '배구',
-        '8abee2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (269,
-        '2023-11-07T03:56:51.711671',
-        '2023-11-07T03:56:51.711673',
-        1500,
-        'ts',
-        '자동차',
-        'a238c6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (270,
-        '2023-11-07T03:56:51.711752',
-        '2023-11-07T03:56:51.711754',
-        3331,
-        'go',
-        '스포츠',
-        '573301');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (271,
-        '2023-11-07T03:56:51.711818',
-        '2023-11-07T03:56:51.711820',
-        6400,
-        'kotlin',
-        '성인',
-        '59f3ea');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (272,
-        '2023-11-07T03:56:51.712610',
-        '2023-11-07T03:56:51.712872',
-        3522,
-        'java',
-        '아동',
-        '07e15e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (273,
-        '2023-11-07T03:56:51.713322',
-        '2023-11-07T03:56:51.713329',
-        6377,
-        'ts',
-        '올림픽',
-        '8a5f89');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (274,
-        '2023-11-07T03:56:51.713613',
-        '2023-11-07T03:56:51.713620',
-        168,
-        'go',
-        '별',
-        '654272');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (275,
-        '2023-11-07T03:56:51.714378',
-        '2023-11-07T03:56:51.714385',
-        3885,
-        'kotlin',
-        '그림',
-        'cd91ba');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (276,
-        '2023-11-07T03:56:51.717312',
-        '2023-11-07T03:56:51.717333',
-        4375,
-        'ts',
-        '노년',
-        '70d032');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (277,
-        '2023-11-07T03:56:51.720227',
-        '2023-11-07T03:56:51.720237',
-        4444,
-        'java',
-        '작가',
-        'e15cc2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (278,
-        '2023-11-07T03:56:51.722864',
-        '2023-11-07T03:56:51.722881',
-        8161,
-        'java',
-        '축구',
-        'f34042');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (279,
-        '2023-11-07T03:56:51.724960',
-        '2023-11-07T03:56:51.724970',
-        1282,
-        'go',
-        '배구',
-        '1347df');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (280,
-        '2023-11-07T03:56:51.726360',
-        '2023-11-07T03:56:51.726372',
-        5762,
-        'kotlin',
-        '의사',
-        '2d2d55');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (281,
-        '2023-11-07T03:56:51.730198',
-        '2023-11-07T03:56:51.730288',
-        3705,
-        'ts',
-        '현재',
-        '595fa9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (282,
-        '2023-11-07T03:56:51.731885',
-        '2023-11-07T03:56:51.731895',
-        9237,
-        'java',
-        '발명',
-        '10aed8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (283,
-        '2023-11-07T03:56:51.732736',
-        '2023-11-07T03:56:51.732754',
-        1334,
-        'ts',
-        '바람',
-        'a0b740');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (284,
-        '2023-11-07T03:56:51.733294',
-        '2023-11-07T03:56:51.733302',
-        4355,
-        'go',
-        '나라',
-        'a05e9c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (285,
-        '2023-11-07T03:56:51.733466',
-        '2023-11-07T03:56:51.733469',
-        2735,
-        'ts',
-        '축구',
-        'bb9704');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (286,
-        '2023-11-07T03:56:51.733806',
-        '2023-11-07T03:56:51.734436',
-        5519,
-        'ts',
-        '산책',
-        '07bf00');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (287,
-        '2023-11-07T03:56:51.734604',
-        '2023-11-07T03:56:51.734606',
-        3209,
-        'kotlin',
-        '엔지니어',
-        '4d8ed7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (288,
-        '2023-11-07T03:56:51.734948',
-        '2023-11-07T03:56:51.734957',
-        3083,
-        'java',
-        '물',
-        '59df6c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (289,
-        '2023-11-07T03:56:51.735331',
-        '2023-11-07T03:56:51.735341',
-        5633,
-        'java',
-        '통신',
-        '7c8ef7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (290,
-        '2023-11-07T03:56:51.735705',
-        '2023-11-07T03:56:51.735715',
-        5572,
-        'go',
-        '예술',
-        'c26b2b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (291,
-        '2023-11-07T03:56:51.736030',
-        '2023-11-07T03:56:51.736037',
-        7421,
-        'go',
-        '음식',
-        'de8434');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (292,
-        '2023-11-07T03:56:51.736269',
-        '2023-11-07T03:56:51.736299',
-        9024,
-        'ts',
-        '바다',
-        'e8b34d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (293,
-        '2023-11-07T03:56:51.736569',
-        '2023-11-07T03:56:51.736598',
-        1198,
-        'go',
-        '과일',
-        '9f4ae5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (294,
-        '2023-11-07T03:56:51.736854',
-        '2023-11-07T03:56:51.736861',
-        4454,
-        'kotlin',
-        '탐험',
-        '30ae17');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (295,
-        '2023-11-07T03:56:51.737237',
-        '2023-11-07T03:56:51.737246',
-        8853,
-        'ts',
-        '친구',
-        '47ffdd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (296,
-        '2023-11-07T03:56:51.737394',
-        '2023-11-07T03:56:51.737396',
-        5629,
-        'go',
-        '열차',
-        '462d6d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (297,
-        '2023-11-07T03:56:51.737490',
-        '2023-11-07T03:56:51.737492',
-        9488,
-        'kotlin',
-        '학생',
-        'a8d2cd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (298,
-        '2023-11-07T03:56:51.737570',
-        '2023-11-07T03:56:51.737571',
-        5838,
-        'ts',
-        '야구',
-        '619ebc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (299,
-        '2023-11-07T03:56:51.737633',
-        '2023-11-07T03:56:51.737634',
-        574,
-        'go',
-        '통신',
-        '299d8b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (300,
-        '2023-11-07T03:56:51.737703',
-        '2023-11-07T03:56:51.737704',
-        2734,
-        'go',
-        '젊음',
-        'ed37b7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (301,
-        '2023-11-07T03:56:51.737828',
-        '2023-11-07T03:56:51.737830',
-        7413,
-        'java',
-        '소망',
-        'c5ba10');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (302,
-        '2023-11-07T03:56:51.737895',
-        '2023-11-07T03:56:51.737896',
-        8852,
-        'ts',
-        '미소',
-        '5e6345');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (303,
-        '2023-11-07T03:56:51.737959',
-        '2023-11-07T03:56:51.737961',
-        2724,
-        'go',
-        '여행',
-        '1a4a22');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (304,
-        '2023-11-07T03:56:51.738020',
-        '2023-11-07T03:56:51.738022',
-        9635,
-        'go',
-        '선생님',
-        '70dfc8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (305,
-        '2023-11-07T03:56:51.738082',
-        '2023-11-07T03:56:51.738083',
-        7473,
-        'java',
-        '그림',
-        '13bcdd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (306,
-        '2023-11-07T03:56:51.738140',
-        '2023-11-07T03:56:51.738141',
-        3148,
-        'java',
-        '성인',
-        'e27d20');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (307,
-        '2023-11-07T03:56:51.738224',
-        '2023-11-07T03:56:51.738225',
-        7316,
-        'go',
-        '비',
-        '17205d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (308,
-        '2023-11-07T03:56:51.738283',
-        '2023-11-07T03:56:51.738285',
-        3690,
-        'ts',
-        '변호사',
-        'afcd68');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (309,
-        '2023-11-07T03:56:51.738343',
-        '2023-11-07T03:56:51.738344',
-        515,
-        'go',
-        '현재',
-        'ea835d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (310,
-        '2023-11-07T03:56:51.738401',
-        '2023-11-07T03:56:51.738403',
-        9205,
-        'java',
-        '나라',
-        '76f27f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (311,
-        '2023-11-07T03:56:51.738463',
-        '2023-11-07T03:56:51.738465',
-        6622,
-        'go',
-        '소방관',
-        'b3ed9c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (312,
-        '2023-11-07T03:56:51.738522',
-        '2023-11-07T03:56:51.738523',
-        993,
-        'go',
-        '음식',
-        '505921');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (313,
-        '2023-11-07T03:56:51.738578',
-        '2023-11-07T03:56:51.738579',
-        3163,
-        'go',
-        '문화',
-        '945de6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (314,
-        '2023-11-07T03:56:51.738636',
-        '2023-11-07T03:56:51.738637',
-        5153,
-        'ts',
-        '변호사',
-        '23c2e2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (315,
-        '2023-11-07T03:56:51.739071',
-        '2023-11-07T03:56:51.739101',
-        2913,
-        'java',
-        '농구',
-        '1a0b6e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (316,
-        '2023-11-07T03:56:51.739373',
-        '2023-11-07T03:56:51.739380',
-        1217,
-        'java',
-        '태양',
-        '0214fd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (317,
-        '2023-11-07T03:56:51.740066',
-        '2023-11-07T03:56:51.740094',
-        629,
-        'ts',
-        '아동',
-        '6c9269');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (318,
-        '2023-11-07T03:56:51.746098',
-        '2023-11-07T03:56:51.746107',
-        9181,
-        'kotlin',
-        '평화',
-        '18376e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (319,
-        '2023-11-07T03:56:51.746855',
-        '2023-11-07T03:56:51.746858',
-        171,
-        'kotlin',
-        '수학',
-        '382017');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (320,
-        '2023-11-07T03:56:51.747423',
-        '2023-11-07T03:56:51.747785',
-        7958,
-        'java',
-        '빛',
-        'cb8793');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (321,
-        '2023-11-07T03:56:51.749259',
-        '2023-11-07T03:56:51.750570',
-        1518,
-        'go',
-        '선생님',
-        '75dc33');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (322,
-        '2023-11-07T03:56:51.760839',
-        '2023-11-07T03:56:51.761004',
-        7654,
-        'kotlin',
-        '문화',
-        'c82269');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (323,
-        '2023-11-07T03:56:51.761889',
-        '2023-11-07T03:56:51.761896',
-        3896,
-        'go',
-        '현재',
-        '1b8f4a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (324,
-        '2023-11-07T03:56:51.762498',
-        '2023-11-07T03:56:51.762501',
-        594,
-        'kotlin',
-        '태양',
-        '5ce61a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (325,
-        '2023-11-07T03:56:51.762781',
-        '2023-11-07T03:56:51.762808',
-        7532,
-        'go',
-        '축제',
-        'eda227');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (326,
-        '2023-11-07T03:56:51.763019',
-        '2023-11-07T03:56:51.763222',
-        8856,
-        'java',
-        '학교',
-        'a6576f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (327,
-        '2023-11-07T03:56:51.763414',
-        '2023-11-07T03:56:51.763415',
-        6762,
-        'kotlin',
-        '선생님',
-        '89d489');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (328,
-        '2023-11-07T03:56:51.763501',
-        '2023-11-07T03:56:51.763502',
-        3352,
-        'go',
-        '파일럿',
-        'f32771');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (329,
-        '2023-11-07T03:56:51.763582',
-        '2023-11-07T03:56:51.763583',
-        4331,
-        'java',
-        '요리',
-        '9af8db');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (330,
-        '2023-11-07T03:56:51.763649',
-        '2023-11-07T03:56:51.763649',
-        78,
-        'java',
-        '꿈',
-        '0d6950');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (331,
-        '2023-11-07T03:56:51.763943',
-        '2023-11-07T03:56:51.763945',
-        9973,
-        'ts',
-        '미래',
-        '99eba0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (332,
-        '2023-11-07T03:56:51.764076',
-        '2023-11-07T03:56:51.764077',
-        2159,
-        'ts',
-        '젊음',
-        '0f1db9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (333,
-        '2023-11-07T03:56:51.764154',
-        '2023-11-07T03:56:51.764157',
-        7004,
-        'go',
-        '여가',
-        '0e51b8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (334,
-        '2023-11-07T03:56:51.764223',
-        '2023-11-07T03:56:51.764223',
-        8628,
-        'java',
-        '도시',
-        'db6d50');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (335,
-        '2023-11-07T03:56:51.764287',
-        '2023-11-07T03:56:51.764287',
-        108,
-        'go',
-        '역사',
-        '5b01eb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (336,
-        '2023-11-07T03:56:51.764399',
-        '2023-11-07T03:56:51.764400',
-        9402,
-        'ts',
-        '노인',
-        '182526');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (337,
-        '2023-11-07T03:56:51.764493',
-        '2023-11-07T03:56:51.764493',
-        1049,
-        'ts',
-        '회사',
-        'f18558');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (338,
-        '2023-11-07T03:56:51.764601',
-        '2023-11-07T03:56:51.764603',
-        4948,
-        'ts',
-        '가족',
-        '1053b5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (339,
-        '2023-11-07T03:56:51.764675',
-        '2023-11-07T03:56:51.764676',
-        8594,
-        'go',
-        '선생님',
-        'c99bb6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (340,
-        '2023-11-07T03:56:51.764736',
-        '2023-11-07T03:56:51.764737',
-        6100,
-        'java',
-        '선원',
-        'db6507');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (341,
-        '2023-11-07T03:56:51.764792',
-        '2023-11-07T03:56:51.764792',
-        7144,
-        'ts',
-        '평화',
-        '7afc72');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (342,
-        '2023-11-07T03:56:51.764874',
-        '2023-11-07T03:56:51.764886',
-        3187,
-        'java',
-        '운동',
-        'cfa13c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (343,
-        '2023-11-07T03:56:51.765285',
-        '2023-11-07T03:56:51.765287',
-        2938,
-        'kotlin',
-        '컴퓨터',
-        '3491d7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (344,
-        '2023-11-07T03:56:51.765514',
-        '2023-11-07T03:56:51.765517',
-        3933,
-        'kotlin',
-        '바다',
-        'a66166');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (345,
-        '2023-11-07T03:56:51.765679',
-        '2023-11-07T03:56:51.765680',
-        4539,
-        'kotlin',
-        '글',
-        '1cdb95');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (346,
-        '2023-11-07T03:56:51.765757',
-        '2023-11-07T03:56:51.765758',
-        8303,
-        'java',
-        '가족',
-        '59765b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (347,
-        '2023-11-07T03:56:51.765831',
-        '2023-11-07T03:56:51.765832',
-        4875,
-        'go',
-        '산책',
-        '5d44ec');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (348,
-        '2023-11-07T03:56:51.765897',
-        '2023-11-07T03:56:51.765898',
-        6,
-        'ts',
-        '수학',
-        'fd4e1e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (349,
-        '2023-11-07T03:56:51.765959',
-        '2023-11-07T03:56:51.765960',
-        7245,
-        'kotlin',
-        '그림',
-        '50658d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (350,
-        '2023-11-07T03:56:51.766020',
-        '2023-11-07T03:56:51.766021',
-        8615,
-        'kotlin',
-        '축구',
-        '36b5b0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (351,
-        '2023-11-07T03:56:51.766117',
-        '2023-11-07T03:56:51.766118',
-        8918,
-        'ts',
-        '역사',
-        '2c677c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (352,
-        '2023-11-07T03:56:51.766177',
-        '2023-11-07T03:56:51.766188',
-        870,
-        'kotlin',
-        '바람',
-        'b1fc18');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (353,
-        '2023-11-07T03:56:51.766414',
-        '2023-11-07T03:56:51.766416',
-        431,
-        'ts',
-        '바다',
-        'e5e598');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (354,
-        '2023-11-07T03:56:51.766556',
-        '2023-11-07T03:56:51.766557',
-        103,
-        'java',
-        '탐험',
-        '6c26a2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (355,
-        '2023-11-07T03:56:51.766637',
-        '2023-11-07T03:56:51.766638',
-        2157,
-        'ts',
-        '올림픽',
-        'bd48e0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (356,
-        '2023-11-07T03:56:51.766958',
-        '2023-11-07T03:56:51.766959',
-        3339,
-        'kotlin',
-        '과학자',
-        'e89b2b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (357,
-        '2023-11-07T03:56:51.767029',
-        '2023-11-07T03:56:51.767030',
-        5345,
-        'ts',
-        '축구',
-        '44a9f1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (358,
-        '2023-11-07T03:56:51.767100',
-        '2023-11-07T03:56:51.767100',
-        16,
-        'kotlin',
-        '과학자',
-        '306248');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (359,
-        '2023-11-07T03:56:51.767233',
-        '2023-11-07T03:56:51.767234',
-        6740,
-        'kotlin',
-        '농구',
-        '5bf681');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (360,
-        '2023-11-07T03:56:51.767571',
-        '2023-11-07T03:56:51.767576',
-        1970,
-        'go',
-        '미래',
-        '525033');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (361,
-        '2023-11-07T03:56:51.767819',
-        '2023-11-07T03:56:51.767821',
-        7642,
-        'go',
-        '노년',
-        '40d594');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (362,
-        '2023-11-07T03:56:51.767955',
-        '2023-11-07T03:56:51.767955',
-        3599,
-        'ts',
-        '게임',
-        'b8703d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (363,
-        '2023-11-07T03:56:51.768033',
-        '2023-11-07T03:56:51.768033',
-        3224,
-        'ts',
-        '직장',
-        '8b56bf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (364,
-        '2023-11-07T03:56:51.768091',
-        '2023-11-07T03:56:51.768092',
-        5304,
-        'kotlin',
-        '엔지니어',
-        '0b51af');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (365,
-        '2023-11-07T03:56:51.768174',
-        '2023-11-07T03:56:51.768176',
-        5474,
-        'ts',
-        '학교',
-        '8d35ae');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (366,
-        '2023-11-07T03:56:51.768229',
-        '2023-11-07T03:56:51.768229',
-        7221,
-        'ts',
-        '우주',
-        '25c7fd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (367,
-        '2023-11-07T03:56:51.768284',
-        '2023-11-07T03:56:51.768284',
-        6495,
-        'java',
-        '스포츠',
-        'fcb192');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (368,
-        '2023-11-07T03:56:51.768339',
-        '2023-11-07T03:56:51.768340',
-        9862,
-        'java',
-        '음식',
-        '773d49');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (369,
-        '2023-11-07T03:56:51.768392',
-        '2023-11-07T03:56:51.768393',
-        7833,
-        'go',
-        '공부',
-        'e79198');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (370,
-        '2023-11-07T03:56:51.768449',
-        '2023-11-07T03:56:51.768449',
-        2808,
-        'go',
-        '과거',
-        '0d460b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (371,
-        '2023-11-07T03:56:51.768558',
-        '2023-11-07T03:56:51.768558',
-        5896,
-        'go',
-        '농구',
-        'c93c2a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (372,
-        '2023-11-07T03:56:51.768614',
-        '2023-11-07T03:56:51.768615',
-        7610,
-        'java',
-        '직장',
-        '29563b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (373,
-        '2023-11-07T03:56:51.768668',
-        '2023-11-07T03:56:51.768668',
-        792,
-        'java',
-        '사랑',
-        'c38256');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (374,
-        '2023-11-07T03:56:51.768737',
-        '2023-11-07T03:56:51.768738',
-        1102,
-        'java',
-        '야구',
-        'd5eb2d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (375,
-        '2023-11-07T03:56:51.769097',
-        '2023-11-07T03:56:51.769120',
-        5668,
-        'ts',
-        '강',
-        '1174d0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (376,
-        '2023-11-07T03:56:51.769353',
-        '2023-11-07T03:56:51.769356',
-        3138,
-        'kotlin',
-        '회사',
-        'a92f65');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (377,
-        '2023-11-07T03:56:51.769589',
-        '2023-11-07T03:56:51.769591',
-        7576,
-        'java',
-        '책',
-        'bf1964');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (378,
-        '2023-11-07T03:56:51.769768',
-        '2023-11-07T03:56:51.769770',
-        8200,
-        'java',
-        '달',
-        'eb4111');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (379,
-        '2023-11-07T03:56:51.770352',
-        '2023-11-07T03:56:51.770359',
-        2470,
-        'ts',
-        '여행가',
-        '207d6b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (380,
-        '2023-11-07T03:56:51.772427',
-        '2023-11-07T03:56:51.772438',
-        1406,
-        'go',
-        '글',
-        '292997');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (381,
-        '2023-11-07T03:56:51.777785',
-        '2023-11-07T03:56:51.777811',
-        692,
-        'go',
-        '꽃',
-        '5f5bea');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (382,
-        '2023-11-07T03:56:51.780107',
-        '2023-11-07T03:56:51.780116',
-        6400,
-        'java',
-        '노년',
-        '6add6a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (383,
-        '2023-11-07T03:56:51.780646',
-        '2023-11-07T03:56:51.780647',
-        1143,
-        'go',
-        '회사',
-        '17dc21');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (384,
-        '2023-11-07T03:56:51.781077',
-        '2023-11-07T03:56:51.781084',
-        4782,
-        'go',
-        '하늘',
-        '4d64d0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (385,
-        '2023-11-07T03:56:51.781768',
-        '2023-11-07T03:56:51.781772',
-        1221,
-        'java',
-        '노인',
-        'f75f6f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (386,
-        '2023-11-07T03:56:51.785735',
-        '2023-11-07T03:56:51.785744',
-        4321,
-        'kotlin',
-        '꿈',
-        'de9b69');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (387,
-        '2023-11-07T03:56:51.787322',
-        '2023-11-07T03:56:51.787325',
-        6965,
-        'go',
-        '선원',
-        'e54cd3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (388,
-        '2023-11-07T03:56:51.787825',
-        '2023-11-07T03:56:51.787826',
-        3079,
-        'kotlin',
-        '노인',
-        '6c744f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (389,
-        '2023-11-07T03:56:51.787982',
-        '2023-11-07T03:56:51.787987',
-        5318,
-        'java',
-        '젊음',
-        '82028a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (390,
-        '2023-11-07T03:56:51.788324',
-        '2023-11-07T03:56:51.788326',
-        6498,
-        'go',
-        '그림',
-        'd48b3d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (391,
-        '2023-11-07T03:56:51.789841',
-        '2023-11-07T03:56:51.789850',
-        2512,
-        'ts',
-        '산책',
-        '677580');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (392,
-        '2023-11-07T03:56:51.790054',
-        '2023-11-07T03:56:51.790055',
-        1835,
-        'go',
-        '책',
-        'aef5a2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (393,
-        '2023-11-07T03:56:51.790340',
-        '2023-11-07T03:56:51.790341',
-        2940,
-        'java',
-        '변호사',
-        'a60c91');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (394,
-        '2023-11-07T03:56:51.792110',
-        '2023-11-07T03:56:51.792115',
-        2472,
-        'java',
-        '비행기',
-        '76d52f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (395,
-        '2023-11-07T03:56:51.794230',
-        '2023-11-07T03:56:51.794237',
-        6264,
-        'java',
-        '축구',
-        '3eec34');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (396,
-        '2023-11-07T03:56:51.794581',
-        '2023-11-07T03:56:51.794583',
-        5865,
-        'go',
-        '과거',
-        '4a8b15');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (397,
-        '2023-11-07T03:56:51.794799',
-        '2023-11-07T03:56:51.794802',
-        1341,
-        'kotlin',
-        '스포츠',
-        '175553');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (398,
-        '2023-11-07T03:56:51.794891',
-        '2023-11-07T03:56:51.794892',
-        9926,
-        'java',
-        '강',
-        'd0c65d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (399,
-        '2023-11-07T03:56:51.794958',
-        '2023-11-07T03:56:51.794959',
-        2238,
-        'go',
-        '작가',
-        '57d581');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (400,
-        '2023-11-07T03:56:51.795068',
-        '2023-11-07T03:56:51.795070',
-        597,
-        'java',
-        '올림픽',
-        'f687ee');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (401,
-        '2023-11-07T03:56:51.795124',
-        '2023-11-07T03:56:51.795125',
-        8114,
-        'java',
-        '태양',
-        '03df58');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (402,
-        '2023-11-07T03:56:51.795280',
-        '2023-11-07T03:56:51.795292',
-        9185,
-        'ts',
-        '예술',
-        'e2844e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (403,
-        '2023-11-07T03:56:51.795509',
-        '2023-11-07T03:56:51.795510',
-        1510,
-        'kotlin',
-        '수학',
-        'b41c3f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (404,
-        '2023-11-07T03:56:51.795596',
-        '2023-11-07T03:56:51.795597',
-        3210,
-        'ts',
-        '태양',
-        '65dd87');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (405,
-        '2023-11-07T03:56:51.795659',
-        '2023-11-07T03:56:51.795659',
-        6421,
-        'go',
-        '소방관',
-        '2ce5f1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (406,
-        '2023-11-07T03:56:51.795716',
-        '2023-11-07T03:56:51.795717',
-        6113,
-        'kotlin',
-        '행복',
-        '7047cc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (407,
-        '2023-11-07T03:56:51.796439',
-        '2023-11-07T03:56:51.796441',
-        5289,
-        'ts',
-        '자동차',
-        '2f371c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (408,
-        '2023-11-07T03:56:51.796743',
-        '2023-11-07T03:56:51.796746',
-        3158,
-        'java',
-        '농구',
-        'ddbce6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (409,
-        '2023-11-07T03:56:51.797085',
-        '2023-11-07T03:56:51.797086',
-        2340,
-        'ts',
-        '경찰',
-        'a21969');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (410,
-        '2023-11-07T03:56:51.797835',
-        '2023-11-07T03:56:51.797837',
-        6710,
-        'kotlin',
-        '연구',
-        '058714');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (411,
-        '2023-11-07T03:56:51.798096',
-        '2023-11-07T03:56:51.798097',
-        4669,
-        'ts',
-        '학교',
-        '805fa5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (412,
-        '2023-11-07T03:56:51.798191',
-        '2023-11-07T03:56:51.798204',
-        2360,
-        'java',
-        '노년',
-        '8f716e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (413,
-        '2023-11-07T03:56:51.798295',
-        '2023-11-07T03:56:51.798296',
-        9223,
-        'ts',
-        '바다',
-        '0e33af');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (414,
-        '2023-11-07T03:56:51.798356',
-        '2023-11-07T03:56:51.798377',
-        7772,
-        'go',
-        '평화',
-        'bc9fa7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (415,
-        '2023-11-07T03:56:51.798434',
-        '2023-11-07T03:56:51.798434',
-        8571,
-        'ts',
-        '도전',
-        '633f82');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (416,
-        '2023-11-07T03:56:51.798492',
-        '2023-11-07T03:56:51.798492',
-        6799,
-        'ts',
-        '행복',
-        'a62c6c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (417,
-        '2023-11-07T03:56:51.798548',
-        '2023-11-07T03:56:51.798549',
-        4073,
-        'go',
-        '연구',
-        '580c6e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (418,
-        '2023-11-07T03:56:51.798624',
-        '2023-11-07T03:56:51.798625',
-        4395,
-        'ts',
-        '자동차',
-        'cfcf60');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (419,
-        '2023-11-07T03:56:51.798696',
-        '2023-11-07T03:56:51.798697',
-        6988,
-        'ts',
-        '강',
-        '29e730');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (420,
-        '2023-11-07T03:56:51.798752',
-        '2023-11-07T03:56:51.798753',
-        7703,
-        'kotlin',
-        '나라',
-        'dd0cf1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (421,
-        '2023-11-07T03:56:51.798803',
-        '2023-11-07T03:56:51.798803',
-        1345,
-        'ts',
-        '문화',
-        '8d30e5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (422,
-        '2023-11-07T03:56:51.798858',
-        '2023-11-07T03:56:51.798859',
-        5609,
-        'kotlin',
-        '교통',
-        '1670f9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (423,
-        '2023-11-07T03:56:51.799052',
-        '2023-11-07T03:56:51.799053',
-        7780,
-        'java',
-        '나무',
-        '75b885');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (424,
-        '2023-11-07T03:56:51.799433',
-        '2023-11-07T03:56:51.799434',
-        3984,
-        'kotlin',
-        '공부',
-        '780837');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (425,
-        '2023-11-07T03:56:51.802241',
-        '2023-11-07T03:56:51.802323',
-        7446,
-        'ts',
-        '기쁨',
-        '2b7188');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (426,
-        '2023-11-07T03:56:51.802997',
-        '2023-11-07T03:56:51.803099',
-        9875,
-        'kotlin',
-        '도전',
-        '64af29');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (427,
-        '2023-11-07T03:56:51.805462',
-        '2023-11-07T03:56:51.805467',
-        7223,
-        'java',
-        '세계',
-        'c44343');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (428,
-        '2023-11-07T03:56:51.806589',
-        '2023-11-07T03:56:51.806606',
-        4554,
-        'java',
-        '미래',
-        'b1d627');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (429,
-        '2023-11-07T03:56:51.806996',
-        '2023-11-07T03:56:51.806997',
-        5170,
-        'java',
-        '탐험',
-        '1605b7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (430,
-        '2023-11-07T03:56:51.807075',
-        '2023-11-07T03:56:51.807075',
-        1111,
-        'kotlin',
-        '산책',
-        '266393');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (431,
-        '2023-11-07T03:56:51.807130',
-        '2023-11-07T03:56:51.807131',
-        6704,
-        'ts',
-        '미래',
-        'e1cba3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (432,
-        '2023-11-07T03:56:51.807187',
-        '2023-11-07T03:56:51.807189',
-        7389,
-        'go',
-        '성인',
-        '39e98c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (433,
-        '2023-11-07T03:56:51.807258',
-        '2023-11-07T03:56:51.807258',
-        3358,
-        'go',
-        '비',
-        'a0bce9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (434,
-        '2023-11-07T03:56:51.808001',
-        '2023-11-07T03:56:51.808006',
-        6577,
-        'ts',
-        '의사',
-        'd9d380');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (435,
-        '2023-11-07T03:56:51.808278',
-        '2023-11-07T03:56:51.808280',
-        6280,
-        'ts',
-        '청소년',
-        '857d1c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (436,
-        '2023-11-07T03:56:51.808397',
-        '2023-11-07T03:56:51.808398',
-        8613,
-        'kotlin',
-        '산책',
-        'bbb464');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (437,
-        '2023-11-07T03:56:51.808473',
-        '2023-11-07T03:56:51.808473',
-        2306,
-        'ts',
-        '음식',
-        '441722');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (438,
-        '2023-11-07T03:56:51.808529',
-        '2023-11-07T03:56:51.808530',
-        5483,
-        'go',
-        '나라',
-        '8d7b83');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (439,
-        '2023-11-07T03:56:51.808585',
-        '2023-11-07T03:56:51.808587',
-        3797,
-        'go',
-        '파일럿',
-        'e0af78');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (440,
-        '2023-11-07T03:56:51.808640',
-        '2023-11-07T03:56:51.808641',
-        8028,
-        'go',
-        '자연',
-        'f4d4df');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (441,
-        '2023-11-07T03:56:51.808841',
-        '2023-11-07T03:56:51.808844',
-        6010,
-        'ts',
-        '컴퓨터',
-        'efa62c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (442,
-        '2023-11-07T03:56:51.809025',
-        '2023-11-07T03:56:51.809026',
-        2107,
-        'java',
-        '연구',
-        'd9f5e5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (443,
-        '2023-11-07T03:56:51.809107',
-        '2023-11-07T03:56:51.809108',
-        7285,
-        'kotlin',
-        '새',
-        'dbd5b2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (444,
-        '2023-11-07T03:56:51.809171',
-        '2023-11-07T03:56:51.809172',
-        9062,
-        'go',
-        '바다',
-        'c96838');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (445,
-        '2023-11-07T03:56:51.809230',
-        '2023-11-07T03:56:51.809231',
-        9952,
-        'go',
-        '젊음',
-        '228e4d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (446,
-        '2023-11-07T03:56:51.809448',
-        '2023-11-07T03:56:51.809450',
-        4929,
-        'java',
-        '축구',
-        '56c1c3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (447,
-        '2023-11-07T03:56:51.809565',
-        '2023-11-07T03:56:51.809566',
-        8258,
-        'kotlin',
-        '가족',
-        '07b803');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (448,
-        '2023-11-07T03:56:51.809635',
-        '2023-11-07T03:56:51.809637',
-        9329,
-        'kotlin',
-        '아동',
-        'bfbc6f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (449,
-        '2023-11-07T03:56:51.809696',
-        '2023-11-07T03:56:51.809697',
-        7121,
-        'java',
-        '과일',
-        'f19213');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (450,
-        '2023-11-07T03:56:51.830821',
-        '2023-11-07T03:56:51.831146',
-        5578,
-        'go',
-        '아동',
-        '616674');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (451,
-        '2023-11-07T03:56:51.832942',
-        '2023-11-07T03:56:51.832944',
-        9568,
-        'kotlin',
-        '구름',
-        'c0c16a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (452,
-        '2023-11-07T03:56:51.834250',
-        '2023-11-07T03:56:51.834253',
-        509,
-        'ts',
-        '바다',
-        'c3b209');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (453,
-        '2023-11-07T03:56:51.834316',
-        '2023-11-07T03:56:51.834317',
-        6454,
-        'go',
-        '성인',
-        '2540aa');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (454,
-        '2023-11-07T03:56:51.834370',
-        '2023-11-07T03:56:51.834371',
-        2679,
-        'kotlin',
-        '변호사',
-        '6d6f0e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (455,
-        '2023-11-07T03:56:51.834441',
-        '2023-11-07T03:56:51.834441',
-        5293,
-        'go',
-        '운동',
-        '1c6e57');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (456,
-        '2023-11-07T03:56:51.834486',
-        '2023-11-07T03:56:51.834487',
-        5125,
-        'ts',
-        '꿈',
-        '5b8f21');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (457,
-        '2023-11-07T03:56:51.834535',
-        '2023-11-07T03:56:51.834536',
-        2689,
-        'go',
-        '예술',
-        '450fd9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (458,
-        '2023-11-07T03:56:51.834583',
-        '2023-11-07T03:56:51.834584',
-        5438,
-        'ts',
-        '발명',
-        '1e7e71');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (459,
-        '2023-11-07T03:56:51.834646',
-        '2023-11-07T03:56:51.834647',
-        52,
-        'go',
-        '음악',
-        'f5d3f4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (460,
-        '2023-11-07T03:56:51.834743',
-        '2023-11-07T03:56:51.834744',
-        3622,
-        'go',
-        '나라',
-        'd5935a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (461,
-        '2023-11-07T03:56:51.834789',
-        '2023-11-07T03:56:51.834790',
-        1148,
-        'java',
-        '회사',
-        'a87926');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (462,
-        '2023-11-07T03:56:51.834867',
-        '2023-11-07T03:56:51.834868',
-        4019,
-        'java',
-        '운동',
-        '3f8043');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (463,
-        '2023-11-07T03:56:51.834917',
-        '2023-11-07T03:56:51.834917',
-        6619,
-        'ts',
-        '그림',
-        'ceb09f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (464,
-        '2023-11-07T03:56:51.834965',
-        '2023-11-07T03:56:51.834966',
-        9640,
-        'go',
-        '노인',
-        '370a77');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (465,
-        '2023-11-07T03:56:51.835012',
-        '2023-11-07T03:56:51.835013',
-        7685,
-        'go',
-        '과일',
-        '5c1f27');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (466,
-        '2023-11-07T03:56:51.835076',
-        '2023-11-07T03:56:51.835076',
-        8419,
-        'kotlin',
-        '산책',
-        'a2aa7c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (467,
-        '2023-11-07T03:56:51.835134',
-        '2023-11-07T03:56:51.835135',
-        4717,
-        'java',
-        '컴퓨터',
-        '3b8ab6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (468,
-        '2023-11-07T03:56:51.835182',
-        '2023-11-07T03:56:51.835182',
-        3642,
-        'ts',
-        '농구',
-        'c5c01a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (469,
-        '2023-11-07T03:56:51.835249',
-        '2023-11-07T03:56:51.835250',
-        7261,
-        'ts',
-        '파일럿',
-        '8cb6ef');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (470,
-        '2023-11-07T03:56:51.835314',
-        '2023-11-07T03:56:51.835314',
-        1650,
-        'ts',
-        '세계',
-        '4747e7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (471,
-        '2023-11-07T03:56:51.835377',
-        '2023-11-07T03:56:51.835378',
-        6240,
-        'ts',
-        '사랑',
-        '9589f4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (472,
-        '2023-11-07T03:56:51.835426',
-        '2023-11-07T03:56:51.835426',
-        5808,
-        'go',
-        '소망',
-        'a915ce');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (473,
-        '2023-11-07T03:56:51.835473',
-        '2023-11-07T03:56:51.835473',
-        6044,
-        'java',
-        '엔지니어',
-        'b44b24');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (474,
-        '2023-11-07T03:56:51.835538',
-        '2023-11-07T03:56:51.835539',
-        2758,
-        'kotlin',
-        '현재',
-        'bb2985');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (475,
-        '2023-11-07T03:56:51.835591',
-        '2023-11-07T03:56:51.835592',
-        3320,
-        'kotlin',
-        '꽃',
-        'dee1d5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (476,
-        '2023-11-07T03:56:51.835640',
-        '2023-11-07T03:56:51.835641',
-        830,
-        'go',
-        '책',
-        '681f08');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (477,
-        '2023-11-07T03:56:51.835692',
-        '2023-11-07T03:56:51.835692',
-        5700,
-        'java',
-        '바다',
-        '63ba0b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (478,
-        '2023-11-07T03:56:51.836841',
-        '2023-11-07T03:56:51.836875',
-        8901,
-        'ts',
-        '사랑',
-        'dad401');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (479,
-        '2023-11-07T03:56:51.837034',
-        '2023-11-07T03:56:51.837034',
-        9764,
-        'ts',
-        '강',
-        '0d867e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (480,
-        '2023-11-07T03:56:51.837098',
-        '2023-11-07T03:56:51.837099',
-        8319,
-        'go',
-        '글',
-        '9e1c44');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (481,
-        '2023-11-07T03:56:51.837151',
-        '2023-11-07T03:56:51.837152',
-        1543,
-        'kotlin',
-        '경찰',
-        '43c65a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (482,
-        '2023-11-07T03:56:51.837206',
-        '2023-11-07T03:56:51.837206',
-        6083,
-        'ts',
-        '젊음',
-        '5800c5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (483,
-        '2023-11-07T03:56:51.837274',
-        '2023-11-07T03:56:51.837274',
-        5159,
-        'kotlin',
-        '군인',
-        'aec898');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (484,
-        '2023-11-07T03:56:51.837336',
-        '2023-11-07T03:56:51.837336',
-        2371,
-        'kotlin',
-        '예술',
-        '4c4d9e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (485,
-        '2023-11-07T03:56:51.837389',
-        '2023-11-07T03:56:51.837390',
-        35,
-        'kotlin',
-        '배',
-        '7bf1b4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (486,
-        '2023-11-07T03:56:51.837707',
-        '2023-11-07T03:56:51.837709',
-        941,
-        'kotlin',
-        '경찰',
-        'ea8b8b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (487,
-        '2023-11-07T03:56:51.837835',
-        '2023-11-07T03:56:51.837836',
-        28,
-        'kotlin',
-        '아동',
-        'ce2a7a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (488,
-        '2023-11-07T03:56:51.837917',
-        '2023-11-07T03:56:51.837918',
-        450,
-        'java',
-        '학교',
-        '88c14b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (489,
-        '2023-11-07T03:56:51.838384',
-        '2023-11-07T03:56:51.838385',
-        9147,
-        'ts',
-        '도시',
-        '9b1278');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (490,
-        '2023-11-07T03:56:51.838996',
-        '2023-11-07T03:56:51.838997',
-        1182,
-        'java',
-        '소망',
-        '6eb547');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (491,
-        '2023-11-07T03:56:51.839099',
-        '2023-11-07T03:56:51.839100',
-        319,
-        'kotlin',
-        '건축가',
-        '1770e2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (492,
-        '2023-11-07T03:56:51.840294',
-        '2023-11-07T03:56:51.840296',
-        2600,
-        'go',
-        '문화',
-        '48b799');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (493,
-        '2023-11-07T03:56:51.840603',
-        '2023-11-07T03:56:51.840604',
-        5840,
-        'ts',
-        '취미',
-        'f21f3b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (494,
-        '2023-11-07T03:56:51.840664',
-        '2023-11-07T03:56:51.840665',
-        942,
-        'go',
-        '사랑',
-        'a8ab8c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (495,
-        '2023-11-07T03:56:51.840769',
-        '2023-11-07T03:56:51.840771',
-        4823,
-        'kotlin',
-        '영화',
-        'fb7670');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (496,
-        '2023-11-07T03:56:51.840831',
-        '2023-11-07T03:56:51.840832',
-        7576,
-        'go',
-        '축제',
-        'b3905a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (497,
-        '2023-11-07T03:56:51.840878',
-        '2023-11-07T03:56:51.840880',
-        5246,
-        'kotlin',
-        '별',
-        '60c865');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (498,
-        '2023-11-07T03:56:51.840926',
-        '2023-11-07T03:56:51.840927',
-        1804,
-        'kotlin',
-        '강',
-        '3d3a45');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (499,
-        '2023-11-07T03:56:51.840983',
-        '2023-11-07T03:56:51.840984',
-        8720,
-        'ts',
-        '젊음',
-        'e17a9d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (500,
-        '2023-11-07T03:56:51.841045',
-        '2023-11-07T03:56:51.841045',
-        9805,
-        'ts',
-        '기쁨',
-        '4f5182');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (501,
-        '2023-11-07T03:56:51.841088',
-        '2023-11-07T03:56:51.841088',
-        3185,
-        'kotlin',
-        '열차',
-        'd35b82');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (502,
-        '2023-11-07T03:56:51.841150',
-        '2023-11-07T03:56:51.841150',
-        1908,
-        'ts',
-        '컴퓨터',
-        '9e6bd2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (503,
-        '2023-11-07T03:56:51.841196',
-        '2023-11-07T03:56:51.841196',
-        2799,
-        'kotlin',
-        '문화',
-        '126077');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (504,
-        '2023-11-07T03:56:51.841264',
-        '2023-11-07T03:56:51.841265',
-        1712,
-        'go',
-        '비',
-        '856911');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (505,
-        '2023-11-07T03:56:51.841310',
-        '2023-11-07T03:56:51.841311',
-        355,
-        'kotlin',
-        '자동차',
-        'afebfc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (506,
-        '2023-11-07T03:56:51.841358',
-        '2023-11-07T03:56:51.841358',
-        2737,
-        'kotlin',
-        '열차',
-        '449bca');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (507,
-        '2023-11-07T03:56:51.841404',
-        '2023-11-07T03:56:51.841405',
-        9734,
-        'ts',
-        '도시',
-        '7d00f8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (508,
-        '2023-11-07T03:56:51.841463',
-        '2023-11-07T03:56:51.841464',
-        6863,
-        'go',
-        '학생',
-        '614626');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (509,
-        '2023-11-07T03:56:51.841505',
-        '2023-11-07T03:56:51.841505',
-        9905,
-        'java',
-        '젊음',
-        '6042a6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (510,
-        '2023-11-07T03:56:51.841549',
-        '2023-11-07T03:56:51.841549',
-        8539,
-        'java',
-        '과학',
-        'e9e024');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (511,
-        '2023-11-07T03:56:51.841589',
-        '2023-11-07T03:56:51.841589',
-        1128,
-        'ts',
-        '꿈',
-        '2fc458');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (512,
-        '2023-11-07T03:56:51.841729',
-        '2023-11-07T03:56:51.841729',
-        6598,
-        'go',
-        '농구',
-        'abd502');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (513,
-        '2023-11-07T03:56:51.842933',
-        '2023-11-07T03:56:51.842936',
-        7939,
-        'java',
-        '교통',
-        '3d5673');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (514,
-        '2023-11-07T03:56:51.846536',
-        '2023-11-07T03:56:51.846668',
-        3766,
-        'ts',
-        '인터넷',
-        '97fd5b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (515,
-        '2023-11-07T03:56:51.847887',
-        '2023-11-07T03:56:51.847889',
-        6164,
-        'kotlin',
-        '선원',
-        '700e9f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (516,
-        '2023-11-07T03:56:51.848196',
-        '2023-11-07T03:56:51.848196',
-        5715,
-        'ts',
-        '산',
-        '2011bb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (517,
-        '2023-11-07T03:56:51.848334',
-        '2023-11-07T03:56:51.848335',
-        87,
-        'go',
-        '인터넷',
-        '516c15');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (518,
-        '2023-11-07T03:56:51.848386',
-        '2023-11-07T03:56:51.848387',
-        6887,
-        'java',
-        '세계',
-        'b65ac6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (519,
-        '2023-11-07T03:56:51.848451',
-        '2023-11-07T03:56:51.848452',
-        5832,
-        'java',
-        '나라',
-        'd2172a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (520,
-        '2023-11-07T03:56:51.848495',
-        '2023-11-07T03:56:51.848496',
-        7930,
-        'java',
-        '바다',
-        '2e1c76');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (521,
-        '2023-11-07T03:56:51.848551',
-        '2023-11-07T03:56:51.848552',
-        3853,
-        'java',
-        '과학',
-        'a8e1db');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (522,
-        '2023-11-07T03:56:51.848595',
-        '2023-11-07T03:56:51.848596',
-        9393,
-        'java',
-        '학교',
-        '2aa16e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (523,
-        '2023-11-07T03:56:51.848639',
-        '2023-11-07T03:56:51.848639',
-        574,
-        'go',
-        '자동차',
-        '8106f5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (524,
-        '2023-11-07T03:56:51.848682',
-        '2023-11-07T03:56:51.848683',
-        3405,
-        'kotlin',
-        '연구',
-        'b99ba6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (525,
-        '2023-11-07T03:56:51.848740',
-        '2023-11-07T03:56:51.848740',
-        9322,
-        'kotlin',
-        '엔지니어',
-        '2e9e0d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (526,
-        '2023-11-07T03:56:51.848779',
-        '2023-11-07T03:56:51.848779',
-        3263,
-        'go',
-        '문화',
-        '3edffd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (527,
-        '2023-11-07T03:56:51.848821',
-        '2023-11-07T03:56:51.848821',
-        8598,
-        'kotlin',
-        '강',
-        '9c4451');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (528,
-        '2023-11-07T03:56:51.848862',
-        '2023-11-07T03:56:51.848863',
-        3800,
-        'java',
-        '비',
-        '86e808');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (529,
-        '2023-11-07T03:56:51.848919',
-        '2023-11-07T03:56:51.848919',
-        3951,
-        'ts',
-        '발명',
-        '18ec0b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (530,
-        '2023-11-07T03:56:51.848960',
-        '2023-11-07T03:56:51.848961',
-        8247,
-        'go',
-        '강',
-        '5a55c0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (531,
-        '2023-11-07T03:56:51.849052',
-        '2023-11-07T03:56:51.849053',
-        2847,
-        'kotlin',
-        '세계',
-        '29934f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (532,
-        '2023-11-07T03:56:51.849110',
-        '2023-11-07T03:56:51.849110',
-        5073,
-        'kotlin',
-        '바다',
-        '71474f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (533,
-        '2023-11-07T03:56:51.849153',
-        '2023-11-07T03:56:51.849153',
-        3022,
-        'kotlin',
-        '아동',
-        '561553');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (534,
-        '2023-11-07T03:56:51.849196',
-        '2023-11-07T03:56:51.849196',
-        1740,
-        'kotlin',
-        '노년',
-        'a41d92');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (535,
-        '2023-11-07T03:56:51.849248',
-        '2023-11-07T03:56:51.849249',
-        8836,
-        'ts',
-        '태양',
-        '6d47a1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (536,
-        '2023-11-07T03:56:51.849291',
-        '2023-11-07T03:56:51.849292',
-        3973,
-        'kotlin',
-        '친구',
-        '430c3f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (537,
-        '2023-11-07T03:56:51.849335',
-        '2023-11-07T03:56:51.849335',
-        3867,
-        'kotlin',
-        '젊음',
-        '85d1bd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (538,
-        '2023-11-07T03:56:51.849377',
-        '2023-11-07T03:56:51.849378',
-        2330,
-        'go',
-        '연구',
-        '7fb61f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (539,
-        '2023-11-07T03:56:51.849420',
-        '2023-11-07T03:56:51.849421',
-        453,
-        'java',
-        '가족',
-        'eee67b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (540,
-        '2023-11-07T03:56:51.849463',
-        '2023-11-07T03:56:51.849464',
-        4333,
-        'kotlin',
-        '학생',
-        'e9ddf5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (541,
-        '2023-11-07T03:56:51.849504',
-        '2023-11-07T03:56:51.849504',
-        1945,
-        'ts',
-        '선원',
-        '290d76');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (542,
-        '2023-11-07T03:56:51.849546',
-        '2023-11-07T03:56:51.849547',
-        5342,
-        'kotlin',
-        '세계',
-        'e459e1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (543,
-        '2023-11-07T03:56:51.849590',
-        '2023-11-07T03:56:51.849591',
-        1398,
-        'java',
-        '여가',
-        '73c7f2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (544,
-        '2023-11-07T03:56:51.849694',
-        '2023-11-07T03:56:51.849694',
-        7805,
-        'ts',
-        '그림',
-        '1b1c7c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (545,
-        '2023-11-07T03:56:51.849763',
-        '2023-11-07T03:56:51.849764',
-        8910,
-        'java',
-        '산',
-        '2a9eed');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (546,
-        '2023-11-07T03:56:51.849999',
-        '2023-11-07T03:56:51.850',
-        9053,
-        'ts',
-        '건축가',
-        'aa997d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (547,
-        '2023-11-07T03:56:51.853687',
-        '2023-11-07T03:56:51.853691',
-        1889,
-        'go',
-        '게임',
-        '9a6800');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (548,
-        '2023-11-07T03:56:51.855369',
-        '2023-11-07T03:56:51.855370',
-        1130,
-        'go',
-        '배',
-        '2f0138');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (549,
-        '2023-11-07T03:56:51.858036',
-        '2023-11-07T03:56:51.858039',
-        6145,
-        'go',
-        '마을',
-        'd0c907');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (550,
-        '2023-11-07T03:56:51.858735',
-        '2023-11-07T03:56:51.858736',
-        3499,
-        'kotlin',
-        '희망',
-        '4dae35');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (551,
-        '2023-11-07T03:56:51.858788',
-        '2023-11-07T03:56:51.858789',
-        3428,
-        'go',
-        '꽃',
-        '83af50');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (552,
-        '2023-11-07T03:56:51.858842',
-        '2023-11-07T03:56:51.858842',
-        6736,
-        'java',
-        '축제',
-        '8180cc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (553,
-        '2023-11-07T03:56:51.858893',
-        '2023-11-07T03:56:51.858894',
-        3056,
-        'kotlin',
-        '교통',
-        '53347f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (554,
-        '2023-11-07T03:56:51.858941',
-        '2023-11-07T03:56:51.858942',
-        1373,
-        'ts',
-        '올림픽',
-        '2e71a3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (555,
-        '2023-11-07T03:56:51.859011',
-        '2023-11-07T03:56:51.859012',
-        1402,
-        'go',
-        '구름',
-        '84335a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (556,
-        '2023-11-07T03:56:51.859056',
-        '2023-11-07T03:56:51.859056',
-        756,
-        'ts',
-        '하늘',
-        'c6fe75');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (557,
-        '2023-11-07T03:56:51.859122',
-        '2023-11-07T03:56:51.859123',
-        1614,
-        'kotlin',
-        '농구',
-        'e94f64');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (558,
-        '2023-11-07T03:56:51.859182',
-        '2023-11-07T03:56:51.859183',
-        6416,
-        'kotlin',
-        '채소',
-        '164c80');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (559,
-        '2023-11-07T03:56:51.859229',
-        '2023-11-07T03:56:51.859230',
-        9359,
-        'ts',
-        '글',
-        '943439');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (560,
-        '2023-11-07T03:56:51.859275',
-        '2023-11-07T03:56:51.859276',
-        3430,
-        'go',
-        '노년',
-        '2ad370');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (561,
-        '2023-11-07T03:56:51.859337',
-        '2023-11-07T03:56:51.859337',
-        8155,
-        'java',
-        '농구',
-        'c4e532');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (562,
-        '2023-11-07T03:56:51.859385',
-        '2023-11-07T03:56:51.859385',
-        9346,
-        'ts',
-        '발명',
-        '8cd36b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (563,
-        '2023-11-07T03:56:51.859451',
-        '2023-11-07T03:56:51.859452',
-        297,
-        'java',
-        '청소년',
-        '7ea01f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (564,
-        '2023-11-07T03:56:51.859497',
-        '2023-11-07T03:56:51.859498',
-        8336,
-        'kotlin',
-        '청소년',
-        '1a3f68');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (565,
-        '2023-11-07T03:56:51.859560',
-        '2023-11-07T03:56:51.859560',
-        8795,
-        'ts',
-        '친구',
-        '2088fe');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (566,
-        '2023-11-07T03:56:51.859656',
-        '2023-11-07T03:56:51.859656',
-        4551,
-        'java',
-        '역사',
-        'd028b7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (567,
-        '2023-11-07T03:56:51.859700',
-        '2023-11-07T03:56:51.859700',
-        6846,
-        'kotlin',
-        '취미',
-        'b3a40d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (568,
-        '2023-11-07T03:56:51.859758',
-        '2023-11-07T03:56:51.859759',
-        2566,
-        'kotlin',
-        '교통',
-        '7cf9aa');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (569,
-        '2023-11-07T03:56:51.859802',
-        '2023-11-07T03:56:51.859802',
-        6851,
-        'java',
-        '영화',
-        '152225');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (570,
-        '2023-11-07T03:56:51.859844',
-        '2023-11-07T03:56:51.859845',
-        2542,
-        'ts',
-        '건축가',
-        '6a8276');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (571,
-        '2023-11-07T03:56:51.859884',
-        '2023-11-07T03:56:51.859885',
-        3417,
-        'go',
-        '통신',
-        'f534ec');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (572,
-        '2023-11-07T03:56:51.859941',
-        '2023-11-07T03:56:51.859941',
-        4779,
-        'go',
-        '성인',
-        '079864');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (573,
-        '2023-11-07T03:56:51.859983',
-        '2023-11-07T03:56:51.859983',
-        3040,
-        'java',
-        '엔지니어',
-        'f7ddd5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (574,
-        '2023-11-07T03:56:51.860024',
-        '2023-11-07T03:56:51.860025',
-        6941,
-        'java',
-        '직장',
-        '126363');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (575,
-        '2023-11-07T03:56:51.860065',
-        '2023-11-07T03:56:51.860066',
-        6104,
-        'kotlin',
-        '여행가',
-        'f46f8b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (576,
-        '2023-11-07T03:56:51.860104',
-        '2023-11-07T03:56:51.860104',
-        6001,
-        'ts',
-        '컴퓨터',
-        '632e73');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (577,
-        '2023-11-07T03:56:51.860146',
-        '2023-11-07T03:56:51.860146',
-        1802,
-        'go',
-        '배구',
-        'b8e8f3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (578,
-        '2023-11-07T03:56:51.860187',
-        '2023-11-07T03:56:51.860187',
-        2652,
-        'go',
-        '영화',
-        '75e40b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (579,
-        '2023-11-07T03:56:51.860237',
-        '2023-11-07T03:56:51.860238',
-        3828,
-        'go',
-        '소망',
-        '6e3ff3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (580,
-        '2023-11-07T03:56:51.860286',
-        '2023-11-07T03:56:51.860287',
-        8677,
-        'ts',
-        '우주',
-        '8dd252');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (581,
-        '2023-11-07T03:56:51.860324',
-        '2023-11-07T03:56:51.860325',
-        2162,
-        'java',
-        '엔지니어',
-        '39cbe9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (582,
-        '2023-11-07T03:56:51.860366',
-        '2023-11-07T03:56:51.860366',
-        7091,
-        'java',
-        '나라',
-        'a5b45c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (583,
-        '2023-11-07T03:56:51.860407',
-        '2023-11-07T03:56:51.860407',
-        9379,
-        'ts',
-        '열차',
-        '6010c1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (584,
-        '2023-11-07T03:56:51.860516',
-        '2023-11-07T03:56:51.860517',
-        5665,
-        'kotlin',
-        '탐험',
-        '88c9f8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (585,
-        '2023-11-07T03:56:51.860561',
-        '2023-11-07T03:56:51.860561',
-        7041,
-        'java',
-        '성인',
-        '9021ac');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (586,
-        '2023-11-07T03:56:51.860601',
-        '2023-11-07T03:56:51.860602',
-        4878,
-        'ts',
-        '자동차',
-        'd4cde1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (587,
-        '2023-11-07T03:56:51.860644',
-        '2023-11-07T03:56:51.860644',
-        972,
-        'java',
-        '산',
-        '0ccbf1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (588,
-        '2023-11-07T03:56:51.860687',
-        '2023-11-07T03:56:51.860688',
-        1230,
-        'kotlin',
-        '눈',
-        '6a4f0a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (589,
-        '2023-11-07T03:56:51.860745',
-        '2023-11-07T03:56:51.860746',
-        2358,
-        'go',
-        '요리',
-        '0d40a0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (590,
-        '2023-11-07T03:56:51.860788',
-        '2023-11-07T03:56:51.860789',
-        6302,
-        'ts',
-        '연구',
-        '4e8b2d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (591,
-        '2023-11-07T03:56:51.860828',
-        '2023-11-07T03:56:51.860829',
-        6625,
-        'go',
-        '군인',
-        '716b9d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (592,
-        '2023-11-07T03:56:51.860873',
-        '2023-11-07T03:56:51.860873',
-        2565,
-        'java',
-        '나무',
-        'af75ac');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (593,
-        '2023-11-07T03:56:51.860916',
-        '2023-11-07T03:56:51.860917',
-        9856,
-        'ts',
-        '청소년',
-        'be8079');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (594,
-        '2023-11-07T03:56:51.860960',
-        '2023-11-07T03:56:51.860961',
-        5777,
-        'go',
-        '여행가',
-        '859459');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (595,
-        '2023-11-07T03:56:51.861013',
-        '2023-11-07T03:56:51.861014',
-        3895,
-        'java',
-        '꽃',
-        'd79766');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (596,
-        '2023-11-07T03:56:51.861054',
-        '2023-11-07T03:56:51.861054',
-        3847,
-        'kotlin',
-        '세계',
-        'f69726');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (597,
-        '2023-11-07T03:56:51.861097',
-        '2023-11-07T03:56:51.861098',
-        9612,
-        'go',
-        '농구',
-        'b9ecf0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (598,
-        '2023-11-07T03:56:51.861141',
-        '2023-11-07T03:56:51.861141',
-        5191,
-        'go',
-        '행복',
-        'c32911');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (599,
-        '2023-11-07T03:56:51.861184',
-        '2023-11-07T03:56:51.861184',
-        4906,
-        'ts',
-        '아동',
-        '272377');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (600,
-        '2023-11-07T03:56:51.861227',
-        '2023-11-07T03:56:51.861227',
-        8670,
-        'ts',
-        '책',
-        '488eb0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (601,
-        '2023-11-07T03:56:51.861306',
-        '2023-11-07T03:56:51.861307',
-        1966,
-        'ts',
-        '희망',
-        'cc5393');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (602,
-        '2023-11-07T03:56:51.861359',
-        '2023-11-07T03:56:51.861359',
-        8532,
-        'java',
-        '현재',
-        '789d6b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (603,
-        '2023-11-07T03:56:51.861402',
-        '2023-11-07T03:56:51.861403',
-        2793,
-        'ts',
-        '기쁨',
-        '9b0d67');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (604,
-        '2023-11-07T03:56:51.861446',
-        '2023-11-07T03:56:51.861446',
-        2184,
-        'java',
-        '교통',
-        '0cf1cf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (605,
-        '2023-11-07T03:56:51.861496',
-        '2023-11-07T03:56:51.861496',
-        1623,
-        'kotlin',
-        '농구',
-        '4f05f7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (606,
-        '2023-11-07T03:56:51.861536',
-        '2023-11-07T03:56:51.861536',
-        8725,
-        'ts',
-        '과거',
-        '14a845');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (607,
-        '2023-11-07T03:56:51.861579',
-        '2023-11-07T03:56:51.861579',
-        4685,
-        'kotlin',
-        '엔지니어',
-        '576ee6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (608,
-        '2023-11-07T03:56:51.861622',
-        '2023-11-07T03:56:51.861622',
-        673,
-        'go',
-        '발명',
-        'e38a1a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (609,
-        '2023-11-07T03:56:51.861664',
-        '2023-11-07T03:56:51.861665',
-        589,
-        'ts',
-        '학교',
-        '849c8b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (610,
-        '2023-11-07T03:56:51.861708',
-        '2023-11-07T03:56:51.861709',
-        3232,
-        'kotlin',
-        '영화',
-        'd0c929');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (611,
-        '2023-11-07T03:56:51.861751',
-        '2023-11-07T03:56:51.861752',
-        7438,
-        'go',
-        '엔지니어',
-        'edcc62');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (612,
-        '2023-11-07T03:56:51.861803',
-        '2023-11-07T03:56:51.861804',
-        5374,
-        'kotlin',
-        '학교',
-        '8073a0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (613,
-        '2023-11-07T03:56:51.861849',
-        '2023-11-07T03:56:51.861850',
-        4611,
-        'ts',
-        '학생',
-        '9ba207');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (614,
-        '2023-11-07T03:56:51.861895',
-        '2023-11-07T03:56:51.861896',
-        4600,
-        'go',
-        '구름',
-        '5f5153');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (615,
-        '2023-11-07T03:56:51.861943',
-        '2023-11-07T03:56:51.861943',
-        99,
-        'kotlin',
-        '선생님',
-        'ae4ff9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (616,
-        '2023-11-07T03:56:51.861984',
-        '2023-11-07T03:56:51.861984',
-        4933,
-        'ts',
-        '아동',
-        '4b9e0f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (617,
-        '2023-11-07T03:56:51.862028',
-        '2023-11-07T03:56:51.862028',
-        353,
-        'ts',
-        '스마트폰',
-        '0afb75');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (618,
-        '2023-11-07T03:56:51.862071',
-        '2023-11-07T03:56:51.862072',
-        1409,
-        'kotlin',
-        '통신',
-        '9de73e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (619,
-        '2023-11-07T03:56:51.862146',
-        '2023-11-07T03:56:51.862146',
-        5843,
-        'go',
-        '아동',
-        '65fc47');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (620,
-        '2023-11-07T03:56:51.862192',
-        '2023-11-07T03:56:51.862193',
-        821,
-        'kotlin',
-        '변호사',
-        '8ab6a9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (621,
-        '2023-11-07T03:56:51.862235',
-        '2023-11-07T03:56:51.862236',
-        6708,
-        'java',
-        '산',
-        '93c17d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (622,
-        '2023-11-07T03:56:51.862281',
-        '2023-11-07T03:56:51.862282',
-        6944,
-        'kotlin',
-        '아동',
-        '03ea8b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (623,
-        '2023-11-07T03:56:51.862328',
-        '2023-11-07T03:56:51.862328',
-        9201,
-        'ts',
-        '도시',
-        'a7371e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (624,
-        '2023-11-07T03:56:51.862374',
-        '2023-11-07T03:56:51.862375',
-        6744,
-        'java',
-        '자동차',
-        '7183a1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (625,
-        '2023-11-07T03:56:51.862421',
-        '2023-11-07T03:56:51.862422',
-        6065,
-        'go',
-        '눈',
-        'd03101');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (626,
-        '2023-11-07T03:56:51.862464',
-        '2023-11-07T03:56:51.862465',
-        1803,
-        'kotlin',
-        '게임',
-        'b8dfbf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (627,
-        '2023-11-07T03:56:51.862529',
-        '2023-11-07T03:56:51.862529',
-        4110,
-        'java',
-        '여가',
-        'cadc97');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (628,
-        '2023-11-07T03:56:51.862574',
-        '2023-11-07T03:56:51.862575',
-        7133,
-        'kotlin',
-        '아동',
-        'd52294');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (629,
-        '2023-11-07T03:56:51.862620',
-        '2023-11-07T03:56:51.862621',
-        4103,
-        'kotlin',
-        '예술',
-        'e4c85d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (630,
-        '2023-11-07T03:56:51.862664',
-        '2023-11-07T03:56:51.862665',
-        8491,
-        'java',
-        '도전',
-        '3341f1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (631,
-        '2023-11-07T03:56:51.862705',
-        '2023-11-07T03:56:51.862706',
-        3415,
-        'go',
-        '소망',
-        '63e84f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (632,
-        '2023-11-07T03:56:51.862750',
-        '2023-11-07T03:56:51.862750',
-        8703,
-        'java',
-        '기쁨',
-        'c121d6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (633,
-        '2023-11-07T03:56:51.862794',
-        '2023-11-07T03:56:51.862795',
-        5196,
-        'kotlin',
-        '노인',
-        'e748a1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (634,
-        '2023-11-07T03:56:51.862839',
-        '2023-11-07T03:56:51.862839',
-        556,
-        'java',
-        '회사',
-        '387e8e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (635,
-        '2023-11-07T03:56:51.862885',
-        '2023-11-07T03:56:51.862885',
-        5376,
-        'kotlin',
-        '물',
-        '90be38');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (636,
-        '2023-11-07T03:56:51.862927',
-        '2023-11-07T03:56:51.862927',
-        7870,
-        'kotlin',
-        '새',
-        'e7701d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (637,
-        '2023-11-07T03:56:51.863004',
-        '2023-11-07T03:56:51.863005',
-        4515,
-        'go',
-        '빛',
-        '7e9ded');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (638,
-        '2023-11-07T03:56:51.863044',
-        '2023-11-07T03:56:51.863045',
-        588,
-        'go',
-        '인터넷',
-        '17f67c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (639,
-        '2023-11-07T03:56:51.863085',
-        '2023-11-07T03:56:51.863086',
-        6938,
-        'kotlin',
-        '파일럿',
-        '39669f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (640,
-        '2023-11-07T03:56:51.863125',
-        '2023-11-07T03:56:51.863126',
-        4082,
-        'java',
-        '군인',
-        'b2635c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (641,
-        '2023-11-07T03:56:51.863200',
-        '2023-11-07T03:56:51.863201',
-        8273,
-        'go',
-        '별',
-        'ff2dd9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (642,
-        '2023-11-07T03:56:51.863258',
-        '2023-11-07T03:56:51.863258',
-        939,
-        'java',
-        '발견',
-        '04e75c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (643,
-        '2023-11-07T03:56:51.863301',
-        '2023-11-07T03:56:51.863301',
-        9188,
-        'java',
-        '농구',
-        'bba4f7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (644,
-        '2023-11-07T03:56:51.863341',
-        '2023-11-07T03:56:51.863341',
-        1252,
-        'ts',
-        '발견',
-        'd2728a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (645,
-        '2023-11-07T03:56:51.863382',
-        '2023-11-07T03:56:51.863383',
-        5162,
-        'kotlin',
-        '기쁨',
-        '273d5b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (646,
-        '2023-11-07T03:56:51.863443',
-        '2023-11-07T03:56:51.863443',
-        5085,
-        'java',
-        '엔지니어',
-        'd9781f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (647,
-        '2023-11-07T03:56:51.863614',
-        '2023-11-07T03:56:51.863616',
-        4086,
-        'ts',
-        '운동',
-        '631373');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (648,
-        '2023-11-07T03:56:51.864020',
-        '2023-11-07T03:56:51.864021',
-        9851,
-        'kotlin',
-        '교통',
-        '61786c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (649,
-        '2023-11-07T03:56:51.864212',
-        '2023-11-07T03:56:51.864213',
-        8494,
-        'ts',
-        '농구',
-        '3d69c1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (650,
-        '2023-11-07T03:56:51.869989',
-        '2023-11-07T03:56:51.869993',
-        7304,
-        'java',
-        '야구',
-        '2660d5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (651,
-        '2023-11-07T03:56:51.870987',
-        '2023-11-07T03:56:51.870988',
-        5579,
-        'java',
-        '열차',
-        '999ac0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (652,
-        '2023-11-07T03:56:51.871057',
-        '2023-11-07T03:56:51.871058',
-        1472,
-        'kotlin',
-        '강',
-        '65774f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (653,
-        '2023-11-07T03:56:51.871102',
-        '2023-11-07T03:56:51.871103',
-        5406,
-        'kotlin',
-        '노인',
-        '7b913d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (654,
-        '2023-11-07T03:56:51.871197',
-        '2023-11-07T03:56:51.871198',
-        4806,
-        'ts',
-        '문화',
-        '43b585');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (655,
-        '2023-11-07T03:56:51.871245',
-        '2023-11-07T03:56:51.871246',
-        9640,
-        'java',
-        '미소',
-        'd77c65');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (656,
-        '2023-11-07T03:56:51.871286',
-        '2023-11-07T03:56:51.871287',
-        4168,
-        'kotlin',
-        '스포츠',
-        '95d7ab');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (657,
-        '2023-11-07T03:56:51.871331',
-        '2023-11-07T03:56:51.871331',
-        5121,
-        'go',
-        '미래',
-        'ec7596');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (658,
-        '2023-11-07T03:56:51.871377',
-        '2023-11-07T03:56:51.871377',
-        3700,
-        'go',
-        '친구',
-        '9b8d4c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (659,
-        '2023-11-07T03:56:51.871436',
-        '2023-11-07T03:56:51.871437',
-        7764,
-        'ts',
-        '작가',
-        '04cdc6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (660,
-        '2023-11-07T03:56:51.871488',
-        '2023-11-07T03:56:51.871489',
-        7396,
-        'ts',
-        '책',
-        '0eb863');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (661,
-        '2023-11-07T03:56:51.871543',
-        '2023-11-07T03:56:51.871543',
-        5460,
-        'kotlin',
-        '운동',
-        'eae441');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (662,
-        '2023-11-07T03:56:51.871586',
-        '2023-11-07T03:56:51.871586',
-        7353,
-        'java',
-        '채소',
-        '665b7b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (663,
-        '2023-11-07T03:56:51.871631',
-        '2023-11-07T03:56:51.871631',
-        9110,
-        'go',
-        '음식',
-        '3891c1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (664,
-        '2023-11-07T03:56:51.871674',
-        '2023-11-07T03:56:51.871674',
-        679,
-        'go',
-        '달',
-        '248857');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (665,
-        '2023-11-07T03:56:51.871717',
-        '2023-11-07T03:56:51.871718',
-        7865,
-        'go',
-        '행복',
-        'd67b2b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (666,
-        '2023-11-07T03:56:51.871758',
-        '2023-11-07T03:56:51.871758',
-        37,
-        'kotlin',
-        '선생님',
-        'a2f54f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (667,
-        '2023-11-07T03:56:51.871801',
-        '2023-11-07T03:56:51.871801',
-        4706,
-        'ts',
-        '꿈',
-        '053a97');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (668,
-        '2023-11-07T03:56:51.871846',
-        '2023-11-07T03:56:51.871847',
-        4532,
-        'ts',
-        '자연',
-        '6c9bfc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (669,
-        '2023-11-07T03:56:51.871890',
-        '2023-11-07T03:56:51.871890',
-        8716,
-        'kotlin',
-        '태양',
-        '5958f2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (670,
-        '2023-11-07T03:56:51.871933',
-        '2023-11-07T03:56:51.871933',
-        1066,
-        'kotlin',
-        '과거',
-        'ed7a04');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (671,
-        '2023-11-07T03:56:51.871974',
-        '2023-11-07T03:56:51.871975',
-        422,
-        'java',
-        '꿈',
-        '1a5118');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (672,
-        '2023-11-07T03:56:51.872048',
-        '2023-11-07T03:56:51.872048',
-        9706,
-        'java',
-        '축구',
-        '9cacc9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (673,
-        '2023-11-07T03:56:51.872094',
-        '2023-11-07T03:56:51.872095',
-        7261,
-        'ts',
-        '아동',
-        '8d1a03');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (674,
-        '2023-11-07T03:56:51.872140',
-        '2023-11-07T03:56:51.872140',
-        66,
-        'kotlin',
-        '도전',
-        'eed4c0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (675,
-        '2023-11-07T03:56:51.872189',
-        '2023-11-07T03:56:51.872189',
-        5387,
-        'kotlin',
-        '자연',
-        '2c566f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (676,
-        '2023-11-07T03:56:51.872230',
-        '2023-11-07T03:56:51.872231',
-        3395,
-        'kotlin',
-        '야구',
-        'c3653d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (677,
-        '2023-11-07T03:56:51.872277',
-        '2023-11-07T03:56:51.872278',
-        4109,
-        'kotlin',
-        '하늘',
-        '631d58');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (678,
-        '2023-11-07T03:56:51.872320',
-        '2023-11-07T03:56:51.872321',
-        9711,
-        'kotlin',
-        '채소',
-        '62ae24');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (679,
-        '2023-11-07T03:56:51.872364',
-        '2023-11-07T03:56:51.872364',
-        2624,
-        'ts',
-        '요리',
-        '88a463');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (680,
-        '2023-11-07T03:56:51.872412',
-        '2023-11-07T03:56:51.872412',
-        2757,
-        'ts',
-        '학교',
-        '561906');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (681,
-        '2023-11-07T03:56:51.872453',
-        '2023-11-07T03:56:51.872454',
-        753,
-        'kotlin',
-        '야구',
-        '8c1ee2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (682,
-        '2023-11-07T03:56:51.872497',
-        '2023-11-07T03:56:51.872497',
-        2197,
-        'go',
-        '수학',
-        '4e8905');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (683,
-        '2023-11-07T03:56:51.872553',
-        '2023-11-07T03:56:51.872554',
-        7373,
-        'go',
-        '건축가',
-        'c12e08');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (684,
-        '2023-11-07T03:56:51.872598',
-        '2023-11-07T03:56:51.872598',
-        1628,
-        'ts',
-        '노년',
-        '76027d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (685,
-        '2023-11-07T03:56:51.872642',
-        '2023-11-07T03:56:51.872643',
-        6708,
-        'ts',
-        '군인',
-        'c66632');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (686,
-        '2023-11-07T03:56:51.872685',
-        '2023-11-07T03:56:51.872686',
-        5616,
-        'kotlin',
-        '아동',
-        '84e79f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (687,
-        '2023-11-07T03:56:51.872749',
-        '2023-11-07T03:56:51.872750',
-        7918,
-        'go',
-        '배',
-        'fbc9f1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (688,
-        '2023-11-07T03:56:51.872797',
-        '2023-11-07T03:56:51.872797',
-        4968,
-        'ts',
-        '군인',
-        '4a35f4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (689,
-        '2023-11-07T03:56:51.872841',
-        '2023-11-07T03:56:51.872842',
-        6746,
-        'java',
-        '교통',
-        '0f0eec');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (690,
-        '2023-11-07T03:56:51.873014',
-        '2023-11-07T03:56:51.873017',
-        5097,
-        'kotlin',
-        '경찰',
-        'e2ba2b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (691,
-        '2023-11-07T03:56:51.873118',
-        '2023-11-07T03:56:51.873119',
-        8670,
-        'go',
-        '젊음',
-        'af01b2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (692,
-        '2023-11-07T03:56:51.873177',
-        '2023-11-07T03:56:51.873189',
-        6722,
-        'kotlin',
-        '나무',
-        '0966b5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (693,
-        '2023-11-07T03:56:51.873237',
-        '2023-11-07T03:56:51.873238',
-        4223,
-        'kotlin',
-        '배',
-        '455642');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (694,
-        '2023-11-07T03:56:51.873292',
-        '2023-11-07T03:56:51.873293',
-        5390,
-        'kotlin',
-        '파일럿',
-        '69d758');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (695,
-        '2023-11-07T03:56:51.873346',
-        '2023-11-07T03:56:51.873346',
-        6727,
-        'java',
-        '하늘',
-        'afa9d4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (696,
-        '2023-11-07T03:56:51.873410',
-        '2023-11-07T03:56:51.873411',
-        3899,
-        'java',
-        '소방관',
-        '4d72d0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (697,
-        '2023-11-07T03:56:51.873459',
-        '2023-11-07T03:56:51.873460',
-        1949,
-        'kotlin',
-        '인터넷',
-        '208808');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (698,
-        '2023-11-07T03:56:51.873510',
-        '2023-11-07T03:56:51.873511',
-        8932,
-        'kotlin',
-        '건축가',
-        '3fe481');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (699,
-        '2023-11-07T03:56:51.873556',
-        '2023-11-07T03:56:51.873557',
-        7351,
-        'java',
-        '구름',
-        'daeb9b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (700,
-        '2023-11-07T03:56:51.873616',
-        '2023-11-07T03:56:51.873616',
-        1784,
-        'ts',
-        '도전',
-        'c3ea0a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (701,
-        '2023-11-07T03:56:51.873672',
-        '2023-11-07T03:56:51.873672',
-        3908,
-        'ts',
-        '현재',
-        'da2b2a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (702,
-        '2023-11-07T03:56:51.873721',
-        '2023-11-07T03:56:51.873722',
-        3447,
-        'kotlin',
-        '아동',
-        '6bae9b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (703,
-        '2023-11-07T03:56:51.873770',
-        '2023-11-07T03:56:51.873770',
-        3713,
-        'java',
-        '도전',
-        'a6a480');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (704,
-        '2023-11-07T03:56:51.873825',
-        '2023-11-07T03:56:51.873828',
-        5864,
-        'ts',
-        '별',
-        '0953a5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (705,
-        '2023-11-07T03:56:51.873918',
-        '2023-11-07T03:56:51.873919',
-        4066,
-        'go',
-        '축제',
-        'f664e5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (706,
-        '2023-11-07T03:56:51.873964',
-        '2023-11-07T03:56:51.873964',
-        8218,
-        'ts',
-        '탐험',
-        '3949eb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (707,
-        '2023-11-07T03:56:51.874367',
-        '2023-11-07T03:56:51.874369',
-        9486,
-        'java',
-        '발견',
-        '408a85');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (708,
-        '2023-11-07T03:56:51.874474',
-        '2023-11-07T03:56:51.874474',
-        2533,
-        'go',
-        '취미',
-        'eeae21');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (709,
-        '2023-11-07T03:56:51.874677',
-        '2023-11-07T03:56:51.874678',
-        5585,
-        'kotlin',
-        '비행기',
-        '747e16');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (710,
-        '2023-11-07T03:56:51.874768',
-        '2023-11-07T03:56:51.874769',
-        5379,
-        'java',
-        '탐험',
-        '57a5de');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (711,
-        '2023-11-07T03:56:51.874817',
-        '2023-11-07T03:56:51.874817',
-        9454,
-        'kotlin',
-        '여행가',
-        '57298f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (712,
-        '2023-11-07T03:56:51.874908',
-        '2023-11-07T03:56:51.874909',
-        1365,
-        'kotlin',
-        '학생',
-        '80d287');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (713,
-        '2023-11-07T03:56:51.875054',
-        '2023-11-07T03:56:51.875055',
-        2761,
-        'go',
-        '평화',
-        'dcd0e9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (714,
-        '2023-11-07T03:56:51.875276',
-        '2023-11-07T03:56:51.875278',
-        8438,
-        'kotlin',
-        '건축가',
-        '8ef69a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (715,
-        '2023-11-07T03:56:51.875405',
-        '2023-11-07T03:56:51.875405',
-        4369,
-        'java',
-        '의사',
-        'c3edbf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (716,
-        '2023-11-07T03:56:51.875508',
-        '2023-11-07T03:56:51.875509',
-        9325,
-        'kotlin',
-        '우주',
-        '566f7c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (717,
-        '2023-11-07T03:56:51.875572',
-        '2023-11-07T03:56:51.875573',
-        7121,
-        'ts',
-        '도시',
-        '5f1422');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (718,
-        '2023-11-07T03:56:51.875623',
-        '2023-11-07T03:56:51.875624',
-        3489,
-        'kotlin',
-        '음식',
-        'cc97f7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (719,
-        '2023-11-07T03:56:51.875700',
-        '2023-11-07T03:56:51.875701',
-        841,
-        'go',
-        '채소',
-        'b62327');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (720,
-        '2023-11-07T03:56:51.875749',
-        '2023-11-07T03:56:51.875751',
-        9520,
-        'ts',
-        '산책',
-        '7a13e7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (721,
-        '2023-11-07T03:56:51.875796',
-        '2023-11-07T03:56:51.875796',
-        3115,
-        'java',
-        '도전',
-        '4aeb2e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (722,
-        '2023-11-07T03:56:51.875848',
-        '2023-11-07T03:56:51.875849',
-        848,
-        'kotlin',
-        '역사',
-        '2f3565');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (723,
-        '2023-11-07T03:56:51.875917',
-        '2023-11-07T03:56:51.875917',
-        4675,
-        'go',
-        '별',
-        '3b40de');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (724,
-        '2023-11-07T03:56:51.875963',
-        '2023-11-07T03:56:51.875964',
-        9863,
-        'go',
-        '평화',
-        '043feb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (725,
-        '2023-11-07T03:56:51.876077',
-        '2023-11-07T03:56:51.876077',
-        2692,
-        'go',
-        '수학',
-        '0b33b4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (726,
-        '2023-11-07T03:56:51.876125',
-        '2023-11-07T03:56:51.876126',
-        3551,
-        'ts',
-        '산책',
-        '3b3111');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (727,
-        '2023-11-07T03:56:51.876180',
-        '2023-11-07T03:56:51.876180',
-        6642,
-        'go',
-        '물',
-        'ed6d60');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (728,
-        '2023-11-07T03:56:51.876230',
-        '2023-11-07T03:56:51.876231',
-        756,
-        'kotlin',
-        '과학',
-        '2b965c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (729,
-        '2023-11-07T03:56:51.876340',
-        '2023-11-07T03:56:51.876341',
-        7730,
-        'java',
-        '엔지니어',
-        '2c87e0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (730,
-        '2023-11-07T03:56:51.876463',
-        '2023-11-07T03:56:51.876464',
-        2092,
-        'ts',
-        '바다',
-        '8c6bc1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (731,
-        '2023-11-07T03:56:51.876521',
-        '2023-11-07T03:56:51.876522',
-        3153,
-        'java',
-        '사랑',
-        'a77750');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (732,
-        '2023-11-07T03:56:51.876580',
-        '2023-11-07T03:56:51.876580',
-        3979,
-        'ts',
-        '파일럿',
-        'b7e14b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (733,
-        '2023-11-07T03:56:51.876829',
-        '2023-11-07T03:56:51.876830',
-        9780,
-        'ts',
-        '빛',
-        'c76aa2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (734,
-        '2023-11-07T03:56:51.876908',
-        '2023-11-07T03:56:51.876909',
-        6398,
-        'kotlin',
-        '음식',
-        '0f3997');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (735,
-        '2023-11-07T03:56:51.876967',
-        '2023-11-07T03:56:51.876968',
-        8288,
-        'ts',
-        '농구',
-        '5ed0b9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (736,
-        '2023-11-07T03:56:51.877011',
-        '2023-11-07T03:56:51.877011',
-        1786,
-        'ts',
-        '문화',
-        '880afb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (737,
-        '2023-11-07T03:56:51.877057',
-        '2023-11-07T03:56:51.877058',
-        8749,
-        'go',
-        '자연',
-        '616dbf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (738,
-        '2023-11-07T03:56:51.877103',
-        '2023-11-07T03:56:51.877103',
-        1106,
-        'go',
-        '게임',
-        '39f979');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (739,
-        '2023-11-07T03:56:51.877170',
-        '2023-11-07T03:56:51.877170',
-        7680,
-        'kotlin',
-        '작가',
-        'db2f31');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (740,
-        '2023-11-07T03:56:51.877215',
-        '2023-11-07T03:56:51.877215',
-        2447,
-        'java',
-        '탐험',
-        '9a82fa');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (741,
-        '2023-11-07T03:56:51.877258',
-        '2023-11-07T03:56:51.877258',
-        836,
-        'kotlin',
-        '미소',
-        '8419a2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (742,
-        '2023-11-07T03:56:51.877303',
-        '2023-11-07T03:56:51.877304',
-        1242,
-        'kotlin',
-        '자연',
-        '65cd2b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (743,
-        '2023-11-07T03:56:51.877412',
-        '2023-11-07T03:56:51.877413',
-        5506,
-        'go',
-        '문화',
-        'e0c4e2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (744,
-        '2023-11-07T03:56:51.877460',
-        '2023-11-07T03:56:51.877461',
-        1899,
-        'ts',
-        '노년',
-        '479ad9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (745,
-        '2023-11-07T03:56:51.877508',
-        '2023-11-07T03:56:51.877509',
-        5110,
-        'ts',
-        '비',
-        '30e119');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (746,
-        '2023-11-07T03:56:51.877586',
-        '2023-11-07T03:56:51.877587',
-        342,
-        'kotlin',
-        '과거',
-        'e9d0c3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (747,
-        '2023-11-07T03:56:51.877632',
-        '2023-11-07T03:56:51.877633',
-        9569,
-        'kotlin',
-        '수학',
-        '2b5e02');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (748,
-        '2023-11-07T03:56:51.877678',
-        '2023-11-07T03:56:51.877678',
-        169,
-        'go',
-        '산책',
-        '0bd21f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (749,
-        '2023-11-07T03:56:51.877771',
-        '2023-11-07T03:56:51.877772',
-        8493,
-        'kotlin',
-        '과학자',
-        '2f3ae2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (750,
-        '2023-11-07T03:56:51.877824',
-        '2023-11-07T03:56:51.877824',
-        5850,
-        'ts',
-        '과학자',
-        '53d3d8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (751,
-        '2023-11-07T03:56:51.877866',
-        '2023-11-07T03:56:51.877866',
-        9192,
-        'kotlin',
-        '가족',
-        'a301c3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (752,
-        '2023-11-07T03:56:51.877909',
-        '2023-11-07T03:56:51.877910',
-        288,
-        'java',
-        '빛',
-        '294b4b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (753,
-        '2023-11-07T03:56:51.877954',
-        '2023-11-07T03:56:51.877955',
-        175,
-        'kotlin',
-        '탐험',
-        '4b5f74');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (754,
-        '2023-11-07T03:56:51.878098',
-        '2023-11-07T03:56:51.878099',
-        3385,
-        'ts',
-        '발견',
-        'e6eb23');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (755,
-        '2023-11-07T03:56:51.878169',
-        '2023-11-07T03:56:51.878170',
-        308,
-        'kotlin',
-        '노인',
-        '57d96d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (756,
-        '2023-11-07T03:56:51.878214',
-        '2023-11-07T03:56:51.878214',
-        3048,
-        'java',
-        '취미',
-        'a917f2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (757,
-        '2023-11-07T03:56:51.878258',
-        '2023-11-07T03:56:51.878259',
-        1539,
-        'java',
-        '소방관',
-        'e3b04d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (758,
-        '2023-11-07T03:56:51.878328',
-        '2023-11-07T03:56:51.878329',
-        3791,
-        'ts',
-        '새',
-        '63693f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (759,
-        '2023-11-07T03:56:51.878372',
-        '2023-11-07T03:56:51.878372',
-        8603,
-        'ts',
-        '운동',
-        '248e7b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (760,
-        '2023-11-07T03:56:51.878543',
-        '2023-11-07T03:56:51.878544',
-        3458,
-        'go',
-        '운동',
-        '5188ba');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (761,
-        '2023-11-07T03:56:51.878602',
-        '2023-11-07T03:56:51.878603',
-        5846,
-        'kotlin',
-        '탐험',
-        '4c64a2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (762,
-        '2023-11-07T03:56:51.878648',
-        '2023-11-07T03:56:51.878648',
-        803,
-        'go',
-        '컴퓨터',
-        'd1782a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (763,
-        '2023-11-07T03:56:51.878692',
-        '2023-11-07T03:56:51.878693',
-        6181,
-        'go',
-        '학생',
-        'b70f02');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (764,
-        '2023-11-07T03:56:51.878736',
-        '2023-11-07T03:56:51.878736',
-        3648,
-        'kotlin',
-        '우주',
-        '478020');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (765,
-        '2023-11-07T03:56:51.878797',
-        '2023-11-07T03:56:51.878798',
-        8521,
-        'java',
-        '비행기',
-        'd68065');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (766,
-        '2023-11-07T03:56:51.878839',
-        '2023-11-07T03:56:51.878839',
-        2517,
-        'kotlin',
-        '발견',
-        '039126');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (767,
-        '2023-11-07T03:56:51.878882',
-        '2023-11-07T03:56:51.878883',
-        2137,
-        'java',
-        '빛',
-        '7b12ba');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (768,
-        '2023-11-07T03:56:51.878947',
-        '2023-11-07T03:56:51.878969',
-        4709,
-        'kotlin',
-        '학생',
-        'bd6caf');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (769,
-        '2023-11-07T03:56:51.879088',
-        '2023-11-07T03:56:51.879090',
-        7262,
-        'java',
-        '여가',
-        '20596e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (770,
-        '2023-11-07T03:56:51.879137',
-        '2023-11-07T03:56:51.879137',
-        6803,
-        'go',
-        '게임',
-        'a7630f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (771,
-        '2023-11-07T03:56:51.879187',
-        '2023-11-07T03:56:51.879188',
-        6324,
-        'kotlin',
-        '소망',
-        '85d7c4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (772,
-        '2023-11-07T03:56:51.879630',
-        '2023-11-07T03:56:51.879631',
-        5431,
-        'kotlin',
-        '친구',
-        'e9ef66');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (773,
-        '2023-11-07T03:56:51.880453',
-        '2023-11-07T03:56:51.880454',
-        7379,
-        'ts',
-        '도시',
-        'e2e10a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (774,
-        '2023-11-07T03:56:51.884324',
-        '2023-11-07T03:56:51.884408',
-        9842,
-        'go',
-        '바다',
-        '9aa270');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (775,
-        '2023-11-07T03:56:51.886586',
-        '2023-11-07T03:56:51.886589',
-        9816,
-        'ts',
-        '가족',
-        'c1f729');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (776,
-        '2023-11-07T03:56:51.888150',
-        '2023-11-07T03:56:51.888153',
-        1289,
-        'go',
-        '경찰',
-        'd2b319');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (777,
-        '2023-11-07T03:56:51.890240',
-        '2023-11-07T03:56:51.890269',
-        934,
-        'java',
-        '회사',
-        '3d2ca4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (778,
-        '2023-11-07T03:56:51.891032',
-        '2023-11-07T03:56:51.891033',
-        2859,
-        'ts',
-        '과일',
-        '6882ec');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (779,
-        '2023-11-07T03:56:51.891319',
-        '2023-11-07T03:56:51.891320',
-        8998,
-        'go',
-        '축구',
-        '1f2628');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (780,
-        '2023-11-07T03:56:51.891369',
-        '2023-11-07T03:56:51.891370',
-        9468,
-        'java',
-        '글',
-        'a77916');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (781,
-        '2023-11-07T03:56:51.891423',
-        '2023-11-07T03:56:51.891423',
-        9323,
-        'java',
-        '역사',
-        'e222eb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (782,
-        '2023-11-07T03:56:51.891464',
-        '2023-11-07T03:56:51.891465',
-        2257,
-        'ts',
-        '올림픽',
-        'bf8f85');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (783,
-        '2023-11-07T03:56:51.891505',
-        '2023-11-07T03:56:51.891505',
-        7356,
-        'go',
-        '빛',
-        '9b40cb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (784,
-        '2023-11-07T03:56:51.891545',
-        '2023-11-07T03:56:51.891545',
-        6476,
-        'go',
-        '배',
-        'aa658c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (785,
-        '2023-11-07T03:56:51.891599',
-        '2023-11-07T03:56:51.891599',
-        6553,
-        'go',
-        '파일럿',
-        '953a52');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (786,
-        '2023-11-07T03:56:51.891636',
-        '2023-11-07T03:56:51.891636',
-        9701,
-        'kotlin',
-        '눈',
-        'e5bc23');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (787,
-        '2023-11-07T03:56:51.891735',
-        '2023-11-07T03:56:51.891736',
-        2140,
-        'kotlin',
-        '운동',
-        'b42e09');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (788,
-        '2023-11-07T03:56:51.891775',
-        '2023-11-07T03:56:51.891775',
-        6911,
-        'go',
-        '공부',
-        '32e910');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (789,
-        '2023-11-07T03:56:51.891828',
-        '2023-11-07T03:56:51.891829',
-        7983,
-        'kotlin',
-        '선생님',
-        'e1fcc8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (790,
-        '2023-11-07T03:56:51.891867',
-        '2023-11-07T03:56:51.891868',
-        4430,
-        'kotlin',
-        '소망',
-        '51c450');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (791,
-        '2023-11-07T03:56:51.891902',
-        '2023-11-07T03:56:51.891903',
-        2256,
-        'ts',
-        '태양',
-        '663312');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (792,
-        '2023-11-07T03:56:51.891941',
-        '2023-11-07T03:56:51.891941',
-        8042,
-        'kotlin',
-        '미소',
-        '5ef89b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (793,
-        '2023-11-07T03:56:51.891993',
-        '2023-11-07T03:56:51.891993',
-        5050,
-        'go',
-        '음악',
-        '6c66a2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (794,
-        '2023-11-07T03:56:51.892035',
-        '2023-11-07T03:56:51.892035',
-        6962,
-        'go',
-        '수학',
-        '374be5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (795,
-        '2023-11-07T03:56:51.892073',
-        '2023-11-07T03:56:51.892073',
-        5441,
-        'go',
-        '예술',
-        '1fb4f3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (796,
-        '2023-11-07T03:56:51.892173',
-        '2023-11-07T03:56:51.892179',
-        786,
-        'ts',
-        '올림픽',
-        'b89065');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (797,
-        '2023-11-07T03:56:51.892463',
-        '2023-11-07T03:56:51.892465',
-        6326,
-        'go',
-        '나무',
-        '77d839');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (798,
-        '2023-11-07T03:56:51.892535',
-        '2023-11-07T03:56:51.892536',
-        3748,
-        'kotlin',
-        '산책',
-        '1f1b1d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (799,
-        '2023-11-07T03:56:51.892576',
-        '2023-11-07T03:56:51.892577',
-        6108,
-        'kotlin',
-        '자연',
-        'b99f14');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (800,
-        '2023-11-07T03:56:51.892645',
-        '2023-11-07T03:56:51.892645',
-        1834,
-        'java',
-        '구름',
-        'd8a9b2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (801,
-        '2023-11-07T03:56:51.892681',
-        '2023-11-07T03:56:51.892682',
-        5144,
-        'java',
-        '사랑',
-        '90f6a7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (802,
-        '2023-11-07T03:56:51.892725',
-        '2023-11-07T03:56:51.892726',
-        9090,
-        'ts',
-        '별',
-        '1345d6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (803,
-        '2023-11-07T03:56:51.892773',
-        '2023-11-07T03:56:51.892774',
-        7997,
-        'go',
-        '음식',
-        'da4ca3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (804,
-        '2023-11-07T03:56:51.892813',
-        '2023-11-07T03:56:51.892814',
-        9618,
-        'go',
-        '직장',
-        '1b34a0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (805,
-        '2023-11-07T03:56:51.892854',
-        '2023-11-07T03:56:51.892854',
-        7991,
-        'java',
-        '공부',
-        '3620ed');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (806,
-        '2023-11-07T03:56:51.892892',
-        '2023-11-07T03:56:51.892892',
-        9403,
-        'go',
-        '비행기',
-        'b586ba');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (807,
-        '2023-11-07T03:56:51.892931',
-        '2023-11-07T03:56:51.892932',
-        2749,
-        'kotlin',
-        '그림',
-        'b4fd97');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (808,
-        '2023-11-07T03:56:51.892977',
-        '2023-11-07T03:56:51.892977',
-        2497,
-        'go',
-        '여행',
-        'ad4ef2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (809,
-        '2023-11-07T03:56:51.893036',
-        '2023-11-07T03:56:51.893037',
-        8639,
-        'kotlin',
-        '학생',
-        '8bfe13');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (810,
-        '2023-11-07T03:56:51.893076',
-        '2023-11-07T03:56:51.893076',
-        2789,
-        'ts',
-        '배',
-        'e381fb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (811,
-        '2023-11-07T03:56:51.893127',
-        '2023-11-07T03:56:51.893128',
-        9155,
-        'ts',
-        '열차',
-        '85eae2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (812,
-        '2023-11-07T03:56:51.893174',
-        '2023-11-07T03:56:51.893175',
-        7838,
-        'go',
-        '배구',
-        'ea16ee');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (813,
-        '2023-11-07T03:56:51.893251',
-        '2023-11-07T03:56:51.893252',
-        7980,
-        'java',
-        '비',
-        'e004ac');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (814,
-        '2023-11-07T03:56:51.893310',
-        '2023-11-07T03:56:51.893310',
-        6248,
-        'java',
-        '배',
-        '2800a6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (815,
-        '2023-11-07T03:56:51.893360',
-        '2023-11-07T03:56:51.893361',
-        5159,
-        'ts',
-        '여행',
-        '11a9e8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (816,
-        '2023-11-07T03:56:51.893401',
-        '2023-11-07T03:56:51.893401',
-        9056,
-        'kotlin',
-        '예술',
-        'e38c41');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (817,
-        '2023-11-07T03:56:51.893444',
-        '2023-11-07T03:56:51.893444',
-        6107,
-        'ts',
-        '올림픽',
-        '41fddc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (818,
-        '2023-11-07T03:56:51.893504',
-        '2023-11-07T03:56:51.893504',
-        4223,
-        'java',
-        '소방관',
-        'd89a59');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (819,
-        '2023-11-07T03:56:51.893553',
-        '2023-11-07T03:56:51.893553',
-        7642,
-        'java',
-        '발명',
-        'be6718');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (820,
-        '2023-11-07T03:56:51.893595',
-        '2023-11-07T03:56:51.893596',
-        1567,
-        'java',
-        '취미',
-        '547015');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (821,
-        '2023-11-07T03:56:51.893642',
-        '2023-11-07T03:56:51.893643',
-        3587,
-        'ts',
-        '학생',
-        '75b006');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (822,
-        '2023-11-07T03:56:51.893702',
-        '2023-11-07T03:56:51.893703',
-        3622,
-        'kotlin',
-        '노인',
-        'cde6b9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (823,
-        '2023-11-07T03:56:51.893746',
-        '2023-11-07T03:56:51.893747',
-        2233,
-        'java',
-        '학교',
-        '401935');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (824,
-        '2023-11-07T03:56:51.893813',
-        '2023-11-07T03:56:51.893815',
-        9853,
-        'java',
-        '소방관',
-        '528fe1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (825,
-        '2023-11-07T03:56:51.893890',
-        '2023-11-07T03:56:51.893891',
-        3997,
-        'ts',
-        '도전',
-        'd37a5e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (826,
-        '2023-11-07T03:56:51.893943',
-        '2023-11-07T03:56:51.893943',
-        8631,
-        'kotlin',
-        '의사',
-        '8e3d86');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (827,
-        '2023-11-07T03:56:51.893996',
-        '2023-11-07T03:56:51.893997',
-        6280,
-        'ts',
-        '과일',
-        '98cdc3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (828,
-        '2023-11-07T03:56:51.894062',
-        '2023-11-07T03:56:51.894063',
-        7994,
-        'java',
-        '마을',
-        '65d29f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (829,
-        '2023-11-07T03:56:51.894130',
-        '2023-11-07T03:56:51.894131',
-        7940,
-        'java',
-        '평화',
-        'a4de4e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (830,
-        '2023-11-07T03:56:51.894178',
-        '2023-11-07T03:56:51.894179',
-        2247,
-        'go',
-        '축제',
-        '7ec41f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (831,
-        '2023-11-07T03:56:51.894279',
-        '2023-11-07T03:56:51.894279',
-        2793,
-        'go',
-        '책',
-        '150ef5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (832,
-        '2023-11-07T03:56:51.894326',
-        '2023-11-07T03:56:51.894327',
-        8314,
-        'kotlin',
-        '의사',
-        '518225');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (833,
-        '2023-11-07T03:56:51.894373',
-        '2023-11-07T03:56:51.894373',
-        9338,
-        'kotlin',
-        '농구',
-        '832944');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (834,
-        '2023-11-07T03:56:51.894419',
-        '2023-11-07T03:56:51.894419',
-        7901,
-        'ts',
-        '여가',
-        '5e5c77');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (835,
-        '2023-11-07T03:56:51.894477',
-        '2023-11-07T03:56:51.894477',
-        9,
-        'ts',
-        '과일',
-        '28721e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (836,
-        '2023-11-07T03:56:51.894537',
-        '2023-11-07T03:56:51.894538',
-        9087,
-        'java',
-        '올림픽',
-        'c60309');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (837,
-        '2023-11-07T03:56:51.894581',
-        '2023-11-07T03:56:51.894581',
-        496,
-        'go',
-        '스마트폰',
-        'f7c80a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (838,
-        '2023-11-07T03:56:51.894627',
-        '2023-11-07T03:56:51.894627',
-        7249,
-        'ts',
-        '회사',
-        '081601');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (839,
-        '2023-11-07T03:56:51.894878',
-        '2023-11-07T03:56:51.894878',
-        2320,
-        'java',
-        '우주',
-        '461208');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (840,
-        '2023-11-07T03:56:51.895053',
-        '2023-11-07T03:56:51.895054',
-        2916,
-        'java',
-        '친구',
-        '43aa66');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (841,
-        '2023-11-07T03:56:51.895100',
-        '2023-11-07T03:56:51.895101',
-        3612,
-        'ts',
-        '과일',
-        '41220c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (842,
-        '2023-11-07T03:56:51.895146',
-        '2023-11-07T03:56:51.895147',
-        6547,
-        'ts',
-        '역사',
-        'ce2a41');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (843,
-        '2023-11-07T03:56:51.895194',
-        '2023-11-07T03:56:51.895194',
-        878,
-        'ts',
-        '수학',
-        'bbf1f5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (844,
-        '2023-11-07T03:56:51.895259',
-        '2023-11-07T03:56:51.895260',
-        1408,
-        'kotlin',
-        '선생님',
-        'baf2f5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (845,
-        '2023-11-07T03:56:51.895322',
-        '2023-11-07T03:56:51.895325',
-        5878,
-        'java',
-        '엔지니어',
-        'dea0b3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (846,
-        '2023-11-07T03:56:51.895551',
-        '2023-11-07T03:56:51.895553',
-        3953,
-        'ts',
-        '연구',
-        'cef49c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (847,
-        '2023-11-07T03:56:51.895619',
-        '2023-11-07T03:56:51.895620',
-        2319,
-        'java',
-        '나무',
-        '812a4a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (848,
-        '2023-11-07T03:56:51.895676',
-        '2023-11-07T03:56:51.895676',
-        8167,
-        'java',
-        '책',
-        'eebd17');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (849,
-        '2023-11-07T03:56:51.895808',
-        '2023-11-07T03:56:51.895809',
-        4710,
-        'kotlin',
-        '영화',
-        'dce235');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (850,
-        '2023-11-07T03:56:51.895872',
-        '2023-11-07T03:56:51.895873',
-        3322,
-        'ts',
-        '스포츠',
-        '8c1939');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (851,
-        '2023-11-07T03:56:51.895935',
-        '2023-11-07T03:56:51.895935',
-        9141,
-        'go',
-        '나무',
-        'fb6f97');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (852,
-        '2023-11-07T03:56:51.896195',
-        '2023-11-07T03:56:51.896195',
-        8664,
-        'java',
-        '비행기',
-        '96e4f9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (853,
-        '2023-11-07T03:56:51.896337',
-        '2023-11-07T03:56:51.896338',
-        4968,
-        'go',
-        '사랑',
-        'a1b531');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (854,
-        '2023-11-07T03:56:51.896401',
-        '2023-11-07T03:56:51.896401',
-        19,
-        'kotlin',
-        '여가',
-        'bfa772');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (855,
-        '2023-11-07T03:56:51.896462',
-        '2023-11-07T03:56:51.896462',
-        7887,
-        'java',
-        '여가',
-        '21c149');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (856,
-        '2023-11-07T03:56:51.896511',
-        '2023-11-07T03:56:51.896511',
-        5143,
-        'java',
-        '노년',
-        '25e0b1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (857,
-        '2023-11-07T03:56:51.896559',
-        '2023-11-07T03:56:51.896560',
-        1486,
-        'ts',
-        '청소년',
-        '85ed7c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (858,
-        '2023-11-07T03:56:51.896602',
-        '2023-11-07T03:56:51.896603',
-        3868,
-        'go',
-        '탐험',
-        '0c4896');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (859,
-        '2023-11-07T03:56:51.896645',
-        '2023-11-07T03:56:51.896646',
-        896,
-        'kotlin',
-        '선생님',
-        '5e591c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (860,
-        '2023-11-07T03:56:51.896690',
-        '2023-11-07T03:56:51.896690',
-        5322,
-        'java',
-        '과학',
-        '489629');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (861,
-        '2023-11-07T03:56:51.896745',
-        '2023-11-07T03:56:51.896745',
-        6975,
-        'kotlin',
-        '작가',
-        '57230e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (862,
-        '2023-11-07T03:56:51.896792',
-        '2023-11-07T03:56:51.896793',
-        8281,
-        'go',
-        '학생',
-        'd8407a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (863,
-        '2023-11-07T03:56:51.896839',
-        '2023-11-07T03:56:51.896839',
-        5002,
-        'ts',
-        '현재',
-        'ec26c2');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (864,
-        '2023-11-07T03:56:51.896884',
-        '2023-11-07T03:56:51.896885',
-        9359,
-        'go',
-        '자연',
-        '2e0380');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (865,
-        '2023-11-07T03:56:51.896945',
-        '2023-11-07T03:56:51.896945',
-        9337,
-        'kotlin',
-        '배구',
-        '867627');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (866,
-        '2023-11-07T03:56:51.897025',
-        '2023-11-07T03:56:51.897026',
-        6467,
-        'java',
-        '미소',
-        '6df41e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (867,
-        '2023-11-07T03:56:51.897081',
-        '2023-11-07T03:56:51.897082',
-        7638,
-        'ts',
-        '공부',
-        '74c1ca');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (868,
-        '2023-11-07T03:56:51.897145',
-        '2023-11-07T03:56:51.897145',
-        9196,
-        'java',
-        '과학',
-        '5782ea');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (869,
-        '2023-11-07T03:56:51.897191',
-        '2023-11-07T03:56:51.897191',
-        2775,
-        'ts',
-        '눈',
-        '296f21');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (870,
-        '2023-11-07T03:56:51.897238',
-        '2023-11-07T03:56:51.897238',
-        6212,
-        'go',
-        '경찰',
-        '38c9ce');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (871,
-        '2023-11-07T03:56:51.897281',
-        '2023-11-07T03:56:51.897282',
-        3621,
-        'ts',
-        '나라',
-        'b5c9b1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (872,
-        '2023-11-07T03:56:51.897343',
-        '2023-11-07T03:56:51.897344',
-        6512,
-        'java',
-        '여행',
-        '3c8728');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (873,
-        '2023-11-07T03:56:51.897404',
-        '2023-11-07T03:56:51.897405',
-        908,
-        'go',
-        '채소',
-        '017fcd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (874,
-        '2023-11-07T03:56:51.897459',
-        '2023-11-07T03:56:51.897460',
-        3247,
-        'ts',
-        '게임',
-        'b0d63b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (875,
-        '2023-11-07T03:56:51.897506',
-        '2023-11-07T03:56:51.897506',
-        3870,
-        'java',
-        '친구',
-        '57c569');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (876,
-        '2023-11-07T03:56:51.897568',
-        '2023-11-07T03:56:51.897569',
-        9204,
-        'go',
-        '새',
-        '34febd');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (877,
-        '2023-11-07T03:56:51.897615',
-        '2023-11-07T03:56:51.897617',
-        7400,
-        'java',
-        '기쁨',
-        '1050fc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (878,
-        '2023-11-07T03:56:51.897663',
-        '2023-11-07T03:56:51.897664',
-        4058,
-        'kotlin',
-        '경찰',
-        '1473e9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (879,
-        '2023-11-07T03:56:51.897709',
-        '2023-11-07T03:56:51.897709',
-        2980,
-        'ts',
-        '탐험',
-        'f4e8ff');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (880,
-        '2023-11-07T03:56:51.897768',
-        '2023-11-07T03:56:51.897769',
-        150,
-        'kotlin',
-        '운동',
-        '7737ca');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (881,
-        '2023-11-07T03:56:51.897809',
-        '2023-11-07T03:56:51.897809',
-        4015,
-        'ts',
-        '사랑',
-        '565cda');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (882,
-        '2023-11-07T03:56:51.897851',
-        '2023-11-07T03:56:51.897852',
-        7919,
-        'kotlin',
-        '평화',
-        'fad421');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (883,
-        '2023-11-07T03:56:51.897900',
-        '2023-11-07T03:56:51.897900',
-        2841,
-        'java',
-        '달',
-        '9c06a7');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (884,
-        '2023-11-07T03:56:51.897989',
-        '2023-11-07T03:56:51.897990',
-        9886,
-        'java',
-        '소망',
-        'a994a9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (885,
-        '2023-11-07T03:56:51.898035',
-        '2023-11-07T03:56:51.898036',
-        294,
-        'ts',
-        '선생님',
-        '7b393a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (886,
-        '2023-11-07T03:56:51.898076',
-        '2023-11-07T03:56:51.898077',
-        2726,
-        'java',
-        '건축가',
-        '97e48c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (887,
-        '2023-11-07T03:56:51.898138',
-        '2023-11-07T03:56:51.898138',
-        5785,
-        'go',
-        '군인',
-        '1f20fa');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (888,
-        '2023-11-07T03:56:51.898182',
-        '2023-11-07T03:56:51.898183',
-        3442,
-        'ts',
-        '여행',
-        '5ab031');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (889,
-        '2023-11-07T03:56:51.898237',
-        '2023-11-07T03:56:51.898237',
-        102,
-        'go',
-        '성인',
-        '772ced');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (890,
-        '2023-11-07T03:56:51.898282',
-        '2023-11-07T03:56:51.898282',
-        9699,
-        'java',
-        '비행기',
-        '1ad015');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (891,
-        '2023-11-07T03:56:51.898341',
-        '2023-11-07T03:56:51.898341',
-        7080,
-        'ts',
-        '눈',
-        'd2c720');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (892,
-        '2023-11-07T03:56:51.898387',
-        '2023-11-07T03:56:51.898388',
-        9590,
-        'go',
-        '사랑',
-        'a4e605');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (893,
-        '2023-11-07T03:56:51.898433',
-        '2023-11-07T03:56:51.898433',
-        1266,
-        'go',
-        '친구',
-        '811740');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (894,
-        '2023-11-07T03:56:51.898477',
-        '2023-11-07T03:56:51.898477',
-        5111,
-        'ts',
-        '의사',
-        'a25739');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (895,
-        '2023-11-07T03:56:51.898538',
-        '2023-11-07T03:56:51.898539',
-        6779,
-        'go',
-        '선원',
-        '236847');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (896,
-        '2023-11-07T03:56:51.898581',
-        '2023-11-07T03:56:51.898581',
-        3027,
-        'ts',
-        '달',
-        '500277');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (897,
-        '2023-11-07T03:56:51.898626',
-        '2023-11-07T03:56:51.898627',
-        1593,
-        'java',
-        '역사',
-        '3eec8d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (898,
-        '2023-11-07T03:56:51.898671',
-        '2023-11-07T03:56:51.898672',
-        4953,
-        'kotlin',
-        '취미',
-        '443481');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (899,
-        '2023-11-07T03:56:51.898737',
-        '2023-11-07T03:56:51.898738',
-        3270,
-        'ts',
-        '음식',
-        'f9a453');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (900,
-        '2023-11-07T03:56:51.898785',
-        '2023-11-07T03:56:51.898786',
-        9191,
-        'kotlin',
-        '배',
-        '5fc5c3');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (901,
-        '2023-11-07T03:56:51.898827',
-        '2023-11-07T03:56:51.898828',
-        3368,
-        'kotlin',
-        '사랑',
-        '7ef8fc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (902,
-        '2023-11-07T03:56:51.898924',
-        '2023-11-07T03:56:51.898925',
-        7312,
-        'kotlin',
-        '꿈',
-        '717f50');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (903,
-        '2023-11-07T03:56:51.898971',
-        '2023-11-07T03:56:51.898972',
-        7275,
-        'ts',
-        '젊음',
-        'dd96ae');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (904,
-        '2023-11-07T03:56:51.899018',
-        '2023-11-07T03:56:51.899018',
-        520,
-        'go',
-        '인터넷',
-        '971694');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (905,
-        '2023-11-07T03:56:51.899063',
-        '2023-11-07T03:56:51.899064',
-        6044,
-        'go',
-        '직장',
-        '591cac');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (906,
-        '2023-11-07T03:56:51.899107',
-        '2023-11-07T03:56:51.899108',
-        1530,
-        'java',
-        '빛',
-        '06f070');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (907,
-        '2023-11-07T03:56:51.899171',
-        '2023-11-07T03:56:51.899172',
-        5664,
-        'java',
-        '역사',
-        'e73b2b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (908,
-        '2023-11-07T03:56:51.899218',
-        '2023-11-07T03:56:51.899220',
-        3140,
-        'java',
-        '여행',
-        '4de912');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (909,
-        '2023-11-07T03:56:51.899267',
-        '2023-11-07T03:56:51.899267',
-        4384,
-        'go',
-        '빛',
-        '029410');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (910,
-        '2023-11-07T03:56:51.899319',
-        '2023-11-07T03:56:51.899337',
-        6558,
-        'go',
-        '산',
-        '9cc23f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (911,
-        '2023-11-07T03:56:51.899380',
-        '2023-11-07T03:56:51.899381',
-        9250,
-        'java',
-        '스포츠',
-        'b2897f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (912,
-        '2023-11-07T03:56:51.899427',
-        '2023-11-07T03:56:51.899427',
-        9879,
-        'java',
-        '청소년',
-        '35ae01');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (913,
-        '2023-11-07T03:56:51.899473',
-        '2023-11-07T03:56:51.899474',
-        6007,
-        'kotlin',
-        '책',
-        'e5011e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (914,
-        '2023-11-07T03:56:51.899520',
-        '2023-11-07T03:56:51.899529',
-        6914,
-        'go',
-        '달',
-        '9b5873');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (915,
-        '2023-11-07T03:56:51.899586',
-        '2023-11-07T03:56:51.899587',
-        2183,
-        'go',
-        '자연',
-        'd32f4f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (916,
-        '2023-11-07T03:56:51.899630',
-        '2023-11-07T03:56:51.899631',
-        5846,
-        'java',
-        '교통',
-        '6d0de6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (917,
-        '2023-11-07T03:56:51.899677',
-        '2023-11-07T03:56:51.899678',
-        4069,
-        'kotlin',
-        '선생님',
-        '6d91f6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (918,
-        '2023-11-07T03:56:51.899724',
-        '2023-11-07T03:56:51.899724',
-        365,
-        'go',
-        '산책',
-        '8a527b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (919,
-        '2023-11-07T03:56:51.899787',
-        '2023-11-07T03:56:51.899787',
-        2772,
-        'java',
-        '산',
-        'ebdb68');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (920,
-        '2023-11-07T03:56:51.899881',
-        '2023-11-07T03:56:51.899882',
-        3189,
-        'go',
-        '성인',
-        '808c8c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (921,
-        '2023-11-07T03:56:51.899924',
-        '2023-11-07T03:56:51.899924',
-        3769,
-        'java',
-        '영화',
-        '406a2a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (922,
-        '2023-11-07T03:56:51.900044',
-        '2023-11-07T03:56:51.900044',
-        4816,
-        'java',
-        '의사',
-        'b02d47');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (923,
-        '2023-11-07T03:56:51.900086',
-        '2023-11-07T03:56:51.900086',
-        9706,
-        'go',
-        '공부',
-        '8ca72f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (924,
-        '2023-11-07T03:56:51.900127',
-        '2023-11-07T03:56:51.900127',
-        9353,
-        'ts',
-        '노인',
-        'a971d4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (925,
-        '2023-11-07T03:56:51.900169',
-        '2023-11-07T03:56:51.900169',
-        930,
-        'go',
-        '소망',
-        '64a25a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (926,
-        '2023-11-07T03:56:51.900221',
-        '2023-11-07T03:56:51.900221',
-        6206,
-        'kotlin',
-        '농구',
-        'cbeeeb');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (927,
-        '2023-11-07T03:56:51.900262',
-        '2023-11-07T03:56:51.900262',
-        4554,
-        'kotlin',
-        '노인',
-        'c576f8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (928,
-        '2023-11-07T03:56:51.900303',
-        '2023-11-07T03:56:51.900304',
-        7851,
-        'kotlin',
-        '배',
-        '1d94d8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (929,
-        '2023-11-07T03:56:51.900345',
-        '2023-11-07T03:56:51.900345',
-        9793,
-        'kotlin',
-        '여가',
-        'e8c049');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (930,
-        '2023-11-07T03:56:51.900399',
-        '2023-11-07T03:56:51.900400',
-        9095,
-        'go',
-        '성인',
-        'e03ea1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (931,
-        '2023-11-07T03:56:51.900442',
-        '2023-11-07T03:56:51.900443',
-        9256,
-        'kotlin',
-        '평화',
-        'ef8b97');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (932,
-        '2023-11-07T03:56:51.900484',
-        '2023-11-07T03:56:51.900484',
-        9349,
-        'java',
-        '회사',
-        '6acb90');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (933,
-        '2023-11-07T03:56:51.900526',
-        '2023-11-07T03:56:51.900526',
-        4757,
-        'ts',
-        '선원',
-        '9bf4d5');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (934,
-        '2023-11-07T03:56:51.900581',
-        '2023-11-07T03:56:51.900581',
-        1627,
-        'java',
-        '나무',
-        '8220b8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (935,
-        '2023-11-07T03:56:51.900625',
-        '2023-11-07T03:56:51.900626',
-        88,
-        'java',
-        '음악',
-        '979b55');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (936,
-        '2023-11-07T03:56:51.900664',
-        '2023-11-07T03:56:51.900664',
-        2184,
-        'ts',
-        '미래',
-        '00926a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (937,
-        '2023-11-07T03:56:51.900887',
-        '2023-11-07T03:56:51.900888',
-        820,
-        'java',
-        '문화',
-        '28d26d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (938,
-        '2023-11-07T03:56:51.900955',
-        '2023-11-07T03:56:51.900956',
-        8004,
-        'java',
-        '선원',
-        '16a06c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (939,
-        '2023-11-07T03:56:51.900997',
-        '2023-11-07T03:56:51.900998',
-        2490,
-        'ts',
-        '성인',
-        '8e1f76');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (940,
-        '2023-11-07T03:56:51.901041',
-        '2023-11-07T03:56:51.901042',
-        7880,
-        'ts',
-        '도전',
-        '34a56d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (941,
-        '2023-11-07T03:56:51.901084',
-        '2023-11-07T03:56:51.901084',
-        9878,
-        'java',
-        '발명',
-        '1fc30a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (942,
-        '2023-11-07T03:56:51.901145',
-        '2023-11-07T03:56:51.901145',
-        5060,
-        'java',
-        '배',
-        '4ffbb8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (943,
-        '2023-11-07T03:56:51.901189',
-        '2023-11-07T03:56:51.901190',
-        1444,
-        'go',
-        '엔지니어',
-        '3dba77');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (944,
-        '2023-11-07T03:56:51.901232',
-        '2023-11-07T03:56:51.901233',
-        7371,
-        'go',
-        '소망',
-        '28c45b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (945,
-        '2023-11-07T03:56:51.901279',
-        '2023-11-07T03:56:51.901279',
-        5411,
-        'kotlin',
-        '발명',
-        '792bbc');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (946,
-        '2023-11-07T03:56:51.901319',
-        '2023-11-07T03:56:51.901320',
-        7005,
-        'ts',
-        '과학',
-        'cd0e19');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (947,
-        '2023-11-07T03:56:51.901381',
-        '2023-11-07T03:56:51.901382',
-        3179,
-        'ts',
-        '연구',
-        '408def');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (948,
-        '2023-11-07T03:56:51.901425',
-        '2023-11-07T03:56:51.901426',
-        6153,
-        'java',
-        '연구',
-        '4b2e2f');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (949,
-        '2023-11-07T03:56:51.901484',
-        '2023-11-07T03:56:51.901485',
-        5385,
-        'java',
-        '파일럿',
-        'c93116');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (950,
-        '2023-11-07T03:56:51.901530',
-        '2023-11-07T03:56:51.901531',
-        1916,
-        'ts',
-        '소망',
-        'b19bc4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (951,
-        '2023-11-07T03:56:51.901572',
-        '2023-11-07T03:56:51.901573',
-        8946,
-        'ts',
-        '새',
-        '355d40');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (952,
-        '2023-11-07T03:56:51.901629',
-        '2023-11-07T03:56:51.901630',
-        7298,
-        'go',
-        '여가',
-        'e06d3e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (953,
-        '2023-11-07T03:56:51.901673',
-        '2023-11-07T03:56:51.901673',
-        4745,
-        'java',
-        '마을',
-        '65eae6');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (954,
-        '2023-11-07T03:56:51.901716',
-        '2023-11-07T03:56:51.901716',
-        1875,
-        'go',
-        '수학',
-        'c85968');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (955,
-        '2023-11-07T03:56:51.901956',
-        '2023-11-07T03:56:51.901958',
-        9032,
-        'go',
-        '야구',
-        'fb4687');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (956,
-        '2023-11-07T03:56:51.902030',
-        '2023-11-07T03:56:51.902031',
-        1672,
-        'ts',
-        '글',
-        'f0d881');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (957,
-        '2023-11-07T03:56:51.902087',
-        '2023-11-07T03:56:51.902087',
-        5952,
-        'ts',
-        '문화',
-        '1c518a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (958,
-        '2023-11-07T03:56:51.902138',
-        '2023-11-07T03:56:51.902139',
-        6444,
-        'java',
-        '바다',
-        '505bf1');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (959,
-        '2023-11-07T03:56:51.902207',
-        '2023-11-07T03:56:51.902207',
-        3588,
-        'ts',
-        '세계',
-        '82d60e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (960,
-        '2023-11-07T03:56:51.902255',
-        '2023-11-07T03:56:51.902256',
-        9794,
-        'ts',
-        '야구',
-        '421ce0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (961,
-        '2023-11-07T03:56:51.902299',
-        '2023-11-07T03:56:51.902299',
-        9804,
-        'ts',
-        '친구',
-        'e9021e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (962,
-        '2023-11-07T03:56:51.902346',
-        '2023-11-07T03:56:51.902346',
-        8257,
-        'go',
-        '경찰',
-        'aa8987');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (963,
-        '2023-11-07T03:56:51.902419',
-        '2023-11-07T03:56:51.902420',
-        9061,
-        'java',
-        '기쁨',
-        'fc1996');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (964,
-        '2023-11-07T03:56:51.902470',
-        '2023-11-07T03:56:51.902470',
-        462,
-        'kotlin',
-        '게임',
-        'ddcc22');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (965,
-        '2023-11-07T03:56:51.902518',
-        '2023-11-07T03:56:51.902518',
-        5594,
-        'java',
-        '도시',
-        '7bf864');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (966,
-        '2023-11-07T03:56:51.902563',
-        '2023-11-07T03:56:51.902564',
-        3733,
-        'ts',
-        '우주',
-        'eaab8d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (967,
-        '2023-11-07T03:56:51.902627',
-        '2023-11-07T03:56:51.902628',
-        1631,
-        'go',
-        '스마트폰',
-        'c1c9e0');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (968,
-        '2023-11-07T03:56:51.902673',
-        '2023-11-07T03:56:51.902674',
-        1802,
-        'java',
-        '운동',
-        '540206');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (969,
-        '2023-11-07T03:56:51.902719',
-        '2023-11-07T03:56:51.902720',
-        1256,
-        'java',
-        '발명',
-        'fd2759');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (970,
-        '2023-11-07T03:56:51.902766',
-        '2023-11-07T03:56:51.902766',
-        8696,
-        'ts',
-        '공부',
-        '9c194b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (971,
-        '2023-11-07T03:56:51.902826',
-        '2023-11-07T03:56:51.902826',
-        6401,
-        'ts',
-        '선원',
-        '8b6a93');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (972,
-        '2023-11-07T03:56:51.902871',
-        '2023-11-07T03:56:51.902872',
-        7108,
-        'java',
-        '소방관',
-        '30593a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (973,
-        '2023-11-07T03:56:51.902951',
-        '2023-11-07T03:56:51.902952',
-        8712,
-        'go',
-        '자연',
-        'e33182');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (974,
-        '2023-11-07T03:56:51.903015',
-        '2023-11-07T03:56:51.903016',
-        6430,
-        'ts',
-        '축제',
-        '5a4071');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (975,
-        '2023-11-07T03:56:51.903065',
-        '2023-11-07T03:56:51.903066',
-        6070,
-        'java',
-        '야구',
-        'f0ba52');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (976,
-        '2023-11-07T03:56:51.903110',
-        '2023-11-07T03:56:51.903111',
-        7611,
-        'kotlin',
-        '학교',
-        'c534ce');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (977,
-        '2023-11-07T03:56:51.903175',
-        '2023-11-07T03:56:51.903176',
-        3396,
-        'kotlin',
-        '통신',
-        'f26aff');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (978,
-        '2023-11-07T03:56:51.903223',
-        '2023-11-07T03:56:51.903224',
-        5901,
-        'go',
-        '사랑',
-        '202fb8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (979,
-        '2023-11-07T03:56:51.903275',
-        '2023-11-07T03:56:51.903275',
-        9727,
-        'go',
-        '스마트폰',
-        '94c762');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (980,
-        '2023-11-07T03:56:51.903322',
-        '2023-11-07T03:56:51.903322',
-        6220,
-        'kotlin',
-        '통신',
-        '50cc25');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (981,
-        '2023-11-07T03:56:51.903367',
-        '2023-11-07T03:56:51.903367',
-        8260,
-        'ts',
-        '행복',
-        'b3c225');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (982,
-        '2023-11-07T03:56:51.903440',
-        '2023-11-07T03:56:51.903441',
-        9805,
-        'ts',
-        '아동',
-        'a5a67a');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (983,
-        '2023-11-07T03:56:51.903490',
-        '2023-11-07T03:56:51.903490',
-        4507,
-        'java',
-        '젊음',
-        'bebf3e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (984,
-        '2023-11-07T03:56:51.903537',
-        '2023-11-07T03:56:51.903538',
-        9958,
-        'java',
-        '여행',
-        'd15077');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (985,
-        '2023-11-07T03:56:51.903584',
-        '2023-11-07T03:56:51.903585',
-        6228,
-        'java',
-        '하늘',
-        '05492b');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (986,
-        '2023-11-07T03:56:51.903647',
-        '2023-11-07T03:56:51.903648',
-        5201,
-        'kotlin',
-        '취미',
-        '376313');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (987,
-        '2023-11-07T03:56:51.903695',
-        '2023-11-07T03:56:51.903696',
-        393,
-        'kotlin',
-        '빛',
-        '2be70d');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (988,
-        '2023-11-07T03:56:51.903748',
-        '2023-11-07T03:56:51.903749',
-        9407,
-        'kotlin',
-        '가족',
-        '4f6454');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (989,
-        '2023-11-07T03:56:51.903796',
-        '2023-11-07T03:56:51.903797',
-        1968,
-        'ts',
-        '사랑',
-        'cd5ba9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (990,
-        '2023-11-07T03:56:51.903896',
-        '2023-11-07T03:56:51.903897',
-        9160,
-        'kotlin',
-        '태양',
-        '1c104c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (991,
-        '2023-11-07T03:56:51.903934',
-        '2023-11-07T03:56:51.903935',
-        6887,
-        'kotlin',
-        '작가',
-        'a6354e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (992,
-        '2023-11-07T03:56:51.903976',
-        '2023-11-07T03:56:51.903976',
-        2893,
-        'go',
-        '기쁨',
-        '0cdf9c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (993,
-        '2023-11-07T03:56:51.904030',
-        '2023-11-07T03:56:51.904030',
-        7980,
-        'go',
-        '음악',
-        '1acf4c');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (994,
-        '2023-11-07T03:56:51.904070',
-        '2023-11-07T03:56:51.904070',
-        7268,
-        'go',
-        '엔지니어',
-        '680fea');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (995,
-        '2023-11-07T03:56:51.904119',
-        '2023-11-07T03:56:51.904120',
-        5667,
-        'java',
-        '비',
-        'e263d4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (996,
-        '2023-11-07T03:56:51.904160',
-        '2023-11-07T03:56:51.904160',
-        5481,
-        'kotlin',
-        '축제',
-        '72938e');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (997,
-        '2023-11-07T03:56:51.904218',
-        '2023-11-07T03:56:51.904218',
-        3990,
-        'java',
-        '기쁨',
-        'cabbd9');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (998,
-        '2023-11-07T03:56:51.904259',
-        '2023-11-07T03:56:51.904259',
-        9786,
-        'java',
-        '학교',
-        'ec07b8');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (999,
-        '2023-11-07T03:56:51.904299',
-        '2023-11-07T03:56:51.904300',
-        4994,
-        'ts',
-        '물',
-        'b67ec4');
-insert into post (id, created_at, modified_at, user_id, post_category, title, content)
-values (1000,
-        '2023-11-07T03:56:51.904341',
-        '2023-11-07T03:56:51.904341',
-        980,
-        'kotlin',
-        '미소',
-        'dc6526');
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    3, 
+    '2023-11-09T15:50:31.663573', 
+    '2023-11-09T15:50:31.663584', 
+    761, 
+    'KOTLIN', 
+    '평화', 
+    'a3f874'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    4, 
+    '2023-11-09T15:50:31.666226', 
+    '2023-11-09T15:50:31.666236', 
+    5355, 
+    'GO', 
+    '통신', 
+    'bf9a4d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    5, 
+    '2023-11-09T15:50:31.667311', 
+    '2023-11-09T15:50:31.667322', 
+    3782, 
+    'JAVA', 
+    '야구', 
+    '0c72ba'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    6, 
+    '2023-11-09T15:50:31.668215', 
+    '2023-11-09T15:50:31.668226', 
+    6412, 
+    'GO', 
+    '농구', 
+    '6340e4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    7, 
+    '2023-11-09T15:50:31.669007', 
+    '2023-11-09T15:50:31.669016', 
+    943, 
+    'JAVA', 
+    '미래', 
+    '6bcf11'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    8, 
+    '2023-11-09T15:50:31.669592', 
+    '2023-11-09T15:50:31.669601', 
+    2605, 
+    'GO', 
+    '요리', 
+    '3b3533'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    9, 
+    '2023-11-09T15:50:31.670847', 
+    '2023-11-09T15:50:31.670857', 
+    9988, 
+    'KOTLIN', 
+    '발견', 
+    '982b90'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    10, 
+    '2023-11-09T15:50:31.671423', 
+    '2023-11-09T15:50:31.671434', 
+    1960, 
+    'JAVA', 
+    '학생', 
+    '9a0d5f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    11, 
+    '2023-11-09T15:50:31.671807', 
+    '2023-11-09T15:50:31.671816', 
+    6275, 
+    'KOTLIN', 
+    '달', 
+    '3541b0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    12, 
+    '2023-11-09T15:50:31.672273', 
+    '2023-11-09T15:50:31.672282', 
+    5933, 
+    'KOTLIN', 
+    '문화', 
+    '8ce914'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    13, 
+    '2023-11-09T15:50:31.672697', 
+    '2023-11-09T15:50:31.672707', 
+    3475, 
+    'GO', 
+    '작가', 
+    '042769'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    14, 
+    '2023-11-09T15:50:31.675099', 
+    '2023-11-09T15:50:31.675112', 
+    5379, 
+    'TS', 
+    '건축가', 
+    '3caf3f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    15, 
+    '2023-11-09T15:50:31.675732', 
+    '2023-11-09T15:50:31.675742', 
+    9076, 
+    'TS', 
+    '직장', 
+    'f8e624'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    16, 
+    '2023-11-09T15:50:31.677533', 
+    '2023-11-09T15:50:31.677563', 
+    6717, 
+    'TS', 
+    '배', 
+    '5932a3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    17, 
+    '2023-11-09T15:50:31.677923', 
+    '2023-11-09T15:50:31.677932', 
+    1274, 
+    'KOTLIN', 
+    '책', 
+    'ca3942'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    18, 
+    '2023-11-09T15:50:31.678223', 
+    '2023-11-09T15:50:31.678252', 
+    5260, 
+    'GO', 
+    '노년', 
+    '29d514'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    19, 
+    '2023-11-09T15:50:31.681764', 
+    '2023-11-09T15:50:31.681774', 
+    8146, 
+    'GO', 
+    '마을', 
+    '6f7c55'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    20, 
+    '2023-11-09T15:50:31.682135', 
+    '2023-11-09T15:50:31.682144', 
+    5621, 
+    'GO', 
+    '예술', 
+    'bb221b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    21, 
+    '2023-11-09T15:50:31.682357', 
+    '2023-11-09T15:50:31.682364', 
+    6273, 
+    'GO', 
+    '새', 
+    'f565fb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    22, 
+    '2023-11-09T15:50:31.683957', 
+    '2023-11-09T15:50:31.683965', 
+    4810, 
+    'JAVA', 
+    '평화', 
+    'ff939f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    23, 
+    '2023-11-09T15:50:31.684315', 
+    '2023-11-09T15:50:31.684327', 
+    7475, 
+    'GO', 
+    '꿈', 
+    '1e6bbf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    24, 
+    '2023-11-09T15:50:31.684895', 
+    '2023-11-09T15:50:31.685029', 
+    8046, 
+    'TS', 
+    '청소년', 
+    '117a19'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    25, 
+    '2023-11-09T15:50:31.686219', 
+    '2023-11-09T15:50:31.686267', 
+    2029, 
+    'KOTLIN', 
+    '통신', 
+    '6025ca'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    26, 
+    '2023-11-09T15:50:31.686560', 
+    '2023-11-09T15:50:31.686573', 
+    7113, 
+    'GO', 
+    '우주', 
+    '9a1542'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    27, 
+    '2023-11-09T15:50:31.688036', 
+    '2023-11-09T15:50:31.688045', 
+    9206, 
+    'GO', 
+    '학생', 
+    'd7cb84'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    28, 
+    '2023-11-09T15:50:31.689189', 
+    '2023-11-09T15:50:31.689199', 
+    6442, 
+    'JAVA', 
+    '젊음', 
+    '10b797'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    29, 
+    '2023-11-09T15:50:31.691086', 
+    '2023-11-09T15:50:31.691095', 
+    230, 
+    'JAVA', 
+    '비', 
+    'a85fdf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    30, 
+    '2023-11-09T15:50:31.692266', 
+    '2023-11-09T15:50:31.692274', 
+    494, 
+    'GO', 
+    '평화', 
+    '631628'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    31, 
+    '2023-11-09T15:50:31.692459', 
+    '2023-11-09T15:50:31.692466', 
+    7550, 
+    'KOTLIN', 
+    '바다', 
+    '49463d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    32, 
+    '2023-11-09T15:50:31.694115', 
+    '2023-11-09T15:50:31.694125', 
+    2458, 
+    'JAVA', 
+    '도시', 
+    '3f46fb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    33, 
+    '2023-11-09T15:50:31.695085', 
+    '2023-11-09T15:50:31.695101', 
+    4541, 
+    'GO', 
+    '올림픽', 
+    '79d6de'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    34, 
+    '2023-11-09T15:50:31.696068', 
+    '2023-11-09T15:50:31.696078', 
+    302, 
+    'TS', 
+    '축구', 
+    '352ac9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    35, 
+    '2023-11-09T15:50:31.696471', 
+    '2023-11-09T15:50:31.696479', 
+    4897, 
+    'GO', 
+    '학교', 
+    '1b3cb9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    36, 
+    '2023-11-09T15:50:31.696771', 
+    '2023-11-09T15:50:31.696779', 
+    6426, 
+    'JAVA', 
+    '요리', 
+    'c3abcc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    37, 
+    '2023-11-09T15:50:31.697611', 
+    '2023-11-09T15:50:31.697619', 
+    2797, 
+    'TS', 
+    '건축가', 
+    'be2e3e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    38, 
+    '2023-11-09T15:50:31.698644', 
+    '2023-11-09T15:50:31.698654', 
+    9227, 
+    'JAVA', 
+    '산책', 
+    '0bb0d7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    39, 
+    '2023-11-09T15:50:31.699003', 
+    '2023-11-09T15:50:31.699012', 
+    1451, 
+    'JAVA', 
+    '교통', 
+    'eaaeca'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    40, 
+    '2023-11-09T15:50:31.699199', 
+    '2023-11-09T15:50:31.699207', 
+    1216, 
+    'JAVA', 
+    '눈', 
+    'c6143d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    41, 
+    '2023-11-09T15:50:31.700102', 
+    '2023-11-09T15:50:31.700120', 
+    6725, 
+    'GO', 
+    '컴퓨터', 
+    '70acf9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    42, 
+    '2023-11-09T15:50:31.703282', 
+    '2023-11-09T15:50:31.703292', 
+    2530, 
+    'TS', 
+    '여행가', 
+    '6fc83e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    43, 
+    '2023-11-09T15:50:31.704134', 
+    '2023-11-09T15:50:31.704143', 
+    9335, 
+    'TS', 
+    '자연', 
+    'bcf904'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    44, 
+    '2023-11-09T15:50:31.704533', 
+    '2023-11-09T15:50:31.704543', 
+    2860, 
+    'TS', 
+    '경찰', 
+    '1e3e0f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    45, 
+    '2023-11-09T15:50:31.705790', 
+    '2023-11-09T15:50:31.705808', 
+    5814, 
+    'JAVA', 
+    '스마트폰', 
+    'd0e9ce'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    46, 
+    '2023-11-09T15:50:31.706036', 
+    '2023-11-09T15:50:31.706044', 
+    401, 
+    'JAVA', 
+    '나라', 
+    'f4dd62'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    47, 
+    '2023-11-09T15:50:31.707045', 
+    '2023-11-09T15:50:31.707055', 
+    5157, 
+    'JAVA', 
+    '영화', 
+    '48cfd3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    48, 
+    '2023-11-09T15:50:31.707349', 
+    '2023-11-09T15:50:31.707357', 
+    7054, 
+    'KOTLIN', 
+    '그림', 
+    '47702b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    49, 
+    '2023-11-09T15:50:31.707526', 
+    '2023-11-09T15:50:31.707531', 
+    9525, 
+    'JAVA', 
+    '문화', 
+    '6f0979'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    50, 
+    '2023-11-09T15:50:31.707752', 
+    '2023-11-09T15:50:31.707796', 
+    9485, 
+    'TS', 
+    '과거', 
+    'c08206'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    51, 
+    '2023-11-09T15:50:31.708040', 
+    '2023-11-09T15:50:31.708270', 
+    8744, 
+    'JAVA', 
+    '희망', 
+    '6b3f14'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    52, 
+    '2023-11-09T15:50:31.708540', 
+    '2023-11-09T15:50:31.708550', 
+    8215, 
+    'JAVA', 
+    '인터넷', 
+    '36c6f0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    53, 
+    '2023-11-09T15:50:31.708722', 
+    '2023-11-09T15:50:31.708741', 
+    2753, 
+    'JAVA', 
+    '물', 
+    '6a94db'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    54, 
+    '2023-11-09T15:50:31.708951', 
+    '2023-11-09T15:50:31.708969', 
+    937, 
+    'GO', 
+    '직장', 
+    '27de22'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    55, 
+    '2023-11-09T15:50:31.709398', 
+    '2023-11-09T15:50:31.709416', 
+    6353, 
+    'TS', 
+    '게임', 
+    '108fbb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    56, 
+    '2023-11-09T15:50:31.709849', 
+    '2023-11-09T15:50:31.709857', 
+    9986, 
+    'JAVA', 
+    '통신', 
+    'd1fc92'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    57, 
+    '2023-11-09T15:50:31.710055', 
+    '2023-11-09T15:50:31.710062', 
+    9631, 
+    'TS', 
+    '채소', 
+    'a4dc52'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    58, 
+    '2023-11-09T15:50:31.710221', 
+    '2023-11-09T15:50:31.710227', 
+    7350, 
+    'JAVA', 
+    '소망', 
+    'caf543'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    59, 
+    '2023-11-09T15:50:31.710382', 
+    '2023-11-09T15:50:31.710389', 
+    9665, 
+    'GO', 
+    '농구', 
+    '6b0360'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    60, 
+    '2023-11-09T15:50:31.710546', 
+    '2023-11-09T15:50:31.710553', 
+    598, 
+    'GO', 
+    '과학자', 
+    '3c143c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    61, 
+    '2023-11-09T15:50:31.710825', 
+    '2023-11-09T15:50:31.710832', 
+    7567, 
+    'TS', 
+    '역사', 
+    '5750f4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    62, 
+    '2023-11-09T15:50:31.711005', 
+    '2023-11-09T15:50:31.711012', 
+    2838, 
+    'JAVA', 
+    '통신', 
+    '91e8e2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    63, 
+    '2023-11-09T15:50:31.711179', 
+    '2023-11-09T15:50:31.711186', 
+    9314, 
+    'TS', 
+    '과거', 
+    'd20c10'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    64, 
+    '2023-11-09T15:50:31.711344', 
+    '2023-11-09T15:50:31.711354', 
+    6718, 
+    'KOTLIN', 
+    '공부', 
+    'ff4967'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    65, 
+    '2023-11-09T15:50:31.711523', 
+    '2023-11-09T15:50:31.711548', 
+    387, 
+    'JAVA', 
+    '공부', 
+    'a83091'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    66, 
+    '2023-11-09T15:50:31.711869', 
+    '2023-11-09T15:50:31.712015', 
+    6174, 
+    'GO', 
+    '게임', 
+    '667d6b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    67, 
+    '2023-11-09T15:50:31.713089', 
+    '2023-11-09T15:50:31.713113', 
+    5438, 
+    'KOTLIN', 
+    '발명', 
+    '2c71fc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    68, 
+    '2023-11-09T15:50:31.713309', 
+    '2023-11-09T15:50:31.713316', 
+    7401, 
+    'GO', 
+    '글', 
+    '81ba73'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    69, 
+    '2023-11-09T15:50:31.713667', 
+    '2023-11-09T15:50:31.713674', 
+    2546, 
+    'KOTLIN', 
+    '선생님', 
+    '4d1a9c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    70, 
+    '2023-11-09T15:50:31.714031', 
+    '2023-11-09T15:50:31.714074', 
+    6427, 
+    'GO', 
+    '수학', 
+    '6b711d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    71, 
+    '2023-11-09T15:50:31.714209', 
+    '2023-11-09T15:50:31.714217', 
+    6331, 
+    'TS', 
+    '과학', 
+    '65a088'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    72, 
+    '2023-11-09T15:50:31.714563', 
+    '2023-11-09T15:50:31.714571', 
+    4963, 
+    'TS', 
+    '운동', 
+    'ea7bba'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    73, 
+    '2023-11-09T15:50:31.714744', 
+    '2023-11-09T15:50:31.714751', 
+    8596, 
+    'KOTLIN', 
+    '산', 
+    '743caf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    74, 
+    '2023-11-09T15:50:31.714896', 
+    '2023-11-09T15:50:31.714903', 
+    6229, 
+    'JAVA', 
+    '비행기', 
+    '03c8d8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    75, 
+    '2023-11-09T15:50:31.715042', 
+    '2023-11-09T15:50:31.715047', 
+    599, 
+    'TS', 
+    '변호사', 
+    '5bc6d8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    76, 
+    '2023-11-09T15:50:31.715164', 
+    '2023-11-09T15:50:31.715168', 
+    998, 
+    'TS', 
+    '도시', 
+    '96d829'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    77, 
+    '2023-11-09T15:50:31.715304', 
+    '2023-11-09T15:50:31.715311', 
+    182, 
+    'KOTLIN', 
+    '건축가', 
+    'b73e7e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    78, 
+    '2023-11-09T15:50:31.715451', 
+    '2023-11-09T15:50:31.715458', 
+    5261, 
+    'KOTLIN', 
+    '건축가', 
+    '4d6953'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    79, 
+    '2023-11-09T15:50:31.715601', 
+    '2023-11-09T15:50:31.715607', 
+    6888, 
+    'KOTLIN', 
+    '바람', 
+    '21e39b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    80, 
+    '2023-11-09T15:50:31.715745', 
+    '2023-11-09T15:50:31.715750', 
+    515, 
+    'GO', 
+    '글', 
+    'ea2182'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    81, 
+    '2023-11-09T15:50:31.715867', 
+    '2023-11-09T15:50:31.715871', 
+    795, 
+    'JAVA', 
+    '역사', 
+    '2c1a25'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    82, 
+    '2023-11-09T15:50:31.716020', 
+    '2023-11-09T15:50:31.716027', 
+    4915, 
+    'JAVA', 
+    '운동', 
+    '791cfd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    83, 
+    '2023-11-09T15:50:31.716166', 
+    '2023-11-09T15:50:31.716171', 
+    7466, 
+    'JAVA', 
+    '현재', 
+    '224e5e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    84, 
+    '2023-11-09T15:50:31.716311', 
+    '2023-11-09T15:50:31.716315', 
+    6834, 
+    'TS', 
+    '축제', 
+    'cdf0ce'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    85, 
+    '2023-11-09T15:50:31.716451', 
+    '2023-11-09T15:50:31.716458', 
+    4473, 
+    'TS', 
+    '배', 
+    'd69352'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    86, 
+    '2023-11-09T15:50:31.716579', 
+    '2023-11-09T15:50:31.716585', 
+    8354, 
+    'KOTLIN', 
+    '학생', 
+    '01217a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    87, 
+    '2023-11-09T15:50:31.716791', 
+    '2023-11-09T15:50:31.716798', 
+    4967, 
+    'TS', 
+    '군인', 
+    'ed0883'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    88, 
+    '2023-11-09T15:50:31.717386', 
+    '2023-11-09T15:50:31.717395', 
+    6944, 
+    'JAVA', 
+    '배구', 
+    '54e717'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    89, 
+    '2023-11-09T15:50:31.717570', 
+    '2023-11-09T15:50:31.717577', 
+    1473, 
+    'KOTLIN', 
+    '자연', 
+    '487293'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    90, 
+    '2023-11-09T15:50:31.717719', 
+    '2023-11-09T15:50:31.717725', 
+    2063, 
+    'GO', 
+    '의사', 
+    '1f714b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    91, 
+    '2023-11-09T15:50:31.717844', 
+    '2023-11-09T15:50:31.717848', 
+    2883, 
+    'JAVA', 
+    '소방관', 
+    '07f604'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    92, 
+    '2023-11-09T15:50:31.717992', 
+    '2023-11-09T15:50:31.717998', 
+    8482, 
+    'TS', 
+    '글', 
+    'f04df2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    93, 
+    '2023-11-09T15:50:31.718133', 
+    '2023-11-09T15:50:31.718143', 
+    6393, 
+    'KOTLIN', 
+    '미소', 
+    'b0f61c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    94, 
+    '2023-11-09T15:50:31.718282', 
+    '2023-11-09T15:50:31.718309', 
+    8800, 
+    'KOTLIN', 
+    '인터넷', 
+    '1dda99'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    95, 
+    '2023-11-09T15:50:31.718462', 
+    '2023-11-09T15:50:31.718482', 
+    3913, 
+    'GO', 
+    '축구', 
+    'aff472'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    96, 
+    '2023-11-09T15:50:31.718623', 
+    '2023-11-09T15:50:31.718630', 
+    856, 
+    'GO', 
+    '소망', 
+    '91954c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    97, 
+    '2023-11-09T15:50:31.718773', 
+    '2023-11-09T15:50:31.718779', 
+    7100, 
+    'KOTLIN', 
+    '노인', 
+    '67849f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    98, 
+    '2023-11-09T15:50:31.718932', 
+    '2023-11-09T15:50:31.718937', 
+    2487, 
+    'JAVA', 
+    '작가', 
+    '0fa0dc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    99, 
+    '2023-11-09T15:50:31.719079', 
+    '2023-11-09T15:50:31.719083', 
+    5678, 
+    'KOTLIN', 
+    '꿈', 
+    '994205'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    100, 
+    '2023-11-09T15:50:31.719231', 
+    '2023-11-09T15:50:31.719278', 
+    5854, 
+    'JAVA', 
+    '기쁨', 
+    'dab301'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    101, 
+    '2023-11-09T15:50:31.719423', 
+    '2023-11-09T15:50:31.719428', 
+    9994, 
+    'TS', 
+    '게임', 
+    '3f1953'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    102, 
+    '2023-11-09T15:50:31.719713', 
+    '2023-11-09T15:50:31.720027', 
+    4089, 
+    'KOTLIN', 
+    '아동', 
+    'f771e9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    103, 
+    '2023-11-09T15:50:31.720335', 
+    '2023-11-09T15:50:31.720349', 
+    1064, 
+    'TS', 
+    '경찰', 
+    'e29989'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    104, 
+    '2023-11-09T15:50:31.720510', 
+    '2023-11-09T15:50:31.720627', 
+    7215, 
+    'JAVA', 
+    '탐험', 
+    '98d341'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    105, 
+    '2023-11-09T15:50:31.720831', 
+    '2023-11-09T15:50:31.720840', 
+    1147, 
+    'JAVA', 
+    '학생', 
+    '085f0b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    106, 
+    '2023-11-09T15:50:31.721106', 
+    '2023-11-09T15:50:31.721111', 
+    4563, 
+    'GO', 
+    '빛', 
+    'f2b042'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    107, 
+    '2023-11-09T15:50:31.721341', 
+    '2023-11-09T15:50:31.721349', 
+    9205, 
+    'GO', 
+    '문화', 
+    'd15b3c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    108, 
+    '2023-11-09T15:50:31.721827', 
+    '2023-11-09T15:50:31.721865', 
+    9233, 
+    'TS', 
+    '여행', 
+    'e6ac02'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    109, 
+    '2023-11-09T15:50:31.722180', 
+    '2023-11-09T15:50:31.722187', 
+    4264, 
+    'KOTLIN', 
+    '게임', 
+    'ec1a7e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    110, 
+    '2023-11-09T15:50:31.722352', 
+    '2023-11-09T15:50:31.722357', 
+    7009, 
+    'JAVA', 
+    '하늘', 
+    'c3c137'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    111, 
+    '2023-11-09T15:50:31.722882', 
+    '2023-11-09T15:50:31.722889', 
+    910, 
+    'TS', 
+    '음악', 
+    '3e2d11'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    112, 
+    '2023-11-09T15:50:31.723034', 
+    '2023-11-09T15:50:31.723041', 
+    4117, 
+    'GO', 
+    '젊음', 
+    '495aab'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    113, 
+    '2023-11-09T15:50:31.723180', 
+    '2023-11-09T15:50:31.723188', 
+    1811, 
+    'JAVA', 
+    '여행', 
+    'ba131b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    114, 
+    '2023-11-09T15:50:31.723338', 
+    '2023-11-09T15:50:31.723350', 
+    4999, 
+    'KOTLIN', 
+    '눈', 
+    '5514fd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    115, 
+    '2023-11-09T15:50:31.723510', 
+    '2023-11-09T15:50:31.723653', 
+    650, 
+    'TS', 
+    '올림픽', 
+    '30a384'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    116, 
+    '2023-11-09T15:50:31.723818', 
+    '2023-11-09T15:50:31.724468', 
+    1238, 
+    'GO', 
+    '빛', 
+    '0a2159'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    117, 
+    '2023-11-09T15:50:31.724927', 
+    '2023-11-09T15:50:31.724933', 
+    8434, 
+    'TS', 
+    '통신', 
+    '571b13'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    118, 
+    '2023-11-09T15:50:31.725083', 
+    '2023-11-09T15:50:31.725086', 
+    4449, 
+    'KOTLIN', 
+    '교통', 
+    '978412'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    119, 
+    '2023-11-09T15:50:31.725221', 
+    '2023-11-09T15:50:31.725227', 
+    841, 
+    'GO', 
+    '스포츠', 
+    '2c7cca'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    120, 
+    '2023-11-09T15:50:31.725383', 
+    '2023-11-09T15:50:31.725391', 
+    4913, 
+    'JAVA', 
+    '음악', 
+    'f87811'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    121, 
+    '2023-11-09T15:50:31.725500', 
+    '2023-11-09T15:50:31.725503', 
+    836, 
+    'GO', 
+    '눈', 
+    '0793d5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    122, 
+    '2023-11-09T15:50:31.725654', 
+    '2023-11-09T15:50:31.725659', 
+    7523, 
+    'JAVA', 
+    '성인', 
+    'fff131'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    123, 
+    '2023-11-09T15:50:31.725860', 
+    '2023-11-09T15:50:31.725867', 
+    9914, 
+    'KOTLIN', 
+    '과거', 
+    'd8b9cb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    124, 
+    '2023-11-09T15:50:31.726006', 
+    '2023-11-09T15:50:31.726009', 
+    6837, 
+    'GO', 
+    '태양', 
+    '23ed10'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    125, 
+    '2023-11-09T15:50:31.726636', 
+    '2023-11-09T15:50:31.726642', 
+    6560, 
+    'GO', 
+    '변호사', 
+    '7a3f5d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    126, 
+    '2023-11-09T15:50:31.726851', 
+    '2023-11-09T15:50:31.726856', 
+    2020, 
+    'KOTLIN', 
+    '가족', 
+    '6e8747'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    127, 
+    '2023-11-09T15:50:31.727242', 
+    '2023-11-09T15:50:31.727251', 
+    4108, 
+    'GO', 
+    '물', 
+    'fe6325'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    128, 
+    '2023-11-09T15:50:31.727570', 
+    '2023-11-09T15:50:31.728077', 
+    8706, 
+    'GO', 
+    '꽃', 
+    '4ddb6b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    129, 
+    '2023-11-09T15:50:31.728813', 
+    '2023-11-09T15:50:31.728948', 
+    1082, 
+    'GO', 
+    '그림', 
+    '2da872'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    130, 
+    '2023-11-09T15:50:31.729735', 
+    '2023-11-09T15:50:31.729741', 
+    3884, 
+    'JAVA', 
+    '교통', 
+    'bbac6a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    131, 
+    '2023-11-09T15:50:31.729908', 
+    '2023-11-09T15:50:31.729912', 
+    6726, 
+    'JAVA', 
+    '행복', 
+    '61c6de'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    132, 
+    '2023-11-09T15:50:31.730051', 
+    '2023-11-09T15:50:31.730057', 
+    6471, 
+    'KOTLIN', 
+    '여가', 
+    'cedef6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    133, 
+    '2023-11-09T15:50:31.730864', 
+    '2023-11-09T15:50:31.730869', 
+    9780, 
+    'JAVA', 
+    '열차', 
+    '3f6831'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    134, 
+    '2023-11-09T15:50:31.731048', 
+    '2023-11-09T15:50:31.731054', 
+    5935, 
+    'JAVA', 
+    '새', 
+    'b2b0c8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    135, 
+    '2023-11-09T15:50:31.731191', 
+    '2023-11-09T15:50:31.731217', 
+    2468, 
+    'TS', 
+    '사랑', 
+    '4e0604'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    136, 
+    '2023-11-09T15:50:31.731346', 
+    '2023-11-09T15:50:31.731350', 
+    8322, 
+    'GO', 
+    '경찰', 
+    '1f5431'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    137, 
+    '2023-11-09T15:50:31.731728', 
+    '2023-11-09T15:50:31.731732', 
+    3060, 
+    'GO', 
+    '과일', 
+    '07d801'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    138, 
+    '2023-11-09T15:50:31.732190', 
+    '2023-11-09T15:50:31.732194', 
+    1161, 
+    'JAVA', 
+    '배구', 
+    '59b0da'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    139, 
+    '2023-11-09T15:50:31.732602', 
+    '2023-11-09T15:50:31.732610', 
+    6617, 
+    'TS', 
+    '행복', 
+    'dc088a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    140, 
+    '2023-11-09T15:50:31.732768', 
+    '2023-11-09T15:50:31.732771', 
+    576, 
+    'TS', 
+    '학생', 
+    'ab7b67'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    141, 
+    '2023-11-09T15:50:31.732854', 
+    '2023-11-09T15:50:31.732857', 
+    2342, 
+    'KOTLIN', 
+    '그림', 
+    '0bc0bf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    142, 
+    '2023-11-09T15:50:31.732953', 
+    '2023-11-09T15:50:31.732956', 
+    3504, 
+    'TS', 
+    '열차', 
+    'b8dad3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    143, 
+    '2023-11-09T15:50:31.733069', 
+    '2023-11-09T15:50:31.733077', 
+    7413, 
+    'KOTLIN', 
+    '축제', 
+    'f1f00c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    144, 
+    '2023-11-09T15:50:31.733168', 
+    '2023-11-09T15:50:31.733171', 
+    2485, 
+    'JAVA', 
+    '역사', 
+    'f1fc34'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    145, 
+    '2023-11-09T15:50:31.733292', 
+    '2023-11-09T15:50:31.733296', 
+    7610, 
+    'KOTLIN', 
+    '구름', 
+    'bce6ab'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    146, 
+    '2023-11-09T15:50:31.733453', 
+    '2023-11-09T15:50:31.733459', 
+    4441, 
+    'GO', 
+    '발견', 
+    'ba9e16'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    147, 
+    '2023-11-09T15:50:31.733584', 
+    '2023-11-09T15:50:31.733592', 
+    9404, 
+    'TS', 
+    '선생님', 
+    '9256e3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    148, 
+    '2023-11-09T15:50:31.733708', 
+    '2023-11-09T15:50:31.733715', 
+    1369, 
+    'KOTLIN', 
+    '비행기', 
+    '75eae6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    149, 
+    '2023-11-09T15:50:31.734006', 
+    '2023-11-09T15:50:31.734010', 
+    4597, 
+    'TS', 
+    '소방관', 
+    'cd87f7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    150, 
+    '2023-11-09T15:50:31.735035', 
+    '2023-11-09T15:50:31.735043', 
+    9811, 
+    'JAVA', 
+    '배', 
+    'fdcc29'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    151, 
+    '2023-11-09T15:50:31.735600', 
+    '2023-11-09T15:50:31.735604', 
+    7081, 
+    'GO', 
+    '작가', 
+    '67ee47'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    152, 
+    '2023-11-09T15:50:31.735959', 
+    '2023-11-09T15:50:31.735967', 
+    6381, 
+    'TS', 
+    '수학', 
+    'a1f017'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    153, 
+    '2023-11-09T15:50:31.740650', 
+    '2023-11-09T15:50:31.740657', 
+    1445, 
+    'KOTLIN', 
+    '경찰', 
+    '882afb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    154, 
+    '2023-11-09T15:50:31.741541', 
+    '2023-11-09T15:50:31.741548', 
+    909, 
+    'KOTLIN', 
+    '소방관', 
+    '530e93'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    155, 
+    '2023-11-09T15:50:31.742972', 
+    '2023-11-09T15:50:31.742977', 
+    9319, 
+    'TS', 
+    '군인', 
+    '941f4c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    156, 
+    '2023-11-09T15:50:31.743188', 
+    '2023-11-09T15:50:31.743191', 
+    2893, 
+    'JAVA', 
+    '노년', 
+    'a01b55'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    157, 
+    '2023-11-09T15:50:31.743317', 
+    '2023-11-09T15:50:31.743321', 
+    3666, 
+    'TS', 
+    '변호사', 
+    'f3d723'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    158, 
+    '2023-11-09T15:50:31.743452', 
+    '2023-11-09T15:50:31.743454', 
+    6781, 
+    'KOTLIN', 
+    '과학자', 
+    '4be14d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    159, 
+    '2023-11-09T15:50:31.743557', 
+    '2023-11-09T15:50:31.743560', 
+    3041, 
+    'GO', 
+    '도전', 
+    '178a2f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    160, 
+    '2023-11-09T15:50:31.743644', 
+    '2023-11-09T15:50:31.743646', 
+    1596, 
+    'TS', 
+    '엔지니어', 
+    '8c3b79'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    161, 
+    '2023-11-09T15:50:31.743722', 
+    '2023-11-09T15:50:31.743725', 
+    4620, 
+    'GO', 
+    '미소', 
+    'fb75be'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    162, 
+    '2023-11-09T15:50:31.743816', 
+    '2023-11-09T15:50:31.743818', 
+    2271, 
+    'JAVA', 
+    '작가', 
+    '0ee77c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    163, 
+    '2023-11-09T15:50:31.743900', 
+    '2023-11-09T15:50:31.743903', 
+    1971, 
+    'TS', 
+    '수학', 
+    'a44f04'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    164, 
+    '2023-11-09T15:50:31.743982', 
+    '2023-11-09T15:50:31.743984', 
+    8615, 
+    'TS', 
+    '자연', 
+    'b90e49'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    165, 
+    '2023-11-09T15:50:31.744742', 
+    '2023-11-09T15:50:31.744750', 
+    9607, 
+    'GO', 
+    '꿈', 
+    '5af177'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    166, 
+    '2023-11-09T15:50:31.744853', 
+    '2023-11-09T15:50:31.744856', 
+    4431, 
+    'TS', 
+    '눈', 
+    '0eec16'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    167, 
+    '2023-11-09T15:50:31.745283', 
+    '2023-11-09T15:50:31.745288', 
+    6837, 
+    'KOTLIN', 
+    '젊음', 
+    'cd68c2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    168, 
+    '2023-11-09T15:50:31.745438', 
+    '2023-11-09T15:50:31.745442', 
+    6485, 
+    'JAVA', 
+    '사랑', 
+    '1f9776'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    169, 
+    '2023-11-09T15:50:31.745531', 
+    '2023-11-09T15:50:31.745534', 
+    692, 
+    'JAVA', 
+    '교통', 
+    'c1aacc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    170, 
+    '2023-11-09T15:50:31.745617', 
+    '2023-11-09T15:50:31.745619', 
+    6196, 
+    'TS', 
+    '미래', 
+    '3de79d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    171, 
+    '2023-11-09T15:50:31.745697', 
+    '2023-11-09T15:50:31.745701', 
+    5607, 
+    'TS', 
+    '바다', 
+    '3d2206'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    172, 
+    '2023-11-09T15:50:31.745797', 
+    '2023-11-09T15:50:31.745799', 
+    4898, 
+    'JAVA', 
+    '배구', 
+    'f3f465'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    173, 
+    '2023-11-09T15:50:31.745881', 
+    '2023-11-09T15:50:31.745884', 
+    3176, 
+    'TS', 
+    '건축가', 
+    'd6a2c3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    174, 
+    '2023-11-09T15:50:31.747576', 
+    '2023-11-09T15:50:31.747586', 
+    9600, 
+    'JAVA', 
+    '엔지니어', 
+    'b4dc78'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    175, 
+    '2023-11-09T15:50:31.748063', 
+    '2023-11-09T15:50:31.748074', 
+    6273, 
+    'TS', 
+    '미래', 
+    '72b775'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    176, 
+    '2023-11-09T15:50:31.748217', 
+    '2023-11-09T15:50:31.748224', 
+    7810, 
+    'KOTLIN', 
+    '태양', 
+    'f606cb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    177, 
+    '2023-11-09T15:50:31.748312', 
+    '2023-11-09T15:50:31.748318', 
+    6478, 
+    'GO', 
+    '학생', 
+    'b0db79'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    178, 
+    '2023-11-09T15:50:31.748411', 
+    '2023-11-09T15:50:31.748416', 
+    456, 
+    'TS', 
+    '아동', 
+    '31f82c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    179, 
+    '2023-11-09T15:50:31.748514', 
+    '2023-11-09T15:50:31.748521', 
+    2654, 
+    'KOTLIN', 
+    '군인', 
+    'e69af2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    180, 
+    '2023-11-09T15:50:31.748600', 
+    '2023-11-09T15:50:31.748606', 
+    233, 
+    'GO', 
+    '직장', 
+    '97537c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    181, 
+    '2023-11-09T15:50:31.748687', 
+    '2023-11-09T15:50:31.748693', 
+    8836, 
+    'KOTLIN', 
+    '우주', 
+    '815211'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    182, 
+    '2023-11-09T15:50:31.748770', 
+    '2023-11-09T15:50:31.748864', 
+    8411, 
+    'GO', 
+    '나라', 
+    'ceb3b6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    183, 
+    '2023-11-09T15:50:31.749797', 
+    '2023-11-09T15:50:31.749891', 
+    5383, 
+    'JAVA', 
+    '엔지니어', 
+    'db3db9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    184, 
+    '2023-11-09T15:50:31.749997', 
+    '2023-11-09T15:50:31.750', 
+    8484, 
+    'JAVA', 
+    '선원', 
+    'b981bc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    185, 
+    '2023-11-09T15:50:31.750086', 
+    '2023-11-09T15:50:31.750087', 
+    3692, 
+    'JAVA', 
+    '기쁨', 
+    '3c59f0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    186, 
+    '2023-11-09T15:50:31.750161', 
+    '2023-11-09T15:50:31.750163', 
+    3172, 
+    'GO', 
+    '행복', 
+    '0f2d8f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    187, 
+    '2023-11-09T15:50:31.750347', 
+    '2023-11-09T15:50:31.750348', 
+    1514, 
+    'GO', 
+    '바다', 
+    'b7c28c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    188, 
+    '2023-11-09T15:50:31.751186', 
+    '2023-11-09T15:50:31.751190', 
+    8929, 
+    'TS', 
+    '채소', 
+    '1ef9a2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    189, 
+    '2023-11-09T15:50:31.751570', 
+    '2023-11-09T15:50:31.751572', 
+    4421, 
+    'KOTLIN', 
+    '책', 
+    'c82d0a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    190, 
+    '2023-11-09T15:50:31.751674', 
+    '2023-11-09T15:50:31.751676', 
+    7988, 
+    'GO', 
+    '인터넷', 
+    'a091a3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    191, 
+    '2023-11-09T15:50:31.751754', 
+    '2023-11-09T15:50:31.751756', 
+    6387, 
+    'JAVA', 
+    '직장', 
+    '0af8c6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    192, 
+    '2023-11-09T15:50:31.751836', 
+    '2023-11-09T15:50:31.751886', 
+    9583, 
+    'GO', 
+    '열차', 
+    '5f4bc7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    193, 
+    '2023-11-09T15:50:31.753299', 
+    '2023-11-09T15:50:31.753875', 
+    6848, 
+    'KOTLIN', 
+    '학교', 
+    'b35083'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    194, 
+    '2023-11-09T15:50:31.755710', 
+    '2023-11-09T15:50:31.755753', 
+    2508, 
+    'GO', 
+    '여행가', 
+    '2464da'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    195, 
+    '2023-11-09T15:50:31.755859', 
+    '2023-11-09T15:50:31.755860', 
+    8340, 
+    'KOTLIN', 
+    '친구', 
+    'd2ed88'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    196, 
+    '2023-11-09T15:50:31.755939', 
+    '2023-11-09T15:50:31.755940', 
+    6355, 
+    'KOTLIN', 
+    '요리', 
+    'da3333'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    197, 
+    '2023-11-09T15:50:31.756014', 
+    '2023-11-09T15:50:31.756016', 
+    1495, 
+    'TS', 
+    '연구', 
+    '6b128b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    198, 
+    '2023-11-09T15:50:31.756087', 
+    '2023-11-09T15:50:31.756087', 
+    3401, 
+    'TS', 
+    '인터넷', 
+    '7d85fa'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    199, 
+    '2023-11-09T15:50:31.756155', 
+    '2023-11-09T15:50:31.756156', 
+    4928, 
+    'KOTLIN', 
+    '올림픽', 
+    '147f3e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    200, 
+    '2023-11-09T15:50:31.756222', 
+    '2023-11-09T15:50:31.756223', 
+    12, 
+    'JAVA', 
+    '자연', 
+    '11c427'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    201, 
+    '2023-11-09T15:50:31.756298', 
+    '2023-11-09T15:50:31.756299', 
+    2575, 
+    'JAVA', 
+    '열차', 
+    'd99987'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    202, 
+    '2023-11-09T15:50:31.756374', 
+    '2023-11-09T15:50:31.756375', 
+    7979, 
+    'TS', 
+    '자동차', 
+    '08364e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    203, 
+    '2023-11-09T15:50:31.756452', 
+    '2023-11-09T15:50:31.756452', 
+    3735, 
+    'GO', 
+    '학생', 
+    '96a164'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    204, 
+    '2023-11-09T15:50:31.756517', 
+    '2023-11-09T15:50:31.756518', 
+    7977, 
+    'KOTLIN', 
+    '역사', 
+    'c72284'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    205, 
+    '2023-11-09T15:50:31.756582', 
+    '2023-11-09T15:50:31.756583', 
+    9077, 
+    'TS', 
+    '꽃', 
+    '7c64ea'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    206, 
+    '2023-11-09T15:50:31.756645', 
+    '2023-11-09T15:50:31.756647', 
+    6551, 
+    'GO', 
+    '비', 
+    '41025a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    207, 
+    '2023-11-09T15:50:31.756709', 
+    '2023-11-09T15:50:31.756709', 
+    5063, 
+    'KOTLIN', 
+    '농구', 
+    '480f44'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    208, 
+    '2023-11-09T15:50:31.756773', 
+    '2023-11-09T15:50:31.756773', 
+    8263, 
+    'GO', 
+    '세계', 
+    'ff8c6d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    209, 
+    '2023-11-09T15:50:31.756837', 
+    '2023-11-09T15:50:31.756838', 
+    8449, 
+    'TS', 
+    '직장', 
+    'eb6c00'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    210, 
+    '2023-11-09T15:50:31.756910', 
+    '2023-11-09T15:50:31.756911', 
+    5333, 
+    'KOTLIN', 
+    '청소년', 
+    '1f4294'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    211, 
+    '2023-11-09T15:50:31.757002', 
+    '2023-11-09T15:50:31.757002', 
+    1971, 
+    'JAVA', 
+    '건축가', 
+    'b832d1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    212, 
+    '2023-11-09T15:50:31.757068', 
+    '2023-11-09T15:50:31.757068', 
+    8680, 
+    'JAVA', 
+    '과학자', 
+    'de1a3f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    213, 
+    '2023-11-09T15:50:31.757130', 
+    '2023-11-09T15:50:31.757131', 
+    5429, 
+    'KOTLIN', 
+    '열차', 
+    '70f1e1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    214, 
+    '2023-11-09T15:50:31.757191', 
+    '2023-11-09T15:50:31.757192', 
+    6732, 
+    'TS', 
+    '우주', 
+    '72a9ba'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    215, 
+    '2023-11-09T15:50:31.757278', 
+    '2023-11-09T15:50:31.757279', 
+    4762, 
+    'GO', 
+    '꽃', 
+    '977fda'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    216, 
+    '2023-11-09T15:50:31.757336', 
+    '2023-11-09T15:50:31.757336', 
+    4507, 
+    'KOTLIN', 
+    '산책', 
+    'fafda8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    217, 
+    '2023-11-09T15:50:31.757399', 
+    '2023-11-09T15:50:31.757400', 
+    5895, 
+    'GO', 
+    '가족', 
+    '032780'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    218, 
+    '2023-11-09T15:50:31.757459', 
+    '2023-11-09T15:50:31.757460', 
+    9844, 
+    'TS', 
+    '눈', 
+    'db1c4f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    219, 
+    '2023-11-09T15:50:31.757525', 
+    '2023-11-09T15:50:31.757525', 
+    8570, 
+    'TS', 
+    '구름', 
+    'e74b8c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    220, 
+    '2023-11-09T15:50:31.757585', 
+    '2023-11-09T15:50:31.757585', 
+    5652, 
+    'GO', 
+    '연구', 
+    'ced5ca'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    221, 
+    '2023-11-09T15:50:31.757647', 
+    '2023-11-09T15:50:31.757648', 
+    5214, 
+    'GO', 
+    '과거', 
+    '8775e9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    222, 
+    '2023-11-09T15:50:31.757709', 
+    '2023-11-09T15:50:31.757710', 
+    7651, 
+    'KOTLIN', 
+    '꿈', 
+    'eeb362'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    223, 
+    '2023-11-09T15:50:31.757772', 
+    '2023-11-09T15:50:31.757772', 
+    2398, 
+    'KOTLIN', 
+    '가족', 
+    '8c3119'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    224, 
+    '2023-11-09T15:50:31.757835', 
+    '2023-11-09T15:50:31.757835', 
+    1085, 
+    'JAVA', 
+    '노년', 
+    'cdb6b3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    225, 
+    '2023-11-09T15:50:31.757903', 
+    '2023-11-09T15:50:31.757904', 
+    5564, 
+    'KOTLIN', 
+    '나라', 
+    'debb96'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    226, 
+    '2023-11-09T15:50:31.757968', 
+    '2023-11-09T15:50:31.757968', 
+    1010, 
+    'JAVA', 
+    '요리', 
+    '2cbdf4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    227, 
+    '2023-11-09T15:50:31.758029', 
+    '2023-11-09T15:50:31.758029', 
+    747, 
+    'KOTLIN', 
+    '군인', 
+    '78501a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    228, 
+    '2023-11-09T15:50:31.758100', 
+    '2023-11-09T15:50:31.758101', 
+    9066, 
+    'JAVA', 
+    '자연', 
+    '7b4dd8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    229, 
+    '2023-11-09T15:50:31.758192', 
+    '2023-11-09T15:50:31.758210', 
+    1299, 
+    'GO', 
+    '나라', 
+    '7cfe60'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    230, 
+    '2023-11-09T15:50:31.758369', 
+    '2023-11-09T15:50:31.758383', 
+    2551, 
+    'KOTLIN', 
+    '학교', 
+    'a13993'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    231, 
+    '2023-11-09T15:50:31.759161', 
+    '2023-11-09T15:50:31.759176', 
+    4118, 
+    'GO', 
+    '취미', 
+    'ef056b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    232, 
+    '2023-11-09T15:50:31.759355', 
+    '2023-11-09T15:50:31.759356', 
+    7623, 
+    'TS', 
+    '비행기', 
+    '6d0c94'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    233, 
+    '2023-11-09T15:50:31.759494', 
+    '2023-11-09T15:50:31.759495', 
+    1540, 
+    'GO', 
+    '요리', 
+    '1491d5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    234, 
+    '2023-11-09T15:50:31.759622', 
+    '2023-11-09T15:50:31.759622', 
+    1714, 
+    'JAVA', 
+    '달', 
+    '348088'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    235, 
+    '2023-11-09T15:50:31.759829', 
+    '2023-11-09T15:50:31.759830', 
+    8545, 
+    'GO', 
+    '강', 
+    '64d7f6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    236, 
+    '2023-11-09T15:50:31.759918', 
+    '2023-11-09T15:50:31.759919', 
+    6253, 
+    'GO', 
+    '나라', 
+    '7bce9d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    237, 
+    '2023-11-09T15:50:31.759994', 
+    '2023-11-09T15:50:31.759994', 
+    6796, 
+    'GO', 
+    '과학자', 
+    '188881'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    238, 
+    '2023-11-09T15:50:31.760064', 
+    '2023-11-09T15:50:31.760065', 
+    7956, 
+    'TS', 
+    '평화', 
+    '095986'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    239, 
+    '2023-11-09T15:50:31.760136', 
+    '2023-11-09T15:50:31.760136', 
+    1762, 
+    'GO', 
+    '파일럿', 
+    '0e69d0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    240, 
+    '2023-11-09T15:50:31.760202', 
+    '2023-11-09T15:50:31.760203', 
+    9616, 
+    'JAVA', 
+    '눈', 
+    '3134db'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    241, 
+    '2023-11-09T15:50:31.760272', 
+    '2023-11-09T15:50:31.760272', 
+    5187, 
+    'JAVA', 
+    '운동', 
+    '06d64b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    242, 
+    '2023-11-09T15:50:31.760344', 
+    '2023-11-09T15:50:31.760345', 
+    7414, 
+    'GO', 
+    '음식', 
+    'a524a3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    243, 
+    '2023-11-09T15:50:31.760410', 
+    '2023-11-09T15:50:31.760411', 
+    7236, 
+    'GO', 
+    '자연', 
+    '0fdade'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    244, 
+    '2023-11-09T15:50:31.760474', 
+    '2023-11-09T15:50:31.760474', 
+    4878, 
+    'TS', 
+    '비', 
+    '408365'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    245, 
+    '2023-11-09T15:50:31.760536', 
+    '2023-11-09T15:50:31.760536', 
+    1619, 
+    'TS', 
+    '영화', 
+    '060463'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    246, 
+    '2023-11-09T15:50:31.760597', 
+    '2023-11-09T15:50:31.760598', 
+    724, 
+    'JAVA', 
+    '문화', 
+    'a3d538'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    247, 
+    '2023-11-09T15:50:31.760692', 
+    '2023-11-09T15:50:31.760692', 
+    8664, 
+    'TS', 
+    '배', 
+    'c9f2f7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    248, 
+    '2023-11-09T15:50:31.760762', 
+    '2023-11-09T15:50:31.760762', 
+    2008, 
+    'JAVA', 
+    '게임', 
+    '196751'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    249, 
+    '2023-11-09T15:50:31.760830', 
+    '2023-11-09T15:50:31.760831', 
+    5564, 
+    'KOTLIN', 
+    '인터넷', 
+    'd4a972'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    250, 
+    '2023-11-09T15:50:31.760918', 
+    '2023-11-09T15:50:31.760918', 
+    2915, 
+    'KOTLIN', 
+    '축제', 
+    'dbe9b7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    251, 
+    '2023-11-09T15:50:31.761102', 
+    '2023-11-09T15:50:31.761103', 
+    4247, 
+    'JAVA', 
+    '배구', 
+    'c6bd4b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    252, 
+    '2023-11-09T15:50:31.761267', 
+    '2023-11-09T15:50:31.761268', 
+    2426, 
+    'TS', 
+    '배구', 
+    'b46caa'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    253, 
+    '2023-11-09T15:50:31.761344', 
+    '2023-11-09T15:50:31.761344', 
+    9771, 
+    'JAVA', 
+    '노인', 
+    '380614'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    254, 
+    '2023-11-09T15:50:31.761565', 
+    '2023-11-09T15:50:31.761568', 
+    3688, 
+    'KOTLIN', 
+    '희망', 
+    '30dd1e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    255, 
+    '2023-11-09T15:50:31.762297', 
+    '2023-11-09T15:50:31.762298', 
+    2174, 
+    'GO', 
+    '예술', 
+    'd2b901'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    256, 
+    '2023-11-09T15:50:31.762546', 
+    '2023-11-09T15:50:31.762547', 
+    4656, 
+    'TS', 
+    '자동차', 
+    '80ff6e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    257, 
+    '2023-11-09T15:50:31.763548', 
+    '2023-11-09T15:50:31.763550', 
+    7599, 
+    'TS', 
+    '올림픽', 
+    'e62eb2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    258, 
+    '2023-11-09T15:50:31.765523', 
+    '2023-11-09T15:50:31.765525', 
+    5607, 
+    'JAVA', 
+    '노인', 
+    '4acd47'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    259, 
+    '2023-11-09T15:50:31.769657', 
+    '2023-11-09T15:50:31.769658', 
+    6868, 
+    'TS', 
+    '과학', 
+    '35446f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    260, 
+    '2023-11-09T15:50:31.770010', 
+    '2023-11-09T15:50:31.770011', 
+    4361, 
+    'TS', 
+    '바다', 
+    '75b8d1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    261, 
+    '2023-11-09T15:50:31.770089', 
+    '2023-11-09T15:50:31.770090', 
+    5247, 
+    'JAVA', 
+    '나무', 
+    '6674f7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    262, 
+    '2023-11-09T15:50:31.770173', 
+    '2023-11-09T15:50:31.770174', 
+    7359, 
+    'GO', 
+    '과일', 
+    'a50aad'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    263, 
+    '2023-11-09T15:50:31.770243', 
+    '2023-11-09T15:50:31.770244', 
+    4389, 
+    'KOTLIN', 
+    '가족', 
+    '07ee76'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    264, 
+    '2023-11-09T15:50:31.770395', 
+    '2023-11-09T15:50:31.770397', 
+    9653, 
+    'TS', 
+    '도전', 
+    'dee245'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    265, 
+    '2023-11-09T15:50:31.770484', 
+    '2023-11-09T15:50:31.770484', 
+    5580, 
+    'JAVA', 
+    '야구', 
+    '75b3e6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    266, 
+    '2023-11-09T15:50:31.770837', 
+    '2023-11-09T15:50:31.770838', 
+    9960, 
+    'TS', 
+    '과거', 
+    '869fe4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    267, 
+    '2023-11-09T15:50:31.772091', 
+    '2023-11-09T15:50:31.772121', 
+    7470, 
+    'GO', 
+    '평화', 
+    '630be4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    268, 
+    '2023-11-09T15:50:31.772886', 
+    '2023-11-09T15:50:31.772887', 
+    2961, 
+    'TS', 
+    '영화', 
+    '6f2cea'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    269, 
+    '2023-11-09T15:50:31.772983', 
+    '2023-11-09T15:50:31.772984', 
+    424, 
+    'JAVA', 
+    '올림픽', 
+    '13ccd6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    270, 
+    '2023-11-09T15:50:31.773063', 
+    '2023-11-09T15:50:31.773064', 
+    4341, 
+    'TS', 
+    '미래', 
+    'c92d66'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    271, 
+    '2023-11-09T15:50:31.773131', 
+    '2023-11-09T15:50:31.773132', 
+    4122, 
+    'KOTLIN', 
+    '가족', 
+    '1c0266'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    272, 
+    '2023-11-09T15:50:31.773199', 
+    '2023-11-09T15:50:31.773200', 
+    2622, 
+    'KOTLIN', 
+    '물', 
+    '308d40'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    273, 
+    '2023-11-09T15:50:31.774216', 
+    '2023-11-09T15:50:31.774221', 
+    1400, 
+    'KOTLIN', 
+    '여행가', 
+    '9836b4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    274, 
+    '2023-11-09T15:50:31.774634', 
+    '2023-11-09T15:50:31.774637', 
+    3968, 
+    'TS', 
+    '발견', 
+    '54b182'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    275, 
+    '2023-11-09T15:50:31.774725', 
+    '2023-11-09T15:50:31.774726', 
+    610, 
+    'JAVA', 
+    '산책', 
+    '8d7b1d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    276, 
+    '2023-11-09T15:50:31.774796', 
+    '2023-11-09T15:50:31.774799', 
+    2340, 
+    'JAVA', 
+    '친구', 
+    '0374da'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    277, 
+    '2023-11-09T15:50:31.774875', 
+    '2023-11-09T15:50:31.774876', 
+    8677, 
+    'JAVA', 
+    '선원', 
+    '42530e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    278, 
+    '2023-11-09T15:50:31.775055', 
+    '2023-11-09T15:50:31.775056', 
+    3558, 
+    'GO', 
+    '통신', 
+    'a3bb97'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    279, 
+    '2023-11-09T15:50:31.775581', 
+    '2023-11-09T15:50:31.775582', 
+    9343, 
+    'GO', 
+    '눈', 
+    '72b235'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    280, 
+    '2023-11-09T15:50:31.776065', 
+    '2023-11-09T15:50:31.776067', 
+    2829, 
+    'JAVA', 
+    '여행', 
+    'c01815'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    281, 
+    '2023-11-09T15:50:31.776377', 
+    '2023-11-09T15:50:31.776378', 
+    5747, 
+    'KOTLIN', 
+    '산책', 
+    '863c7a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    282, 
+    '2023-11-09T15:50:31.776548', 
+    '2023-11-09T15:50:31.776549', 
+    2867, 
+    'JAVA', 
+    '현재', 
+    '7afbc9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    283, 
+    '2023-11-09T15:50:31.776620', 
+    '2023-11-09T15:50:31.776620', 
+    9662, 
+    'KOTLIN', 
+    '축구', 
+    '1c8d57'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    284, 
+    '2023-11-09T15:50:31.776694', 
+    '2023-11-09T15:50:31.776695', 
+    8192, 
+    'TS', 
+    '발명', 
+    '9fcd7d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    285, 
+    '2023-11-09T15:50:31.776751', 
+    '2023-11-09T15:50:31.776752', 
+    4246, 
+    'GO', 
+    '엔지니어', 
+    'ce6f57'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    286, 
+    '2023-11-09T15:50:31.776819', 
+    '2023-11-09T15:50:31.776819', 
+    5009, 
+    'TS', 
+    '바다', 
+    '3000bf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    287, 
+    '2023-11-09T15:50:31.776880', 
+    '2023-11-09T15:50:31.776881', 
+    5589, 
+    'TS', 
+    '마을', 
+    'e00ca8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    288, 
+    '2023-11-09T15:50:31.776937', 
+    '2023-11-09T15:50:31.776938', 
+    2020, 
+    'JAVA', 
+    '여가', 
+    'c2223a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    289, 
+    '2023-11-09T15:50:31.777024', 
+    '2023-11-09T15:50:31.777025', 
+    7864, 
+    'TS', 
+    '야구', 
+    'd4712e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    290, 
+    '2023-11-09T15:50:31.777107', 
+    '2023-11-09T15:50:31.777108', 
+    6639, 
+    'GO', 
+    '우주', 
+    '78a0cd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    291, 
+    '2023-11-09T15:50:31.777168', 
+    '2023-11-09T15:50:31.777169', 
+    2875, 
+    'KOTLIN', 
+    '과거', 
+    '7eb7c9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    292, 
+    '2023-11-09T15:50:31.777233', 
+    '2023-11-09T15:50:31.777233', 
+    136, 
+    'TS', 
+    '책', 
+    '0fa9d1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    293, 
+    '2023-11-09T15:50:31.777292', 
+    '2023-11-09T15:50:31.777293', 
+    8626, 
+    'KOTLIN', 
+    '작가', 
+    'd8e5bf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    294, 
+    '2023-11-09T15:50:31.777352', 
+    '2023-11-09T15:50:31.777353', 
+    4485, 
+    'GO', 
+    '직장', 
+    '1c2a86'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    295, 
+    '2023-11-09T15:50:31.777418', 
+    '2023-11-09T15:50:31.777419', 
+    9698, 
+    'KOTLIN', 
+    '게임', 
+    '588e6c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    296, 
+    '2023-11-09T15:50:31.777477', 
+    '2023-11-09T15:50:31.777478', 
+    5238, 
+    'JAVA', 
+    '과일', 
+    '18a00a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    297, 
+    '2023-11-09T15:50:31.777535', 
+    '2023-11-09T15:50:31.777535', 
+    1114, 
+    'KOTLIN', 
+    '기쁨', 
+    '207e2e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    298, 
+    '2023-11-09T15:50:31.777595', 
+    '2023-11-09T15:50:31.777596', 
+    6760, 
+    'TS', 
+    '운동', 
+    'c2a5df'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    299, 
+    '2023-11-09T15:50:31.777650', 
+    '2023-11-09T15:50:31.777650', 
+    8636, 
+    'GO', 
+    '채소', 
+    'a10135'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    300, 
+    '2023-11-09T15:50:31.777746', 
+    '2023-11-09T15:50:31.777747', 
+    2463, 
+    'GO', 
+    '산', 
+    'e62e92'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    301, 
+    '2023-11-09T15:50:31.777801', 
+    '2023-11-09T15:50:31.777802', 
+    9026, 
+    'GO', 
+    '취미', 
+    '751667'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    302, 
+    '2023-11-09T15:50:31.777859', 
+    '2023-11-09T15:50:31.777860', 
+    8924, 
+    'KOTLIN', 
+    '야구', 
+    'f2a382'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    303, 
+    '2023-11-09T15:50:31.777917', 
+    '2023-11-09T15:50:31.777917', 
+    4462, 
+    'TS', 
+    '사랑', 
+    '65f583'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    304, 
+    '2023-11-09T15:50:31.778045', 
+    '2023-11-09T15:50:31.778046', 
+    6623, 
+    'KOTLIN', 
+    '하늘', 
+    'fc16be'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    305, 
+    '2023-11-09T15:50:31.778103', 
+    '2023-11-09T15:50:31.778103', 
+    1172, 
+    'GO', 
+    '영화', 
+    '2c060c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    306, 
+    '2023-11-09T15:50:31.778166', 
+    '2023-11-09T15:50:31.778167', 
+    1502, 
+    'TS', 
+    '강', 
+    '7c6ff6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    307, 
+    '2023-11-09T15:50:31.778245', 
+    '2023-11-09T15:50:31.778246', 
+    3407, 
+    'TS', 
+    '선원', 
+    '509d03'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    308, 
+    '2023-11-09T15:50:31.778304', 
+    '2023-11-09T15:50:31.778304', 
+    1969, 
+    'KOTLIN', 
+    '채소', 
+    'f21716'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    309, 
+    '2023-11-09T15:50:31.778361', 
+    '2023-11-09T15:50:31.778362', 
+    7848, 
+    'JAVA', 
+    '하늘', 
+    'ec6ec7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    310, 
+    '2023-11-09T15:50:31.778427', 
+    '2023-11-09T15:50:31.778427', 
+    9996, 
+    'TS', 
+    '친구', 
+    '2b8d1e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    311, 
+    '2023-11-09T15:50:31.778482', 
+    '2023-11-09T15:50:31.778482', 
+    46, 
+    'KOTLIN', 
+    '나무', 
+    '8bc484'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    312, 
+    '2023-11-09T15:50:31.778541', 
+    '2023-11-09T15:50:31.778543', 
+    518, 
+    'TS', 
+    '여행가', 
+    '46f80a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    313, 
+    '2023-11-09T15:50:31.778600', 
+    '2023-11-09T15:50:31.778601', 
+    6781, 
+    'GO', 
+    '성인', 
+    '42bc35'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    314, 
+    '2023-11-09T15:50:31.778657', 
+    '2023-11-09T15:50:31.778657', 
+    4050, 
+    'JAVA', 
+    '산책', 
+    '1ba143'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    315, 
+    '2023-11-09T15:50:31.778712', 
+    '2023-11-09T15:50:31.778713', 
+    4263, 
+    'TS', 
+    '학교', 
+    '1944cc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    316, 
+    '2023-11-09T15:50:31.778765', 
+    '2023-11-09T15:50:31.778766', 
+    2069, 
+    'JAVA', 
+    '친구', 
+    'e9948a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    317, 
+    '2023-11-09T15:50:31.778823', 
+    '2023-11-09T15:50:31.778823', 
+    8491, 
+    'TS', 
+    '게임', 
+    '0335ce'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    318, 
+    '2023-11-09T15:50:31.778880', 
+    '2023-11-09T15:50:31.778880', 
+    6777, 
+    'TS', 
+    '미래', 
+    '273ff5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    319, 
+    '2023-11-09T15:50:31.778937', 
+    '2023-11-09T15:50:31.778937', 
+    8379, 
+    'TS', 
+    '탐험', 
+    'a0c357'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    320, 
+    '2023-11-09T15:50:31.778993', 
+    '2023-11-09T15:50:31.778993', 
+    3058, 
+    'TS', 
+    '소망', 
+    '6e7441'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    321, 
+    '2023-11-09T15:50:31.779044', 
+    '2023-11-09T15:50:31.779045', 
+    8737, 
+    'TS', 
+    '글', 
+    'c9af63'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    322, 
+    '2023-11-09T15:50:31.779110', 
+    '2023-11-09T15:50:31.779110', 
+    2091, 
+    'JAVA', 
+    '컴퓨터', 
+    '4f2ec3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    323, 
+    '2023-11-09T15:50:31.779177', 
+    '2023-11-09T15:50:31.779177', 
+    5363, 
+    'JAVA', 
+    '글', 
+    '72d16f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    324, 
+    '2023-11-09T15:50:31.779232', 
+    '2023-11-09T15:50:31.779232', 
+    5093, 
+    'JAVA', 
+    '작가', 
+    'ecb98b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    325, 
+    '2023-11-09T15:50:31.779288', 
+    '2023-11-09T15:50:31.779289', 
+    2211, 
+    'JAVA', 
+    '가족', 
+    '73e820'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    326, 
+    '2023-11-09T15:50:31.779339', 
+    '2023-11-09T15:50:31.779340', 
+    8955, 
+    'KOTLIN', 
+    '엔지니어', 
+    '675d41'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    327, 
+    '2023-11-09T15:50:31.779395', 
+    '2023-11-09T15:50:31.779396', 
+    3190, 
+    'GO', 
+    '우주', 
+    'cb46d7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    328, 
+    '2023-11-09T15:50:31.779449', 
+    '2023-11-09T15:50:31.779450', 
+    8606, 
+    'JAVA', 
+    '선원', 
+    '814c36'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    329, 
+    '2023-11-09T15:50:31.779505', 
+    '2023-11-09T15:50:31.779505', 
+    6554, 
+    'GO', 
+    '선생님', 
+    '48d848'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    330, 
+    '2023-11-09T15:50:31.779561', 
+    '2023-11-09T15:50:31.779562', 
+    7093, 
+    'TS', 
+    '꽃', 
+    '3a329c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    331, 
+    '2023-11-09T15:50:31.779613', 
+    '2023-11-09T15:50:31.779613', 
+    5077, 
+    'KOTLIN', 
+    '취미', 
+    '3b2a4a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    332, 
+    '2023-11-09T15:50:31.779671', 
+    '2023-11-09T15:50:31.779672', 
+    4420, 
+    'JAVA', 
+    '학생', 
+    '5a8d43'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    333, 
+    '2023-11-09T15:50:31.780231', 
+    '2023-11-09T15:50:31.780232', 
+    9693, 
+    'TS', 
+    '스포츠', 
+    '57ac78'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    334, 
+    '2023-11-09T15:50:31.784602', 
+    '2023-11-09T15:50:31.784604', 
+    7350, 
+    'GO', 
+    '역사', 
+    '8296e2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    335, 
+    '2023-11-09T15:50:31.786035', 
+    '2023-11-09T15:50:31.786036', 
+    153, 
+    'JAVA', 
+    '학교', 
+    '3c2959'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    336, 
+    '2023-11-09T15:50:31.786429', 
+    '2023-11-09T15:50:31.786430', 
+    8208, 
+    'TS', 
+    '통신', 
+    'e98fcb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    337, 
+    '2023-11-09T15:50:31.786519', 
+    '2023-11-09T15:50:31.786521', 
+    5785, 
+    'JAVA', 
+    '야구', 
+    '5a6b4a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    338, 
+    '2023-11-09T15:50:31.786598', 
+    '2023-11-09T15:50:31.786599', 
+    2382, 
+    'TS', 
+    '탐험', 
+    'cf3a00'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    339, 
+    '2023-11-09T15:50:31.786665', 
+    '2023-11-09T15:50:31.786665', 
+    7273, 
+    'TS', 
+    '미래', 
+    'cd6faf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    340, 
+    '2023-11-09T15:50:31.786724', 
+    '2023-11-09T15:50:31.786725', 
+    9870, 
+    'TS', 
+    '운동', 
+    '3f28cd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    341, 
+    '2023-11-09T15:50:31.786780', 
+    '2023-11-09T15:50:31.786781', 
+    6137, 
+    'KOTLIN', 
+    '과거', 
+    '81cc55'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    342, 
+    '2023-11-09T15:50:31.786837', 
+    '2023-11-09T15:50:31.786838', 
+    6810, 
+    'GO', 
+    '눈', 
+    '83af15'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    343, 
+    '2023-11-09T15:50:31.786898', 
+    '2023-11-09T15:50:31.786899', 
+    8928, 
+    'GO', 
+    '영화', 
+    'cb9d39'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    344, 
+    '2023-11-09T15:50:31.786956', 
+    '2023-11-09T15:50:31.786957', 
+    1335, 
+    'JAVA', 
+    '농구', 
+    '3f1fc8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    345, 
+    '2023-11-09T15:50:31.787012', 
+    '2023-11-09T15:50:31.787013', 
+    3941, 
+    'JAVA', 
+    '군인', 
+    '2f37e3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    346, 
+    '2023-11-09T15:50:31.787064', 
+    '2023-11-09T15:50:31.787064', 
+    3224, 
+    'GO', 
+    '노년', 
+    '18a9c4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    347, 
+    '2023-11-09T15:50:31.787125', 
+    '2023-11-09T15:50:31.787126', 
+    4841, 
+    'KOTLIN', 
+    '자연', 
+    '9f3f69'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    348, 
+    '2023-11-09T15:50:31.787185', 
+    '2023-11-09T15:50:31.787186', 
+    3913, 
+    'KOTLIN', 
+    '자동차', 
+    '88ded9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    349, 
+    '2023-11-09T15:50:31.787242', 
+    '2023-11-09T15:50:31.787243', 
+    7926, 
+    'KOTLIN', 
+    '채소', 
+    '09c503'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    350, 
+    '2023-11-09T15:50:31.787359', 
+    '2023-11-09T15:50:31.787360', 
+    9233, 
+    'KOTLIN', 
+    '군인', 
+    '7d076f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    351, 
+    '2023-11-09T15:50:31.787413', 
+    '2023-11-09T15:50:31.787414', 
+    9364, 
+    'JAVA', 
+    '과학자', 
+    '24a6a2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    352, 
+    '2023-11-09T15:50:31.787468', 
+    '2023-11-09T15:50:31.787469', 
+    4727, 
+    'TS', 
+    '바람', 
+    '17835d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    353, 
+    '2023-11-09T15:50:31.787527', 
+    '2023-11-09T15:50:31.787528', 
+    5723, 
+    'TS', 
+    '현재', 
+    '4b85a1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    354, 
+    '2023-11-09T15:50:31.787592', 
+    '2023-11-09T15:50:31.787593', 
+    4639, 
+    'TS', 
+    '평화', 
+    '38d621'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    355, 
+    '2023-11-09T15:50:31.787650', 
+    '2023-11-09T15:50:31.787650', 
+    2108, 
+    'KOTLIN', 
+    '직장', 
+    '299865'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    356, 
+    '2023-11-09T15:50:31.787706', 
+    '2023-11-09T15:50:31.787707', 
+    3027, 
+    'TS', 
+    '요리', 
+    'c9443a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    357, 
+    '2023-11-09T15:50:31.787767', 
+    '2023-11-09T15:50:31.787768', 
+    9691, 
+    'TS', 
+    '노인', 
+    'f1d228'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    358, 
+    '2023-11-09T15:50:31.787826', 
+    '2023-11-09T15:50:31.787827', 
+    2893, 
+    'GO', 
+    '변호사', 
+    'd588db'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    359, 
+    '2023-11-09T15:50:31.787880', 
+    '2023-11-09T15:50:31.787881', 
+    9417, 
+    'JAVA', 
+    '건축가', 
+    'efe9c3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    360, 
+    '2023-11-09T15:50:31.787934', 
+    '2023-11-09T15:50:31.787935', 
+    8075, 
+    'KOTLIN', 
+    '친구', 
+    '74e13c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    361, 
+    '2023-11-09T15:50:31.787987', 
+    '2023-11-09T15:50:31.787987', 
+    2839, 
+    'GO', 
+    '인터넷', 
+    '4f0832'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    362, 
+    '2023-11-09T15:50:31.788048', 
+    '2023-11-09T15:50:31.788048', 
+    8099, 
+    'KOTLIN', 
+    '군인', 
+    '344f5c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    363, 
+    '2023-11-09T15:50:31.788101', 
+    '2023-11-09T15:50:31.788102', 
+    3322, 
+    'TS', 
+    '컴퓨터', 
+    '907e51'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    364, 
+    '2023-11-09T15:50:31.788156', 
+    '2023-11-09T15:50:31.788156', 
+    2699, 
+    'TS', 
+    '파일럿', 
+    '8d8fac'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    365, 
+    '2023-11-09T15:50:31.788208', 
+    '2023-11-09T15:50:31.788210', 
+    9930, 
+    'JAVA', 
+    '빛', 
+    '45a197'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    366, 
+    '2023-11-09T15:50:31.788271', 
+    '2023-11-09T15:50:31.788271', 
+    7979, 
+    'GO', 
+    '요리', 
+    '390086'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    367, 
+    '2023-11-09T15:50:31.788326', 
+    '2023-11-09T15:50:31.788326', 
+    9406, 
+    'JAVA', 
+    '글', 
+    '69656a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    368, 
+    '2023-11-09T15:50:31.788380', 
+    '2023-11-09T15:50:31.788380', 
+    4107, 
+    'TS', 
+    '발견', 
+    'cfedd2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    369, 
+    '2023-11-09T15:50:31.788431', 
+    '2023-11-09T15:50:31.788433', 
+    3646, 
+    'TS', 
+    '교통', 
+    'f46efc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    370, 
+    '2023-11-09T15:50:31.788489', 
+    '2023-11-09T15:50:31.788489', 
+    4729, 
+    'TS', 
+    '태양', 
+    '659ef5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    371, 
+    '2023-11-09T15:50:31.788553', 
+    '2023-11-09T15:50:31.788554', 
+    5697, 
+    'TS', 
+    '산책', 
+    '632da7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    372, 
+    '2023-11-09T15:50:31.788604', 
+    '2023-11-09T15:50:31.788605', 
+    6036, 
+    'KOTLIN', 
+    '요리', 
+    '96778c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    373, 
+    '2023-11-09T15:50:31.788666', 
+    '2023-11-09T15:50:31.788667', 
+    6521, 
+    'KOTLIN', 
+    '꽃', 
+    '504752'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    374, 
+    '2023-11-09T15:50:31.788720', 
+    '2023-11-09T15:50:31.788721', 
+    9174, 
+    'JAVA', 
+    '가족', 
+    'a3d8b9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    375, 
+    '2023-11-09T15:50:31.788771', 
+    '2023-11-09T15:50:31.788772', 
+    8356, 
+    'TS', 
+    '발견', 
+    '540eff'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    376, 
+    '2023-11-09T15:50:31.788821', 
+    '2023-11-09T15:50:31.788821', 
+    5785, 
+    'KOTLIN', 
+    '학교', 
+    'e84e70'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    377, 
+    '2023-11-09T15:50:31.788873', 
+    '2023-11-09T15:50:31.788873', 
+    9273, 
+    'JAVA', 
+    '강', 
+    'a2a9ad'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    378, 
+    '2023-11-09T15:50:31.788932', 
+    '2023-11-09T15:50:31.788933', 
+    9376, 
+    'GO', 
+    '직장', 
+    '9730df'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    379, 
+    '2023-11-09T15:50:31.788987', 
+    '2023-11-09T15:50:31.788987', 
+    982, 
+    'TS', 
+    '태양', 
+    '0680eb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    380, 
+    '2023-11-09T15:50:31.789041', 
+    '2023-11-09T15:50:31.789042', 
+    7668, 
+    'KOTLIN', 
+    '게임', 
+    'f2c98a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    381, 
+    '2023-11-09T15:50:31.789089', 
+    '2023-11-09T15:50:31.789090', 
+    7741, 
+    'JAVA', 
+    '꿈', 
+    'af61a4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    382, 
+    '2023-11-09T15:50:31.789142', 
+    '2023-11-09T15:50:31.789142', 
+    9796, 
+    'JAVA', 
+    '여행', 
+    'a56098'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    383, 
+    '2023-11-09T15:50:31.789289', 
+    '2023-11-09T15:50:31.789290', 
+    821, 
+    'JAVA', 
+    '별', 
+    'e13850'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    384, 
+    '2023-11-09T15:50:31.790049', 
+    '2023-11-09T15:50:31.790051', 
+    4610, 
+    'JAVA', 
+    '자연', 
+    'd011be'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    385, 
+    '2023-11-09T15:50:31.790656', 
+    '2023-11-09T15:50:31.790657', 
+    7404, 
+    'GO', 
+    '구름', 
+    'c1dc24'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    386, 
+    '2023-11-09T15:50:31.791838', 
+    '2023-11-09T15:50:31.791839', 
+    7149, 
+    'KOTLIN', 
+    '배구', 
+    'e50924'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    387, 
+    '2023-11-09T15:50:31.793225', 
+    '2023-11-09T15:50:31.793227', 
+    9730, 
+    'KOTLIN', 
+    '평화', 
+    'c8e7bf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    388, 
+    '2023-11-09T15:50:31.794045', 
+    '2023-11-09T15:50:31.794059', 
+    7845, 
+    'TS', 
+    '축구', 
+    '68ecf6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    389, 
+    '2023-11-09T15:50:31.794200', 
+    '2023-11-09T15:50:31.794201', 
+    6075, 
+    'GO', 
+    '노년', 
+    '5bb42d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    390, 
+    '2023-11-09T15:50:31.794266', 
+    '2023-11-09T15:50:31.794266', 
+    9857, 
+    'TS', 
+    '비행기', 
+    '10718e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    391, 
+    '2023-11-09T15:50:31.794326', 
+    '2023-11-09T15:50:31.794327', 
+    2171, 
+    'JAVA', 
+    '여가', 
+    '4e76e9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    392, 
+    '2023-11-09T15:50:31.794386', 
+    '2023-11-09T15:50:31.794386', 
+    7283, 
+    'KOTLIN', 
+    '별', 
+    '9b6ada'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    393, 
+    '2023-11-09T15:50:31.794444', 
+    '2023-11-09T15:50:31.794445', 
+    3280, 
+    'TS', 
+    '축제', 
+    'a755a2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    394, 
+    '2023-11-09T15:50:31.794501', 
+    '2023-11-09T15:50:31.794502', 
+    4926, 
+    'JAVA', 
+    '야구', 
+    'a009a7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    395, 
+    '2023-11-09T15:50:31.794682', 
+    '2023-11-09T15:50:31.794683', 
+    2223, 
+    'JAVA', 
+    '스포츠', 
+    'f8d116'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    396, 
+    '2023-11-09T15:50:31.794783', 
+    '2023-11-09T15:50:31.794784', 
+    6299, 
+    'JAVA', 
+    '가족', 
+    'ae8f9a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    397, 
+    '2023-11-09T15:50:31.794840', 
+    '2023-11-09T15:50:31.794841', 
+    6692, 
+    'GO', 
+    '발견', 
+    '3fa97f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    398, 
+    '2023-11-09T15:50:31.794896', 
+    '2023-11-09T15:50:31.794896', 
+    2645, 
+    'GO', 
+    '운동', 
+    'a85ea7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    399, 
+    '2023-11-09T15:50:31.794952', 
+    '2023-11-09T15:50:31.794952', 
+    8089, 
+    'TS', 
+    '수학', 
+    'bcd991'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    400, 
+    '2023-11-09T15:50:31.795006', 
+    '2023-11-09T15:50:31.795007', 
+    5099, 
+    'GO', 
+    '파일럿', 
+    '2945d5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    401, 
+    '2023-11-09T15:50:31.795062', 
+    '2023-11-09T15:50:31.795062', 
+    6665, 
+    'GO', 
+    '운동', 
+    'deec3a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    402, 
+    '2023-11-09T15:50:31.795129', 
+    '2023-11-09T15:50:31.795130', 
+    4360, 
+    'KOTLIN', 
+    '영화', 
+    '06f7fe'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    403, 
+    '2023-11-09T15:50:31.795194', 
+    '2023-11-09T15:50:31.795195', 
+    6667, 
+    'TS', 
+    '미소', 
+    '94e954'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    404, 
+    '2023-11-09T15:50:31.795251', 
+    '2023-11-09T15:50:31.795251', 
+    4488, 
+    'KOTLIN', 
+    '구름', 
+    '1ed707'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    405, 
+    '2023-11-09T15:50:31.795309', 
+    '2023-11-09T15:50:31.795310', 
+    9569, 
+    'TS', 
+    '여행', 
+    '944809'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    406, 
+    '2023-11-09T15:50:31.795360', 
+    '2023-11-09T15:50:31.795362', 
+    5723, 
+    'JAVA', 
+    '바다', 
+    '0954c2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    407, 
+    '2023-11-09T15:50:31.795416', 
+    '2023-11-09T15:50:31.795417', 
+    4222, 
+    'GO', 
+    '구름', 
+    'b82939'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    408, 
+    '2023-11-09T15:50:31.795472', 
+    '2023-11-09T15:50:31.795472', 
+    7373, 
+    'TS', 
+    '그림', 
+    '4c60f1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    409, 
+    '2023-11-09T15:50:31.795528', 
+    '2023-11-09T15:50:31.795529', 
+    869, 
+    'TS', 
+    '우주', 
+    'cdb8bb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    410, 
+    '2023-11-09T15:50:31.795596', 
+    '2023-11-09T15:50:31.795597', 
+    290, 
+    'TS', 
+    '하늘', 
+    '453aeb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    411, 
+    '2023-11-09T15:50:31.795646', 
+    '2023-11-09T15:50:31.795646', 
+    8269, 
+    'KOTLIN', 
+    '미래', 
+    '707332'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    412, 
+    '2023-11-09T15:50:31.795715', 
+    '2023-11-09T15:50:31.795715', 
+    1972, 
+    'KOTLIN', 
+    '선생님', 
+    '9d7f6b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    413, 
+    '2023-11-09T15:50:31.795774', 
+    '2023-11-09T15:50:31.795774', 
+    2769, 
+    'JAVA', 
+    '산', 
+    '27e5df'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    414, 
+    '2023-11-09T15:50:31.795862', 
+    '2023-11-09T15:50:31.795863', 
+    526, 
+    'KOTLIN', 
+    '젊음', 
+    'c3c41c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    415, 
+    '2023-11-09T15:50:31.796443', 
+    '2023-11-09T15:50:31.796443', 
+    6955, 
+    'KOTLIN', 
+    '영화', 
+    '9f2f0c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    416, 
+    '2023-11-09T15:50:31.797028', 
+    '2023-11-09T15:50:31.797029', 
+    4968, 
+    'JAVA', 
+    '학생', 
+    'b1985c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    417, 
+    '2023-11-09T15:50:31.797315', 
+    '2023-11-09T15:50:31.797316', 
+    6894, 
+    'KOTLIN', 
+    '젊음', 
+    '040c0f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    418, 
+    '2023-11-09T15:50:31.797388', 
+    '2023-11-09T15:50:31.797388', 
+    5387, 
+    'TS', 
+    '스포츠', 
+    '80462b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    419, 
+    '2023-11-09T15:50:31.797451', 
+    '2023-11-09T15:50:31.797451', 
+    7798, 
+    'JAVA', 
+    '마을', 
+    '01fed9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    420, 
+    '2023-11-09T15:50:31.797510', 
+    '2023-11-09T15:50:31.797511', 
+    8268, 
+    'JAVA', 
+    '우주', 
+    '92f692'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    421, 
+    '2023-11-09T15:50:31.797560', 
+    '2023-11-09T15:50:31.797561', 
+    6019, 
+    'GO', 
+    '경찰', 
+    '83f3b7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    422, 
+    '2023-11-09T15:50:31.797617', 
+    '2023-11-09T15:50:31.797618', 
+    5706, 
+    'GO', 
+    '소방관', 
+    '6d0f2b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    423, 
+    '2023-11-09T15:50:31.797675', 
+    '2023-11-09T15:50:31.797676', 
+    1148, 
+    'JAVA', 
+    '평화', 
+    '6da0ab'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    424, 
+    '2023-11-09T15:50:31.797729', 
+    '2023-11-09T15:50:31.797730', 
+    1643, 
+    'KOTLIN', 
+    '과일', 
+    '85c7d7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    425, 
+    '2023-11-09T15:50:31.797783', 
+    '2023-11-09T15:50:31.797784', 
+    6276, 
+    'JAVA', 
+    '바다', 
+    '1c556b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    426, 
+    '2023-11-09T15:50:31.797839', 
+    '2023-11-09T15:50:31.797840', 
+    7114, 
+    'TS', 
+    '도전', 
+    'ebc6c3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    427, 
+    '2023-11-09T15:50:31.797891', 
+    '2023-11-09T15:50:31.797893', 
+    4412, 
+    'TS', 
+    '바람', 
+    '17f55a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    428, 
+    '2023-11-09T15:50:31.797955', 
+    '2023-11-09T15:50:31.797956', 
+    605, 
+    'TS', 
+    '빛', 
+    '40d1a5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    429, 
+    '2023-11-09T15:50:31.798008', 
+    '2023-11-09T15:50:31.798009', 
+    3407, 
+    'GO', 
+    '학생', 
+    '075341'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    430, 
+    '2023-11-09T15:50:31.798060', 
+    '2023-11-09T15:50:31.798061', 
+    3737, 
+    'KOTLIN', 
+    '구름', 
+    '05291a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    431, 
+    '2023-11-09T15:50:31.798135', 
+    '2023-11-09T15:50:31.798136', 
+    3117, 
+    'GO', 
+    '태양', 
+    '280e03'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    432, 
+    '2023-11-09T15:50:31.798187', 
+    '2023-11-09T15:50:31.798187', 
+    5049, 
+    'JAVA', 
+    '공부', 
+    'b870ac'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    433, 
+    '2023-11-09T15:50:31.798249', 
+    '2023-11-09T15:50:31.798250', 
+    3446, 
+    'KOTLIN', 
+    '스마트폰', 
+    '86ac35'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    434, 
+    '2023-11-09T15:50:31.798304', 
+    '2023-11-09T15:50:31.798305', 
+    342, 
+    'KOTLIN', 
+    '소방관', 
+    '50c333'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    435, 
+    '2023-11-09T15:50:31.798359', 
+    '2023-11-09T15:50:31.798359', 
+    6011, 
+    'JAVA', 
+    '스포츠', 
+    '2ea0ea'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    436, 
+    '2023-11-09T15:50:31.798407', 
+    '2023-11-09T15:50:31.798408', 
+    9500, 
+    'TS', 
+    '산책', 
+    'f87430'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    437, 
+    '2023-11-09T15:50:31.798457', 
+    '2023-11-09T15:50:31.798458', 
+    7736, 
+    'GO', 
+    '축구', 
+    'ed4f08'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    438, 
+    '2023-11-09T15:50:31.798509', 
+    '2023-11-09T15:50:31.798510', 
+    2623, 
+    'GO', 
+    '음악', 
+    'f69f37'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    439, 
+    '2023-11-09T15:50:31.798562', 
+    '2023-11-09T15:50:31.798562', 
+    2277, 
+    'JAVA', 
+    '기쁨', 
+    'df9ee5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    440, 
+    '2023-11-09T15:50:31.798614', 
+    '2023-11-09T15:50:31.798614', 
+    9171, 
+    'KOTLIN', 
+    '우주', 
+    'ef5d10'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    441, 
+    '2023-11-09T15:50:31.798665', 
+    '2023-11-09T15:50:31.798666', 
+    190, 
+    'KOTLIN', 
+    '발명', 
+    '34f2ba'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    442, 
+    '2023-11-09T15:50:31.798721', 
+    '2023-11-09T15:50:31.798722', 
+    8430, 
+    'JAVA', 
+    '발명', 
+    '2bf952'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    443, 
+    '2023-11-09T15:50:31.798774', 
+    '2023-11-09T15:50:31.798775', 
+    8833, 
+    'KOTLIN', 
+    '과거', 
+    '6beaa1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    444, 
+    '2023-11-09T15:50:31.798827', 
+    '2023-11-09T15:50:31.798828', 
+    1908, 
+    'JAVA', 
+    '건축가', 
+    '6d89cc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    445, 
+    '2023-11-09T15:50:31.798883', 
+    '2023-11-09T15:50:31.798884', 
+    600, 
+    'JAVA', 
+    '아동', 
+    'f4e2b6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    446, 
+    '2023-11-09T15:50:31.798931', 
+    '2023-11-09T15:50:31.798931', 
+    3392, 
+    'KOTLIN', 
+    '축구', 
+    '2a0c9a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    447, 
+    '2023-11-09T15:50:31.798983', 
+    '2023-11-09T15:50:31.798983', 
+    6386, 
+    'TS', 
+    '수학', 
+    '53e59d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    448, 
+    '2023-11-09T15:50:31.799033', 
+    '2023-11-09T15:50:31.799034', 
+    4518, 
+    'KOTLIN', 
+    '컴퓨터', 
+    'd3fdd1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    449, 
+    '2023-11-09T15:50:31.799085', 
+    '2023-11-09T15:50:31.799085', 
+    194, 
+    'TS', 
+    '발명', 
+    '1168ba'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    450, 
+    '2023-11-09T15:50:31.799140', 
+    '2023-11-09T15:50:31.799141', 
+    5229, 
+    'TS', 
+    '노인', 
+    '1e619f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    451, 
+    '2023-11-09T15:50:31.799186', 
+    '2023-11-09T15:50:31.799187', 
+    7546, 
+    'KOTLIN', 
+    '과거', 
+    '0fa26f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    452, 
+    '2023-11-09T15:50:31.799238', 
+    '2023-11-09T15:50:31.799239', 
+    6015, 
+    'TS', 
+    '경찰', 
+    'c1cff5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    453, 
+    '2023-11-09T15:50:31.799289', 
+    '2023-11-09T15:50:31.799290', 
+    2954, 
+    'GO', 
+    '직장', 
+    'c2cdf9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    454, 
+    '2023-11-09T15:50:31.799342', 
+    '2023-11-09T15:50:31.799343', 
+    3348, 
+    'GO', 
+    '희망', 
+    '735f43'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    455, 
+    '2023-11-09T15:50:31.799395', 
+    '2023-11-09T15:50:31.799396', 
+    4587, 
+    'TS', 
+    '배', 
+    'a2c9c7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    456, 
+    '2023-11-09T15:50:31.799445', 
+    '2023-11-09T15:50:31.799446', 
+    417, 
+    'GO', 
+    '가족', 
+    'e2ce4a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    457, 
+    '2023-11-09T15:50:31.799498', 
+    '2023-11-09T15:50:31.799499', 
+    2397, 
+    'KOTLIN', 
+    '운동', 
+    'd70f9c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    458, 
+    '2023-11-09T15:50:31.799554', 
+    '2023-11-09T15:50:31.799555', 
+    9709, 
+    'TS', 
+    '소망', 
+    '717ce5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    459, 
+    '2023-11-09T15:50:31.799608', 
+    '2023-11-09T15:50:31.799611', 
+    1663, 
+    'TS', 
+    '꿈', 
+    'fbc64e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    460, 
+    '2023-11-09T15:50:31.799671', 
+    '2023-11-09T15:50:31.799672', 
+    8105, 
+    'KOTLIN', 
+    '평화', 
+    '6eed4a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    461, 
+    '2023-11-09T15:50:31.799728', 
+    '2023-11-09T15:50:31.799729', 
+    6993, 
+    'KOTLIN', 
+    '파일럿', 
+    'a6530d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    462, 
+    '2023-11-09T15:50:31.799788', 
+    '2023-11-09T15:50:31.799789', 
+    3853, 
+    'KOTLIN', 
+    '물', 
+    '63ac44'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    463, 
+    '2023-11-09T15:50:31.799846', 
+    '2023-11-09T15:50:31.799847', 
+    8194, 
+    'TS', 
+    '과학자', 
+    '790a4d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    464, 
+    '2023-11-09T15:50:31.799901', 
+    '2023-11-09T15:50:31.799901', 
+    8309, 
+    'TS', 
+    '우주', 
+    'a450fc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    465, 
+    '2023-11-09T15:50:31.799955', 
+    '2023-11-09T15:50:31.799955', 
+    2927, 
+    'KOTLIN', 
+    '연구', 
+    'bfbb3a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    466, 
+    '2023-11-09T15:50:31.800005', 
+    '2023-11-09T15:50:31.800005', 
+    6217, 
+    'JAVA', 
+    '행복', 
+    'ecf4fe'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    467, 
+    '2023-11-09T15:50:31.800078', 
+    '2023-11-09T15:50:31.800078', 
+    2897, 
+    'GO', 
+    '배구', 
+    '09a642'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    468, 
+    '2023-11-09T15:50:31.800133', 
+    '2023-11-09T15:50:31.800133', 
+    9209, 
+    'JAVA', 
+    '작가', 
+    '46f825'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    469, 
+    '2023-11-09T15:50:31.800185', 
+    '2023-11-09T15:50:31.800185', 
+    5182, 
+    'TS', 
+    '과일', 
+    '2986ef'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    470, 
+    '2023-11-09T15:50:31.800259', 
+    '2023-11-09T15:50:31.800259', 
+    4280, 
+    'KOTLIN', 
+    '배구', 
+    '85823a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    471, 
+    '2023-11-09T15:50:31.800321', 
+    '2023-11-09T15:50:31.800322', 
+    9066, 
+    'KOTLIN', 
+    '공부', 
+    'f35e84'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    472, 
+    '2023-11-09T15:50:31.800374', 
+    '2023-11-09T15:50:31.800375', 
+    9569, 
+    'JAVA', 
+    '야구', 
+    '31f0a1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    473, 
+    '2023-11-09T15:50:31.800427', 
+    '2023-11-09T15:50:31.800427', 
+    4984, 
+    'TS', 
+    '엔지니어', 
+    'f3cbd4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    474, 
+    '2023-11-09T15:50:31.800478', 
+    '2023-11-09T15:50:31.800479', 
+    1843, 
+    'JAVA', 
+    '건축가', 
+    '49792f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    475, 
+    '2023-11-09T15:50:31.800530', 
+    '2023-11-09T15:50:31.800531', 
+    4067, 
+    'GO', 
+    '미소', 
+    '4dcadd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    476, 
+    '2023-11-09T15:50:31.800579', 
+    '2023-11-09T15:50:31.800580', 
+    2796, 
+    'KOTLIN', 
+    '회사', 
+    '9cd0a2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    477, 
+    '2023-11-09T15:50:31.800631', 
+    '2023-11-09T15:50:31.800631', 
+    3964, 
+    'GO', 
+    '축구', 
+    '59c8ff'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    478, 
+    '2023-11-09T15:50:31.800686', 
+    '2023-11-09T15:50:31.800687', 
+    6398, 
+    'KOTLIN', 
+    '회사', 
+    '56fefd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    479, 
+    '2023-11-09T15:50:31.800754', 
+    '2023-11-09T15:50:31.800754', 
+    2108, 
+    'JAVA', 
+    '하늘', 
+    '812f54'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    480, 
+    '2023-11-09T15:50:31.800812', 
+    '2023-11-09T15:50:31.800813', 
+    7492, 
+    'JAVA', 
+    '교통', 
+    '855371'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    481, 
+    '2023-11-09T15:50:31.800897', 
+    '2023-11-09T15:50:31.800898', 
+    5104, 
+    'JAVA', 
+    '선원', 
+    'b7cb7d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    482, 
+    '2023-11-09T15:50:31.800976', 
+    '2023-11-09T15:50:31.800977', 
+    5160, 
+    'GO', 
+    '도시', 
+    '985939'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    483, 
+    '2023-11-09T15:50:31.814322', 
+    '2023-11-09T15:50:31.814683', 
+    223, 
+    'KOTLIN', 
+    '자연', 
+    'f1662f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    484, 
+    '2023-11-09T15:50:31.819850', 
+    '2023-11-09T15:50:31.819852', 
+    1312, 
+    'JAVA', 
+    '운동', 
+    '40a75d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    485, 
+    '2023-11-09T15:50:31.821107', 
+    '2023-11-09T15:50:31.821108', 
+    4175, 
+    'JAVA', 
+    '배', 
+    '1df92e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    486, 
+    '2023-11-09T15:50:31.821493', 
+    '2023-11-09T15:50:31.821494', 
+    340, 
+    'GO', 
+    '가족', 
+    'edb48d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    487, 
+    '2023-11-09T15:50:31.821699', 
+    '2023-11-09T15:50:31.821700', 
+    6978, 
+    'GO', 
+    '발견', 
+    '3de574'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    488, 
+    '2023-11-09T15:50:31.821816', 
+    '2023-11-09T15:50:31.821817', 
+    6888, 
+    'GO', 
+    '직장', 
+    'dd4a9f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    489, 
+    '2023-11-09T15:50:31.821866', 
+    '2023-11-09T15:50:31.821867', 
+    2942, 
+    'GO', 
+    '희망', 
+    'b0c742'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    490, 
+    '2023-11-09T15:50:31.821916', 
+    '2023-11-09T15:50:31.821916', 
+    4011, 
+    'JAVA', 
+    '과거', 
+    '604619'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    491, 
+    '2023-11-09T15:50:31.822001', 
+    '2023-11-09T15:50:31.822002', 
+    9933, 
+    'GO', 
+    '음악', 
+    '723963'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    492, 
+    '2023-11-09T15:50:31.822056', 
+    '2023-11-09T15:50:31.822057', 
+    4745, 
+    'JAVA', 
+    '자동차', 
+    'b3a5d1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    493, 
+    '2023-11-09T15:50:31.822108', 
+    '2023-11-09T15:50:31.822109', 
+    7859, 
+    'GO', 
+    '연구', 
+    'bc344c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    494, 
+    '2023-11-09T15:50:31.822163', 
+    '2023-11-09T15:50:31.822164', 
+    8057, 
+    'GO', 
+    '도시', 
+    'e90260'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    495, 
+    '2023-11-09T15:50:31.822214', 
+    '2023-11-09T15:50:31.822214', 
+    3530, 
+    'KOTLIN', 
+    '도전', 
+    '903eaf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    496, 
+    '2023-11-09T15:50:31.822263', 
+    '2023-11-09T15:50:31.822263', 
+    8943, 
+    'TS', 
+    '야구', 
+    '8dd569'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    497, 
+    '2023-11-09T15:50:31.822313', 
+    '2023-11-09T15:50:31.822314', 
+    4567, 
+    'JAVA', 
+    '강', 
+    'a164dd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    498, 
+    '2023-11-09T15:50:31.822376', 
+    '2023-11-09T15:50:31.822377', 
+    9743, 
+    'KOTLIN', 
+    '바다', 
+    '5fcf89'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    499, 
+    '2023-11-09T15:50:31.822428', 
+    '2023-11-09T15:50:31.822428', 
+    506, 
+    'TS', 
+    '건축가', 
+    '4958f2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    500, 
+    '2023-11-09T15:50:31.822481', 
+    '2023-11-09T15:50:31.822482', 
+    7426, 
+    'JAVA', 
+    '빛', 
+    'ff2344'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    501, 
+    '2023-11-09T15:50:31.822530', 
+    '2023-11-09T15:50:31.822531', 
+    8888, 
+    'TS', 
+    '수학', 
+    '23c68b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    502, 
+    '2023-11-09T15:50:31.822595', 
+    '2023-11-09T15:50:31.822595', 
+    1647, 
+    'JAVA', 
+    '산', 
+    '9148c7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    503, 
+    '2023-11-09T15:50:31.822654', 
+    '2023-11-09T15:50:31.822655', 
+    742, 
+    'GO', 
+    '사랑', 
+    '421c5d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    504, 
+    '2023-11-09T15:50:31.822730', 
+    '2023-11-09T15:50:31.822730', 
+    6854, 
+    'KOTLIN', 
+    '행복', 
+    '6ec7c6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    505, 
+    '2023-11-09T15:50:31.822798', 
+    '2023-11-09T15:50:31.822799', 
+    7254, 
+    'JAVA', 
+    '성인', 
+    'd43b56'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    506, 
+    '2023-11-09T15:50:31.822845', 
+    '2023-11-09T15:50:31.822845', 
+    1641, 
+    'TS', 
+    '통신', 
+    '563f1f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    507, 
+    '2023-11-09T15:50:31.822895', 
+    '2023-11-09T15:50:31.822896', 
+    1141, 
+    'KOTLIN', 
+    '행복', 
+    '4076a3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    508, 
+    '2023-11-09T15:50:31.822946', 
+    '2023-11-09T15:50:31.822946', 
+    5916, 
+    'KOTLIN', 
+    '의사', 
+    '51941a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    509, 
+    '2023-11-09T15:50:31.823008', 
+    '2023-11-09T15:50:31.823008', 
+    9572, 
+    'GO', 
+    '도시', 
+    '7fd1d5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    510, 
+    '2023-11-09T15:50:31.823058', 
+    '2023-11-09T15:50:31.823058', 
+    63, 
+    'TS', 
+    '수학', 
+    'ae399a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    511, 
+    '2023-11-09T15:50:31.823105', 
+    '2023-11-09T15:50:31.823106', 
+    8360, 
+    'TS', 
+    '공부', 
+    '2aed9b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    512, 
+    '2023-11-09T15:50:31.823240', 
+    '2023-11-09T15:50:31.823241', 
+    624, 
+    'GO', 
+    '과일', 
+    '78b1f2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    513, 
+    '2023-11-09T15:50:31.823869', 
+    '2023-11-09T15:50:31.823871', 
+    5508, 
+    'TS', 
+    '자동차', 
+    '009619'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    514, 
+    '2023-11-09T15:50:31.824507', 
+    '2023-11-09T15:50:31.824508', 
+    9548, 
+    'JAVA', 
+    '파일럿', 
+    '2834e0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    515, 
+    '2023-11-09T15:50:31.829249', 
+    '2023-11-09T15:50:31.829251', 
+    6331, 
+    'GO', 
+    '축제', 
+    '3ce242'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    516, 
+    '2023-11-09T15:50:31.832077', 
+    '2023-11-09T15:50:31.832078', 
+    4678, 
+    'KOTLIN', 
+    '음식', 
+    'f82e79'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    517, 
+    '2023-11-09T15:50:31.832456', 
+    '2023-11-09T15:50:31.832456', 
+    7098, 
+    'GO', 
+    '태양', 
+    'de5f96'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    518, 
+    '2023-11-09T15:50:31.832515', 
+    '2023-11-09T15:50:31.832516', 
+    1060, 
+    'GO', 
+    '평화', 
+    'c08444'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    519, 
+    '2023-11-09T15:50:31.832568', 
+    '2023-11-09T15:50:31.832569', 
+    9257, 
+    'JAVA', 
+    '소방관', 
+    '85046d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    520, 
+    '2023-11-09T15:50:31.832619', 
+    '2023-11-09T15:50:31.832619', 
+    8069, 
+    'KOTLIN', 
+    '학생', 
+    '84bb2d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    521, 
+    '2023-11-09T15:50:31.832670', 
+    '2023-11-09T15:50:31.832670', 
+    2062, 
+    'TS', 
+    '사랑', 
+    '3639d8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    522, 
+    '2023-11-09T15:50:31.832719', 
+    '2023-11-09T15:50:31.832719', 
+    3223, 
+    'TS', 
+    '열차', 
+    '20756b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    523, 
+    '2023-11-09T15:50:31.832771', 
+    '2023-11-09T15:50:31.832771', 
+    8758, 
+    'GO', 
+    '글', 
+    'd7e02f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    524, 
+    '2023-11-09T15:50:31.832823', 
+    '2023-11-09T15:50:31.832823', 
+    8013, 
+    'GO', 
+    '청소년', 
+    'fc7f8e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    525, 
+    '2023-11-09T15:50:31.832870', 
+    '2023-11-09T15:50:31.832871', 
+    7860, 
+    'TS', 
+    '야구', 
+    'f589e4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    526, 
+    '2023-11-09T15:50:31.832915', 
+    '2023-11-09T15:50:31.832915', 
+    2886, 
+    'JAVA', 
+    '수학', 
+    '6cf474'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    527, 
+    '2023-11-09T15:50:31.832963', 
+    '2023-11-09T15:50:31.832963', 
+    6542, 
+    'KOTLIN', 
+    '채소', 
+    'be2ecc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    528, 
+    '2023-11-09T15:50:31.833011', 
+    '2023-11-09T15:50:31.833011', 
+    8114, 
+    'GO', 
+    '청소년', 
+    'c862eb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    529, 
+    '2023-11-09T15:50:31.833056', 
+    '2023-11-09T15:50:31.833057', 
+    648, 
+    'TS', 
+    '스포츠', 
+    '6678d2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    530, 
+    '2023-11-09T15:50:31.833113', 
+    '2023-11-09T15:50:31.833114', 
+    2671, 
+    'GO', 
+    '여가', 
+    'f767e0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    531, 
+    '2023-11-09T15:50:31.833157', 
+    '2023-11-09T15:50:31.833157', 
+    7943, 
+    'JAVA', 
+    '하늘', 
+    '3c20b6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    532, 
+    '2023-11-09T15:50:31.833216', 
+    '2023-11-09T15:50:31.833216', 
+    9493, 
+    'KOTLIN', 
+    '건축가', 
+    '192653'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    533, 
+    '2023-11-09T15:50:31.833264', 
+    '2023-11-09T15:50:31.833266', 
+    5882, 
+    'TS', 
+    '빛', 
+    'c9fea0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    534, 
+    '2023-11-09T15:50:31.833312', 
+    '2023-11-09T15:50:31.833313', 
+    5672, 
+    'TS', 
+    '배구', 
+    '326aa2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    535, 
+    '2023-11-09T15:50:31.833381', 
+    '2023-11-09T15:50:31.833382', 
+    1377, 
+    'TS', 
+    '비', 
+    'a130ce'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    536, 
+    '2023-11-09T15:50:31.833594', 
+    '2023-11-09T15:50:31.833594', 
+    1268, 
+    'KOTLIN', 
+    '선원', 
+    'e8e02e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    537, 
+    '2023-11-09T15:50:31.833941', 
+    '2023-11-09T15:50:31.833942', 
+    9648, 
+    'JAVA', 
+    '구름', 
+    '6546d2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    538, 
+    '2023-11-09T15:50:31.834252', 
+    '2023-11-09T15:50:31.834252', 
+    6377, 
+    'KOTLIN', 
+    '꽃', 
+    'ba1169'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    539, 
+    '2023-11-09T15:50:31.834314', 
+    '2023-11-09T15:50:31.834314', 
+    9947, 
+    'GO', 
+    '선원', 
+    'bfafeb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    540, 
+    '2023-11-09T15:50:31.834369', 
+    '2023-11-09T15:50:31.834370', 
+    3656, 
+    'JAVA', 
+    '별', 
+    '515e6a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    541, 
+    '2023-11-09T15:50:31.834512', 
+    '2023-11-09T15:50:31.834513', 
+    7783, 
+    'JAVA', 
+    '사랑', 
+    'e2a7dc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    542, 
+    '2023-11-09T15:50:31.835124', 
+    '2023-11-09T15:50:31.835124', 
+    1951, 
+    'JAVA', 
+    '도전', 
+    'd419dc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    543, 
+    '2023-11-09T15:50:31.835183', 
+    '2023-11-09T15:50:31.835184', 
+    5977, 
+    'TS', 
+    '운동', 
+    '274c2e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    544, 
+    '2023-11-09T15:50:31.835234', 
+    '2023-11-09T15:50:31.835235', 
+    9552, 
+    'JAVA', 
+    '배구', 
+    '9f9a7f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    545, 
+    '2023-11-09T15:50:31.835288', 
+    '2023-11-09T15:50:31.835289', 
+    3519, 
+    'GO', 
+    '기쁨', 
+    '764452'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    546, 
+    '2023-11-09T15:50:31.835344', 
+    '2023-11-09T15:50:31.835345', 
+    9802, 
+    'GO', 
+    '나무', 
+    '2d8e35'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    547, 
+    '2023-11-09T15:50:31.835394', 
+    '2023-11-09T15:50:31.835395', 
+    4133, 
+    'GO', 
+    '바람', 
+    'd020d9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    548, 
+    '2023-11-09T15:50:31.835473', 
+    '2023-11-09T15:50:31.835473', 
+    5241, 
+    'GO', 
+    '요리', 
+    'c4e117'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    549, 
+    '2023-11-09T15:50:31.835519', 
+    '2023-11-09T15:50:31.835520', 
+    8834, 
+    'TS', 
+    '선생님', 
+    '1b71d5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    550, 
+    '2023-11-09T15:50:31.835566', 
+    '2023-11-09T15:50:31.835567', 
+    1042, 
+    'JAVA', 
+    '작가', 
+    'e850d3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    551, 
+    '2023-11-09T15:50:31.835610', 
+    '2023-11-09T15:50:31.835610', 
+    582, 
+    'TS', 
+    '배구', 
+    'e5d5e9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    552, 
+    '2023-11-09T15:50:31.835663', 
+    '2023-11-09T15:50:31.835663', 
+    3911, 
+    'KOTLIN', 
+    '의사', 
+    'ad2801'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    553, 
+    '2023-11-09T15:50:31.835713', 
+    '2023-11-09T15:50:31.835713', 
+    3563, 
+    'TS', 
+    '작가', 
+    'a872b9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    554, 
+    '2023-11-09T15:50:31.835759', 
+    '2023-11-09T15:50:31.835759', 
+    1634, 
+    'GO', 
+    '탐험', 
+    '2ec660'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    555, 
+    '2023-11-09T15:50:31.835806', 
+    '2023-11-09T15:50:31.835806', 
+    6526, 
+    'KOTLIN', 
+    '엔지니어', 
+    '70ad88'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    556, 
+    '2023-11-09T15:50:31.835861', 
+    '2023-11-09T15:50:31.835861', 
+    7077, 
+    'KOTLIN', 
+    '운동', 
+    'b01f78'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    557, 
+    '2023-11-09T15:50:31.835911', 
+    '2023-11-09T15:50:31.835911', 
+    4257, 
+    'KOTLIN', 
+    '비행기', 
+    'aa24cd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    558, 
+    '2023-11-09T15:50:31.835958', 
+    '2023-11-09T15:50:31.835958', 
+    7575, 
+    'KOTLIN', 
+    '현재', 
+    'fb7c75'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    559, 
+    '2023-11-09T15:50:31.836007', 
+    '2023-11-09T15:50:31.836008', 
+    7071, 
+    'JAVA', 
+    '노인', 
+    '6b6651'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    560, 
+    '2023-11-09T15:50:31.836055', 
+    '2023-11-09T15:50:31.836055', 
+    7050, 
+    'TS', 
+    '게임', 
+    '75793c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    561, 
+    '2023-11-09T15:50:31.836101', 
+    '2023-11-09T15:50:31.836101', 
+    8766, 
+    'GO', 
+    '축제', 
+    '64f088'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    562, 
+    '2023-11-09T15:50:31.836152', 
+    '2023-11-09T15:50:31.836153', 
+    7221, 
+    'GO', 
+    '의사', 
+    '09ae16'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    563, 
+    '2023-11-09T15:50:31.836204', 
+    '2023-11-09T15:50:31.836204', 
+    2195, 
+    'TS', 
+    '탐험', 
+    'f6dcb2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    564, 
+    '2023-11-09T15:50:31.836249', 
+    '2023-11-09T15:50:31.836249', 
+    8624, 
+    'TS', 
+    '희망', 
+    '3aba5a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    565, 
+    '2023-11-09T15:50:31.836295', 
+    '2023-11-09T15:50:31.836296', 
+    4961, 
+    'JAVA', 
+    '자연', 
+    '59759a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    566, 
+    '2023-11-09T15:50:31.836336', 
+    '2023-11-09T15:50:31.836336', 
+    5229, 
+    'GO', 
+    '통신', 
+    '55f84c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    567, 
+    '2023-11-09T15:50:31.836380', 
+    '2023-11-09T15:50:31.836380', 
+    5192, 
+    'KOTLIN', 
+    '책', 
+    '0faa44'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    568, 
+    '2023-11-09T15:50:31.836423', 
+    '2023-11-09T15:50:31.836423', 
+    3889, 
+    'TS', 
+    '스포츠', 
+    '9aacb0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    569, 
+    '2023-11-09T15:50:31.836465', 
+    '2023-11-09T15:50:31.836466', 
+    6586, 
+    'KOTLIN', 
+    '과학자', 
+    'fba958'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    570, 
+    '2023-11-09T15:50:31.836511', 
+    '2023-11-09T15:50:31.836511', 
+    5736, 
+    'GO', 
+    '스포츠', 
+    'b8e52b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    571, 
+    '2023-11-09T15:50:31.836553', 
+    '2023-11-09T15:50:31.836554', 
+    2112, 
+    'JAVA', 
+    '파일럿', 
+    '7fd548'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    572, 
+    '2023-11-09T15:50:31.836599', 
+    '2023-11-09T15:50:31.836599', 
+    9172, 
+    'KOTLIN', 
+    '파일럿', 
+    'a4dc5d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    573, 
+    '2023-11-09T15:50:31.836642', 
+    '2023-11-09T15:50:31.836643', 
+    1080, 
+    'TS', 
+    '산', 
+    'd7ea57'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    574, 
+    '2023-11-09T15:50:31.836688', 
+    '2023-11-09T15:50:31.836688', 
+    4095, 
+    'GO', 
+    '채소', 
+    '20c369'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    575, 
+    '2023-11-09T15:50:31.836732', 
+    '2023-11-09T15:50:31.836733', 
+    2960, 
+    'TS', 
+    '운동', 
+    'c4cf78'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    576, 
+    '2023-11-09T15:50:31.836773', 
+    '2023-11-09T15:50:31.836773', 
+    5867, 
+    'KOTLIN', 
+    '달', 
+    'a0a635'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    577, 
+    '2023-11-09T15:50:31.836817', 
+    '2023-11-09T15:50:31.836817', 
+    4112, 
+    'GO', 
+    '학생', 
+    '885f4a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    578, 
+    '2023-11-09T15:50:31.836884', 
+    '2023-11-09T15:50:31.836884', 
+    3776, 
+    'JAVA', 
+    '사랑', 
+    'b26215'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    579, 
+    '2023-11-09T15:50:31.836926', 
+    '2023-11-09T15:50:31.836927', 
+    2263, 
+    'KOTLIN', 
+    '음식', 
+    'f6d1d4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    580, 
+    '2023-11-09T15:50:31.836968', 
+    '2023-11-09T15:50:31.836968', 
+    2831, 
+    'GO', 
+    '현재', 
+    '199e24'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    581, 
+    '2023-11-09T15:50:31.837007', 
+    '2023-11-09T15:50:31.837008', 
+    2363, 
+    'TS', 
+    '발명', 
+    'e86828'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    582, 
+    '2023-11-09T15:50:31.837050', 
+    '2023-11-09T15:50:31.837050', 
+    9130, 
+    'JAVA', 
+    '소방관', 
+    '74d2ea'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    583, 
+    '2023-11-09T15:50:31.837138', 
+    '2023-11-09T15:50:31.837138', 
+    4465, 
+    'JAVA', 
+    '산책', 
+    '513db0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    584, 
+    '2023-11-09T15:50:31.837193', 
+    '2023-11-09T15:50:31.837194', 
+    6441, 
+    'KOTLIN', 
+    '평화', 
+    'c7bd63'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    585, 
+    '2023-11-09T15:50:31.837239', 
+    '2023-11-09T15:50:31.837239', 
+    2296, 
+    'TS', 
+    '축구', 
+    '5b3ba9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    586, 
+    '2023-11-09T15:50:31.837280', 
+    '2023-11-09T15:50:31.837280', 
+    313, 
+    'JAVA', 
+    '변호사', 
+    'a836db'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    587, 
+    '2023-11-09T15:50:31.837331', 
+    '2023-11-09T15:50:31.837331', 
+    7630, 
+    'GO', 
+    '연구', 
+    'de5d37'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    588, 
+    '2023-11-09T15:50:31.837374', 
+    '2023-11-09T15:50:31.837375', 
+    7518, 
+    'KOTLIN', 
+    '학생', 
+    'aad66a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    589, 
+    '2023-11-09T15:50:31.837422', 
+    '2023-11-09T15:50:31.837422', 
+    5578, 
+    'TS', 
+    '회사', 
+    'd0dd26'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    590, 
+    '2023-11-09T15:50:31.837466', 
+    '2023-11-09T15:50:31.837466', 
+    3757, 
+    'KOTLIN', 
+    '눈', 
+    '45a3b5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    591, 
+    '2023-11-09T15:50:31.837507', 
+    '2023-11-09T15:50:31.837508', 
+    4158, 
+    'JAVA', 
+    '그림', 
+    'fc4a00'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    592, 
+    '2023-11-09T15:50:31.837554', 
+    '2023-11-09T15:50:31.837555', 
+    987, 
+    'TS', 
+    '여가', 
+    '6f8718'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    593, 
+    '2023-11-09T15:50:31.837605', 
+    '2023-11-09T15:50:31.837606', 
+    9914, 
+    'TS', 
+    '음식', 
+    'ae5faf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    594, 
+    '2023-11-09T15:50:31.837651', 
+    '2023-11-09T15:50:31.837652', 
+    1616, 
+    'TS', 
+    '파일럿', 
+    '2ca7d0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    595, 
+    '2023-11-09T15:50:31.837696', 
+    '2023-11-09T15:50:31.837697', 
+    2845, 
+    'TS', 
+    '소망', 
+    '36f213'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    596, 
+    '2023-11-09T15:50:31.837738', 
+    '2023-11-09T15:50:31.837739', 
+    7276, 
+    'GO', 
+    '열차', 
+    '6b08c0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    597, 
+    '2023-11-09T15:50:31.837782', 
+    '2023-11-09T15:50:31.837783', 
+    6891, 
+    'KOTLIN', 
+    '탐험', 
+    'c0bd7f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    598, 
+    '2023-11-09T15:50:31.837825', 
+    '2023-11-09T15:50:31.837826', 
+    7104, 
+    'JAVA', 
+    '음식', 
+    '3827f7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    599, 
+    '2023-11-09T15:50:31.837869', 
+    '2023-11-09T15:50:31.837870', 
+    2534, 
+    'KOTLIN', 
+    '과학', 
+    '11e6b8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    600, 
+    '2023-11-09T15:50:31.837913', 
+    '2023-11-09T15:50:31.837914', 
+    3924, 
+    'KOTLIN', 
+    '야구', 
+    '017609'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    601, 
+    '2023-11-09T15:50:31.837962', 
+    '2023-11-09T15:50:31.837963', 
+    6511, 
+    'JAVA', 
+    '비행기', 
+    '8c6d8d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    602, 
+    '2023-11-09T15:50:31.838006', 
+    '2023-11-09T15:50:31.838007', 
+    3159, 
+    'TS', 
+    '여행가', 
+    'ffff18'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    603, 
+    '2023-11-09T15:50:31.838051', 
+    '2023-11-09T15:50:31.838051', 
+    3828, 
+    'TS', 
+    '야구', 
+    '1278d4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    604, 
+    '2023-11-09T15:50:31.838098', 
+    '2023-11-09T15:50:31.838098', 
+    9565, 
+    'GO', 
+    '비행기', 
+    '56e400'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    605, 
+    '2023-11-09T15:50:31.838143', 
+    '2023-11-09T15:50:31.838143', 
+    6511, 
+    'KOTLIN', 
+    '산', 
+    'a82922'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    606, 
+    '2023-11-09T15:50:31.838190', 
+    '2023-11-09T15:50:31.838190', 
+    1398, 
+    'GO', 
+    '축구', 
+    '01e9b9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    607, 
+    '2023-11-09T15:50:31.838235', 
+    '2023-11-09T15:50:31.838235', 
+    902, 
+    'TS', 
+    '바람', 
+    '64b546'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    608, 
+    '2023-11-09T15:50:31.838279', 
+    '2023-11-09T15:50:31.838280', 
+    3935, 
+    'TS', 
+    '채소', 
+    '83f2ed'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    609, 
+    '2023-11-09T15:50:31.838324', 
+    '2023-11-09T15:50:31.838325', 
+    70, 
+    'GO', 
+    '파일럿', 
+    'e30e5d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    610, 
+    '2023-11-09T15:50:31.838374', 
+    '2023-11-09T15:50:31.838374', 
+    9428, 
+    'GO', 
+    '나무', 
+    'c00b55'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    611, 
+    '2023-11-09T15:50:31.838418', 
+    '2023-11-09T15:50:31.838418', 
+    5146, 
+    'TS', 
+    '가족', 
+    '231f01'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    612, 
+    '2023-11-09T15:50:31.838462', 
+    '2023-11-09T15:50:31.838462', 
+    6409, 
+    'GO', 
+    '음식', 
+    'ed218d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    613, 
+    '2023-11-09T15:50:31.838508', 
+    '2023-11-09T15:50:31.838508', 
+    3400, 
+    'KOTLIN', 
+    '선원', 
+    'd33880'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    614, 
+    '2023-11-09T15:50:31.838551', 
+    '2023-11-09T15:50:31.838551', 
+    7624, 
+    'KOTLIN', 
+    '축제', 
+    'abaa82'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    615, 
+    '2023-11-09T15:50:31.838603', 
+    '2023-11-09T15:50:31.838603', 
+    6587, 
+    'TS', 
+    '선원', 
+    '6d96c9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    616, 
+    '2023-11-09T15:50:31.838645', 
+    '2023-11-09T15:50:31.838645', 
+    6343, 
+    'JAVA', 
+    '작가', 
+    'dc260d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    617, 
+    '2023-11-09T15:50:31.838689', 
+    '2023-11-09T15:50:31.838689', 
+    7432, 
+    'TS', 
+    '소망', 
+    '5f3123'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    618, 
+    '2023-11-09T15:50:31.838732', 
+    '2023-11-09T15:50:31.838732', 
+    7328, 
+    'KOTLIN', 
+    '게임', 
+    '99d28a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    619, 
+    '2023-11-09T15:50:31.838776', 
+    '2023-11-09T15:50:31.838776', 
+    1015, 
+    'KOTLIN', 
+    '파일럿', 
+    'e06436'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    620, 
+    '2023-11-09T15:50:31.838819', 
+    '2023-11-09T15:50:31.838820', 
+    747, 
+    'KOTLIN', 
+    '소망', 
+    '0b87a8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    621, 
+    '2023-11-09T15:50:31.838861', 
+    '2023-11-09T15:50:31.838862', 
+    905, 
+    'JAVA', 
+    '바다', 
+    '460e99'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    622, 
+    '2023-11-09T15:50:31.838904', 
+    '2023-11-09T15:50:31.838905', 
+    9687, 
+    'GO', 
+    '청소년', 
+    '8a8ac2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    623, 
+    '2023-11-09T15:50:31.838948', 
+    '2023-11-09T15:50:31.838949', 
+    8880, 
+    'TS', 
+    '경찰', 
+    '0b49f5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    624, 
+    '2023-11-09T15:50:31.838993', 
+    '2023-11-09T15:50:31.838993', 
+    5437, 
+    'TS', 
+    '행복', 
+    '79e52e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    625, 
+    '2023-11-09T15:50:31.839036', 
+    '2023-11-09T15:50:31.839037', 
+    1371, 
+    'KOTLIN', 
+    '선원', 
+    'd74269'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    626, 
+    '2023-11-09T15:50:31.839078', 
+    '2023-11-09T15:50:31.839079', 
+    2214, 
+    'TS', 
+    '연구', 
+    '3a2794'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    627, 
+    '2023-11-09T15:50:31.839125', 
+    '2023-11-09T15:50:31.839125', 
+    5332, 
+    'JAVA', 
+    '역사', 
+    'ec8ad1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    628, 
+    '2023-11-09T15:50:31.839168', 
+    '2023-11-09T15:50:31.839169', 
+    9912, 
+    'KOTLIN', 
+    '꽃', 
+    '57fb8e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    629, 
+    '2023-11-09T15:50:31.839212', 
+    '2023-11-09T15:50:31.839213', 
+    9652, 
+    'GO', 
+    '노인', 
+    'a20632'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    630, 
+    '2023-11-09T15:50:31.839255', 
+    '2023-11-09T15:50:31.839255', 
+    4611, 
+    'GO', 
+    '바다', 
+    '058437'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    631, 
+    '2023-11-09T15:50:31.839296', 
+    '2023-11-09T15:50:31.839297', 
+    6288, 
+    'TS', 
+    '산', 
+    '904e61'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    632, 
+    '2023-11-09T15:50:31.839340', 
+    '2023-11-09T15:50:31.839340', 
+    3026, 
+    'GO', 
+    '작가', 
+    '8d274a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    633, 
+    '2023-11-09T15:50:31.839383', 
+    '2023-11-09T15:50:31.839384', 
+    1240, 
+    'TS', 
+    '스포츠', 
+    '93ae7f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    634, 
+    '2023-11-09T15:50:31.839428', 
+    '2023-11-09T15:50:31.839428', 
+    8504, 
+    'KOTLIN', 
+    '나라', 
+    '375cd2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    635, 
+    '2023-11-09T15:50:31.839473', 
+    '2023-11-09T15:50:31.839473', 
+    7911, 
+    'JAVA', 
+    '직장', 
+    '6d2ed6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    636, 
+    '2023-11-09T15:50:31.839515', 
+    '2023-11-09T15:50:31.839515', 
+    8247, 
+    'JAVA', 
+    '스마트폰', 
+    'a2f6c4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    637, 
+    '2023-11-09T15:50:31.839557', 
+    '2023-11-09T15:50:31.839558', 
+    1145, 
+    'GO', 
+    '빛', 
+    '772d98'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    638, 
+    '2023-11-09T15:50:31.839598', 
+    '2023-11-09T15:50:31.839599', 
+    5667, 
+    'JAVA', 
+    '산', 
+    'b7be5d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    639, 
+    '2023-11-09T15:50:31.839641', 
+    '2023-11-09T15:50:31.839642', 
+    4395, 
+    'KOTLIN', 
+    '여가', 
+    '70fa0d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    640, 
+    '2023-11-09T15:50:31.839700', 
+    '2023-11-09T15:50:31.839710', 
+    3384, 
+    'TS', 
+    '의사', 
+    '41bcde'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    641, 
+    '2023-11-09T15:50:31.839764', 
+    '2023-11-09T15:50:31.839765', 
+    431, 
+    'GO', 
+    '도시', 
+    '1cbdb9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    642, 
+    '2023-11-09T15:50:31.839812', 
+    '2023-11-09T15:50:31.839813', 
+    375, 
+    'JAVA', 
+    '비', 
+    '9c5e6f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    643, 
+    '2023-11-09T15:50:31.839868', 
+    '2023-11-09T15:50:31.839869', 
+    7764, 
+    'KOTLIN', 
+    '책', 
+    '437003'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    644, 
+    '2023-11-09T15:50:31.841470', 
+    '2023-11-09T15:50:31.841490', 
+    7249, 
+    'KOTLIN', 
+    '글', 
+    '11d70f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    645, 
+    '2023-11-09T15:50:31.842825', 
+    '2023-11-09T15:50:31.842826', 
+    9124, 
+    'KOTLIN', 
+    '여행가', 
+    'edb39e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    646, 
+    '2023-11-09T15:50:31.843673', 
+    '2023-11-09T15:50:31.843674', 
+    5516, 
+    'KOTLIN', 
+    '발명', 
+    'f34c61'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    647, 
+    '2023-11-09T15:50:31.843874', 
+    '2023-11-09T15:50:31.843875', 
+    7068, 
+    'GO', 
+    '배구', 
+    'e05630'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    648, 
+    '2023-11-09T15:50:31.843925', 
+    '2023-11-09T15:50:31.843926', 
+    1018, 
+    'JAVA', 
+    '소방관', 
+    'b21a0e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    649, 
+    '2023-11-09T15:50:31.843973', 
+    '2023-11-09T15:50:31.843974', 
+    4022, 
+    'TS', 
+    '과학', 
+    '7bab35'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    650, 
+    '2023-11-09T15:50:31.844018', 
+    '2023-11-09T15:50:31.844019', 
+    1131, 
+    'JAVA', 
+    '건축가', 
+    'cf5f0c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    651, 
+    '2023-11-09T15:50:31.844059', 
+    '2023-11-09T15:50:31.844060', 
+    4747, 
+    'GO', 
+    '나라', 
+    '316912'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    652, 
+    '2023-11-09T15:50:31.844102', 
+    '2023-11-09T15:50:31.844102', 
+    4476, 
+    'GO', 
+    '과거', 
+    '1df571'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    653, 
+    '2023-11-09T15:50:31.844147', 
+    '2023-11-09T15:50:31.844148', 
+    8651, 
+    'GO', 
+    '달', 
+    '07c550'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    654, 
+    '2023-11-09T15:50:31.844192', 
+    '2023-11-09T15:50:31.844192', 
+    790, 
+    'JAVA', 
+    '농구', 
+    'bab2ad'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    655, 
+    '2023-11-09T15:50:31.844237', 
+    '2023-11-09T15:50:31.844237', 
+    8756, 
+    'KOTLIN', 
+    '운동', 
+    '5252eb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    656, 
+    '2023-11-09T15:50:31.844279', 
+    '2023-11-09T15:50:31.844280', 
+    1256, 
+    'GO', 
+    '예술', 
+    'd04f96'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    657, 
+    '2023-11-09T15:50:31.844323', 
+    '2023-11-09T15:50:31.844324', 
+    923, 
+    'GO', 
+    '과학자', 
+    '466439'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    658, 
+    '2023-11-09T15:50:31.844383', 
+    '2023-11-09T15:50:31.844383', 
+    2221, 
+    'JAVA', 
+    '과학자', 
+    '8b8f10'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    659, 
+    '2023-11-09T15:50:31.844428', 
+    '2023-11-09T15:50:31.844429', 
+    2524, 
+    'GO', 
+    '과학', 
+    '2e632e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    660, 
+    '2023-11-09T15:50:31.844477', 
+    '2023-11-09T15:50:31.844477', 
+    3777, 
+    'KOTLIN', 
+    '경찰', 
+    '4cce92'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    661, 
+    '2023-11-09T15:50:31.844518', 
+    '2023-11-09T15:50:31.844519', 
+    2381, 
+    'TS', 
+    '군인', 
+    '0cd44b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    662, 
+    '2023-11-09T15:50:31.844562', 
+    '2023-11-09T15:50:31.844562', 
+    1871, 
+    'GO', 
+    '세계', 
+    '8dcd4f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    663, 
+    '2023-11-09T15:50:31.844623', 
+    '2023-11-09T15:50:31.844624', 
+    539, 
+    'JAVA', 
+    '나무', 
+    '816142'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    664, 
+    '2023-11-09T15:50:31.844666', 
+    '2023-11-09T15:50:31.844666', 
+    161, 
+    'JAVA', 
+    '꿈', 
+    '4d7c77'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    665, 
+    '2023-11-09T15:50:31.844707', 
+    '2023-11-09T15:50:31.844708', 
+    1073, 
+    'JAVA', 
+    '요리', 
+    '55a94d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    666, 
+    '2023-11-09T15:50:31.844748', 
+    '2023-11-09T15:50:31.844749', 
+    2980, 
+    'JAVA', 
+    '열차', 
+    '7d1817'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    667, 
+    '2023-11-09T15:50:31.844789', 
+    '2023-11-09T15:50:31.844790', 
+    4294, 
+    'KOTLIN', 
+    '엔지니어', 
+    '125b3e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    668, 
+    '2023-11-09T15:50:31.844832', 
+    '2023-11-09T15:50:31.844833', 
+    6602, 
+    'TS', 
+    '야구', 
+    'df7588'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    669, 
+    '2023-11-09T15:50:31.844874', 
+    '2023-11-09T15:50:31.844874', 
+    2290, 
+    'KOTLIN', 
+    '학교', 
+    'b344a1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    670, 
+    '2023-11-09T15:50:31.844914', 
+    '2023-11-09T15:50:31.844915', 
+    9823, 
+    'GO', 
+    '그림', 
+    '339060'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    671, 
+    '2023-11-09T15:50:31.844955', 
+    '2023-11-09T15:50:31.844955', 
+    5966, 
+    'TS', 
+    '나무', 
+    '8af6d8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    672, 
+    '2023-11-09T15:50:31.844996', 
+    '2023-11-09T15:50:31.844997', 
+    7734, 
+    'GO', 
+    '통신', 
+    '51256b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    673, 
+    '2023-11-09T15:50:31.845039', 
+    '2023-11-09T15:50:31.845039', 
+    6697, 
+    'GO', 
+    '젊음', 
+    '1c72fa'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    674, 
+    '2023-11-09T15:50:31.845083', 
+    '2023-11-09T15:50:31.845084', 
+    6873, 
+    'KOTLIN', 
+    '물', 
+    'abe0ba'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    675, 
+    '2023-11-09T15:50:31.845125', 
+    '2023-11-09T15:50:31.845126', 
+    599, 
+    'GO', 
+    '청소년', 
+    '68044e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    676, 
+    '2023-11-09T15:50:31.845166', 
+    '2023-11-09T15:50:31.845167', 
+    6470, 
+    'GO', 
+    '바다', 
+    'e7520f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    677, 
+    '2023-11-09T15:50:31.845209', 
+    '2023-11-09T15:50:31.845209', 
+    9992, 
+    'GO', 
+    '배', 
+    '8f3303'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    678, 
+    '2023-11-09T15:50:31.845250', 
+    '2023-11-09T15:50:31.845250', 
+    1960, 
+    'GO', 
+    '인터넷', 
+    '475a02'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    679, 
+    '2023-11-09T15:50:31.845289', 
+    '2023-11-09T15:50:31.845290', 
+    5158, 
+    'KOTLIN', 
+    '채소', 
+    '6b07ef'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    680, 
+    '2023-11-09T15:50:31.845330', 
+    '2023-11-09T15:50:31.845330', 
+    9238, 
+    'TS', 
+    '미소', 
+    'd9423f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    681, 
+    '2023-11-09T15:50:31.845367', 
+    '2023-11-09T15:50:31.845368', 
+    9714, 
+    'JAVA', 
+    '연구', 
+    '86e445'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    682, 
+    '2023-11-09T15:50:31.845408', 
+    '2023-11-09T15:50:31.845408', 
+    4120, 
+    'KOTLIN', 
+    '도전', 
+    'bb8746'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    683, 
+    '2023-11-09T15:50:31.845447', 
+    '2023-11-09T15:50:31.845448', 
+    502, 
+    'TS', 
+    '스포츠', 
+    '88f38b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    684, 
+    '2023-11-09T15:50:31.845487', 
+    '2023-11-09T15:50:31.845488', 
+    2024, 
+    'TS', 
+    '수학', 
+    '3b5733'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    685, 
+    '2023-11-09T15:50:31.845528', 
+    '2023-11-09T15:50:31.845528', 
+    4337, 
+    'GO', 
+    '사랑', 
+    '5f0451'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    686, 
+    '2023-11-09T15:50:31.845565', 
+    '2023-11-09T15:50:31.845566', 
+    5524, 
+    'TS', 
+    '물', 
+    '21c0c4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    687, 
+    '2023-11-09T15:50:31.845605', 
+    '2023-11-09T15:50:31.845606', 
+    6230, 
+    'KOTLIN', 
+    '현재', 
+    'd14d61'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    688, 
+    '2023-11-09T15:50:31.845645', 
+    '2023-11-09T15:50:31.845646', 
+    7443, 
+    'KOTLIN', 
+    '비행기', 
+    '7d8e0f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    689, 
+    '2023-11-09T15:50:31.845691', 
+    '2023-11-09T15:50:31.845691', 
+    8385, 
+    'JAVA', 
+    '축제', 
+    'f79ca3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    690, 
+    '2023-11-09T15:50:31.845734', 
+    '2023-11-09T15:50:31.845734', 
+    1865, 
+    'GO', 
+    '산', 
+    '64a0e2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    691, 
+    '2023-11-09T15:50:31.845784', 
+    '2023-11-09T15:50:31.845784', 
+    6103, 
+    'JAVA', 
+    '과학', 
+    '0ba6c1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    692, 
+    '2023-11-09T15:50:31.845824', 
+    '2023-11-09T15:50:31.845825', 
+    2527, 
+    'KOTLIN', 
+    '미소', 
+    '789ad0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    693, 
+    '2023-11-09T15:50:31.845863', 
+    '2023-11-09T15:50:31.845864', 
+    2414, 
+    'GO', 
+    '채소', 
+    '2890d1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    694, 
+    '2023-11-09T15:50:31.845905', 
+    '2023-11-09T15:50:31.845905', 
+    2282, 
+    'TS', 
+    '아동', 
+    '8cc24b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    695, 
+    '2023-11-09T15:50:31.845945', 
+    '2023-11-09T15:50:31.845945', 
+    4353, 
+    'TS', 
+    '바다', 
+    'dbfa74'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    696, 
+    '2023-11-09T15:50:31.845983', 
+    '2023-11-09T15:50:31.845983', 
+    9115, 
+    'JAVA', 
+    '나무', 
+    '2cdb83'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    697, 
+    '2023-11-09T15:50:31.846023', 
+    '2023-11-09T15:50:31.846023', 
+    5934, 
+    'TS', 
+    '비행기', 
+    '5ae512'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    698, 
+    '2023-11-09T15:50:31.846064', 
+    '2023-11-09T15:50:31.846064', 
+    8711, 
+    'TS', 
+    '소망', 
+    '34ae71'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    699, 
+    '2023-11-09T15:50:31.846104', 
+    '2023-11-09T15:50:31.846105', 
+    5244, 
+    'KOTLIN', 
+    '성인', 
+    '5085b2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    700, 
+    '2023-11-09T15:50:31.846145', 
+    '2023-11-09T15:50:31.846145', 
+    8995, 
+    'TS', 
+    '과학자', 
+    'b7d929'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    701, 
+    '2023-11-09T15:50:31.846182', 
+    '2023-11-09T15:50:31.846182', 
+    9460, 
+    'KOTLIN', 
+    '탐험', 
+    '0eb0de'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    702, 
+    '2023-11-09T15:50:31.846221', 
+    '2023-11-09T15:50:31.846222', 
+    9405, 
+    'JAVA', 
+    '역사', 
+    '07072f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    703, 
+    '2023-11-09T15:50:31.846263', 
+    '2023-11-09T15:50:31.846264', 
+    3317, 
+    'KOTLIN', 
+    '음식', 
+    '6db4b6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    704, 
+    '2023-11-09T15:50:31.846303', 
+    '2023-11-09T15:50:31.846303', 
+    1482, 
+    'TS', 
+    '채소', 
+    '890637'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    705, 
+    '2023-11-09T15:50:31.846345', 
+    '2023-11-09T15:50:31.846346', 
+    5046, 
+    'GO', 
+    '새', 
+    '51538b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    706, 
+    '2023-11-09T15:50:31.846390', 
+    '2023-11-09T15:50:31.846391', 
+    3635, 
+    'TS', 
+    '교통', 
+    '93f476'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    707, 
+    '2023-11-09T15:50:31.846432', 
+    '2023-11-09T15:50:31.846433', 
+    7299, 
+    'TS', 
+    '야구', 
+    '9b8769'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    708, 
+    '2023-11-09T15:50:31.846472', 
+    '2023-11-09T15:50:31.846472', 
+    2487, 
+    'TS', 
+    '태양', 
+    'cd02bf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    709, 
+    '2023-11-09T15:50:31.846512', 
+    '2023-11-09T15:50:31.846513', 
+    3517, 
+    'GO', 
+    '영화', 
+    'a4309d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    710, 
+    '2023-11-09T15:50:31.846552', 
+    '2023-11-09T15:50:31.846553', 
+    4627, 
+    'KOTLIN', 
+    '소방관', 
+    'ff146f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    711, 
+    '2023-11-09T15:50:31.846589', 
+    '2023-11-09T15:50:31.846590', 
+    6966, 
+    'GO', 
+    '교통', 
+    'ca5282'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    712, 
+    '2023-11-09T15:50:31.846632', 
+    '2023-11-09T15:50:31.846633', 
+    2047, 
+    'JAVA', 
+    '마을', 
+    'dee5ed'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    713, 
+    '2023-11-09T15:50:31.846983', 
+    '2023-11-09T15:50:31.846984', 
+    7908, 
+    'JAVA', 
+    '운동', 
+    '809904'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    714, 
+    '2023-11-09T15:50:31.847143', 
+    '2023-11-09T15:50:31.847144', 
+    3980, 
+    'TS', 
+    '태양', 
+    '44a5cd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    715, 
+    '2023-11-09T15:50:31.847189', 
+    '2023-11-09T15:50:31.847189', 
+    6802, 
+    'KOTLIN', 
+    '성인', 
+    '52ee88'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    716, 
+    '2023-11-09T15:50:31.847230', 
+    '2023-11-09T15:50:31.847230', 
+    7033, 
+    'GO', 
+    '빛', 
+    '5348c6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    717, 
+    '2023-11-09T15:50:31.847271', 
+    '2023-11-09T15:50:31.847272', 
+    9819, 
+    'TS', 
+    '기쁨', 
+    'bd748c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    718, 
+    '2023-11-09T15:50:31.847315', 
+    '2023-11-09T15:50:31.847315', 
+    10000, 
+    'KOTLIN', 
+    '책', 
+    '30cc25'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    719, 
+    '2023-11-09T15:50:31.847357', 
+    '2023-11-09T15:50:31.847358', 
+    5920, 
+    'JAVA', 
+    '학생', 
+    '5e5e7d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    720, 
+    '2023-11-09T15:50:31.847400', 
+    '2023-11-09T15:50:31.847400', 
+    1274, 
+    'TS', 
+    '자연', 
+    '6fecf6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    721, 
+    '2023-11-09T15:50:31.847437', 
+    '2023-11-09T15:50:31.847438', 
+    3421, 
+    'JAVA', 
+    '음식', 
+    '68cd82'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    722, 
+    '2023-11-09T15:50:31.847480', 
+    '2023-11-09T15:50:31.847481', 
+    5665, 
+    'GO', 
+    '변호사', 
+    'e18cff'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    723, 
+    '2023-11-09T15:50:31.847525', 
+    '2023-11-09T15:50:31.847525', 
+    7190, 
+    'KOTLIN', 
+    '눈', 
+    '93632e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    724, 
+    '2023-11-09T15:50:31.847565', 
+    '2023-11-09T15:50:31.847566', 
+    4644, 
+    'TS', 
+    '가족', 
+    'e6f252'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    725, 
+    '2023-11-09T15:50:31.847605', 
+    '2023-11-09T15:50:31.847605', 
+    5417, 
+    'TS', 
+    '물', 
+    'bfbbdc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    726, 
+    '2023-11-09T15:50:31.847641', 
+    '2023-11-09T15:50:31.847642', 
+    3115, 
+    'JAVA', 
+    '회사', 
+    '56767d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    727, 
+    '2023-11-09T15:50:31.847683', 
+    '2023-11-09T15:50:31.847683', 
+    5931, 
+    'JAVA', 
+    '과일', 
+    'f952cc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    728, 
+    '2023-11-09T15:50:31.847722', 
+    '2023-11-09T15:50:31.847722', 
+    6349, 
+    'JAVA', 
+    '구름', 
+    'c3bd1f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    729, 
+    '2023-11-09T15:50:31.847762', 
+    '2023-11-09T15:50:31.847762', 
+    8331, 
+    'TS', 
+    '성인', 
+    '4b761d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    730, 
+    '2023-11-09T15:50:31.847803', 
+    '2023-11-09T15:50:31.847803', 
+    9766, 
+    'GO', 
+    '취미', 
+    'e8a848'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    731, 
+    '2023-11-09T15:50:31.847839', 
+    '2023-11-09T15:50:31.847840', 
+    8855, 
+    'JAVA', 
+    '가족', 
+    'a97546'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    732, 
+    '2023-11-09T15:50:31.847880', 
+    '2023-11-09T15:50:31.847880', 
+    3410, 
+    'JAVA', 
+    '소망', 
+    '71328f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    733, 
+    '2023-11-09T15:50:31.847920', 
+    '2023-11-09T15:50:31.847920', 
+    6173, 
+    'GO', 
+    '요리', 
+    '5d211b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    734, 
+    '2023-11-09T15:50:31.847960', 
+    '2023-11-09T15:50:31.847960', 
+    7789, 
+    'KOTLIN', 
+    '눈', 
+    '88f685'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    735, 
+    '2023-11-09T15:50:31.848', 
+    '2023-11-09T15:50:31.848', 
+    480, 
+    'JAVA', 
+    '비', 
+    'aacc28'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    736, 
+    '2023-11-09T15:50:31.849303', 
+    '2023-11-09T15:50:31.849305', 
+    2155, 
+    'KOTLIN', 
+    '꽃', 
+    'c73f31'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    737, 
+    '2023-11-09T15:50:31.849475', 
+    '2023-11-09T15:50:31.849476', 
+    661, 
+    'GO', 
+    '발견', 
+    '1c55f5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    738, 
+    '2023-11-09T15:50:31.849556', 
+    '2023-11-09T15:50:31.849557', 
+    9305, 
+    'JAVA', 
+    '변호사', 
+    '93476e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    739, 
+    '2023-11-09T15:50:31.849604', 
+    '2023-11-09T15:50:31.849605', 
+    39, 
+    'JAVA', 
+    '공부', 
+    '923f59'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    740, 
+    '2023-11-09T15:50:31.849650', 
+    '2023-11-09T15:50:31.849650', 
+    5812, 
+    'KOTLIN', 
+    '평화', 
+    '9812dd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    741, 
+    '2023-11-09T15:50:31.849694', 
+    '2023-11-09T15:50:31.849694', 
+    3448, 
+    'TS', 
+    '평화', 
+    'fa1f2e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    742, 
+    '2023-11-09T15:50:31.849737', 
+    '2023-11-09T15:50:31.849738', 
+    9585, 
+    'GO', 
+    '경찰', 
+    '7094af'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    743, 
+    '2023-11-09T15:50:31.849780', 
+    '2023-11-09T15:50:31.849780', 
+    5779, 
+    'GO', 
+    '젊음', 
+    'c2536a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    744, 
+    '2023-11-09T15:50:31.849821', 
+    '2023-11-09T15:50:31.849822', 
+    5975, 
+    'KOTLIN', 
+    '바다', 
+    '1de55a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    745, 
+    '2023-11-09T15:50:31.849864', 
+    '2023-11-09T15:50:31.849864', 
+    5178, 
+    'JAVA', 
+    '마을', 
+    '030af1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    746, 
+    '2023-11-09T15:50:31.849903', 
+    '2023-11-09T15:50:31.849904', 
+    7299, 
+    'TS', 
+    '작가', 
+    'b39c2a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    747, 
+    '2023-11-09T15:50:31.849945', 
+    '2023-11-09T15:50:31.849946', 
+    7859, 
+    'JAVA', 
+    '탐험', 
+    '3a5a1c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    748, 
+    '2023-11-09T15:50:31.849988', 
+    '2023-11-09T15:50:31.849989', 
+    1174, 
+    'JAVA', 
+    '평화', 
+    'bc083e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    749, 
+    '2023-11-09T15:50:31.850043', 
+    '2023-11-09T15:50:31.850044', 
+    5124, 
+    'TS', 
+    '여가', 
+    '4e53f8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    750, 
+    '2023-11-09T15:50:31.850100', 
+    '2023-11-09T15:50:31.850101', 
+    981, 
+    'GO', 
+    '탐험', 
+    'fc03c6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    751, 
+    '2023-11-09T15:50:31.850138', 
+    '2023-11-09T15:50:31.850139', 
+    6065, 
+    'JAVA', 
+    '그림', 
+    '45bc14'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    752, 
+    '2023-11-09T15:50:31.850179', 
+    '2023-11-09T15:50:31.850179', 
+    8878, 
+    'JAVA', 
+    '노년', 
+    '3e4111'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    753, 
+    '2023-11-09T15:50:31.850220', 
+    '2023-11-09T15:50:31.850220', 
+    6790, 
+    'JAVA', 
+    '성인', 
+    '50da79'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    754, 
+    '2023-11-09T15:50:31.850264', 
+    '2023-11-09T15:50:31.850264', 
+    7845, 
+    'TS', 
+    '미래', 
+    'f437a1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    755, 
+    '2023-11-09T15:50:31.850306', 
+    '2023-11-09T15:50:31.850306', 
+    8976, 
+    'JAVA', 
+    '책', 
+    '890d93'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    756, 
+    '2023-11-09T15:50:31.850374', 
+    '2023-11-09T15:50:31.850375', 
+    7839, 
+    'KOTLIN', 
+    '엔지니어', 
+    '498e43'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    757, 
+    '2023-11-09T15:50:31.850414', 
+    '2023-11-09T15:50:31.850415', 
+    9778, 
+    'JAVA', 
+    '야구', 
+    '2e5017'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    758, 
+    '2023-11-09T15:50:31.850456', 
+    '2023-11-09T15:50:31.850456', 
+    8424, 
+    'TS', 
+    '공부', 
+    '5bc505'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    759, 
+    '2023-11-09T15:50:31.850497', 
+    '2023-11-09T15:50:31.850497', 
+    3634, 
+    'TS', 
+    '성인', 
+    '8bf91e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    760, 
+    '2023-11-09T15:50:31.850538', 
+    '2023-11-09T15:50:31.850538', 
+    5593, 
+    'GO', 
+    '과일', 
+    'aec48f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    761, 
+    '2023-11-09T15:50:31.850576', 
+    '2023-11-09T15:50:31.850576', 
+    9583, 
+    'GO', 
+    '통신', 
+    '03fde5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    762, 
+    '2023-11-09T15:50:31.850617', 
+    '2023-11-09T15:50:31.850617', 
+    6193, 
+    'TS', 
+    '통신', 
+    'f8c0b7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    763, 
+    '2023-11-09T15:50:31.850658', 
+    '2023-11-09T15:50:31.850658', 
+    1504, 
+    'GO', 
+    '의사', 
+    'ab8bdb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    764, 
+    '2023-11-09T15:50:31.850701', 
+    '2023-11-09T15:50:31.850702', 
+    3283, 
+    'GO', 
+    '글', 
+    '5e5646'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    765, 
+    '2023-11-09T15:50:31.850742', 
+    '2023-11-09T15:50:31.850742', 
+    7939, 
+    'TS', 
+    '공부', 
+    '8a4021'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    766, 
+    '2023-11-09T15:50:31.850780', 
+    '2023-11-09T15:50:31.850780', 
+    3262, 
+    'JAVA', 
+    '작가', 
+    '0a48ab'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    767, 
+    '2023-11-09T15:50:31.850822', 
+    '2023-11-09T15:50:31.850822', 
+    7689, 
+    'GO', 
+    '취미', 
+    '96f1fe'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    768, 
+    '2023-11-09T15:50:31.850864', 
+    '2023-11-09T15:50:31.850864', 
+    7936, 
+    'GO', 
+    '현재', 
+    '179d01'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    769, 
+    '2023-11-09T15:50:31.850941', 
+    '2023-11-09T15:50:31.850942', 
+    1694, 
+    'GO', 
+    '소방관', 
+    '01a8bd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    770, 
+    '2023-11-09T15:50:31.850988', 
+    '2023-11-09T15:50:31.850989', 
+    4239, 
+    'KOTLIN', 
+    '노년', 
+    '61f307'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    771, 
+    '2023-11-09T15:50:31.851027', 
+    '2023-11-09T15:50:31.851028', 
+    7683, 
+    'KOTLIN', 
+    '자동차', 
+    '1aba97'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    772, 
+    '2023-11-09T15:50:31.851068', 
+    '2023-11-09T15:50:31.851069', 
+    1020, 
+    'JAVA', 
+    '새', 
+    'a84af5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    773, 
+    '2023-11-09T15:50:31.851110', 
+    '2023-11-09T15:50:31.851110', 
+    7037, 
+    'JAVA', 
+    '새', 
+    'c02aa3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    774, 
+    '2023-11-09T15:50:31.851150', 
+    '2023-11-09T15:50:31.851151', 
+    7677, 
+    'TS', 
+    '글', 
+    '548663'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    775, 
+    '2023-11-09T15:50:31.851191', 
+    '2023-11-09T15:50:31.851192', 
+    1689, 
+    'KOTLIN', 
+    '학교', 
+    'c269a7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    776, 
+    '2023-11-09T15:50:31.851230', 
+    '2023-11-09T15:50:31.851231', 
+    7749, 
+    'TS', 
+    '사랑', 
+    '0ed451'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    777, 
+    '2023-11-09T15:50:31.851286', 
+    '2023-11-09T15:50:31.851286', 
+    5450, 
+    'JAVA', 
+    '행복', 
+    '1dfd6d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    778, 
+    '2023-11-09T15:50:31.851385', 
+    '2023-11-09T15:50:31.851386', 
+    2936, 
+    'KOTLIN', 
+    '꽃', 
+    '53c200'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    779, 
+    '2023-11-09T15:50:31.851838', 
+    '2023-11-09T15:50:31.851852', 
+    8888, 
+    'JAVA', 
+    '비행기', 
+    '680a31'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    780, 
+    '2023-11-09T15:50:31.852064', 
+    '2023-11-09T15:50:31.852065', 
+    5174, 
+    'TS', 
+    '선원', 
+    'd0f453'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    781, 
+    '2023-11-09T15:50:31.852435', 
+    '2023-11-09T15:50:31.852436', 
+    5446, 
+    'JAVA', 
+    '여가', 
+    '11ec68'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    782, 
+    '2023-11-09T15:50:31.852632', 
+    '2023-11-09T15:50:31.852632', 
+    1401, 
+    'TS', 
+    '미래', 
+    '70e7c7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    783, 
+    '2023-11-09T15:50:31.852724', 
+    '2023-11-09T15:50:31.852724', 
+    1491, 
+    'JAVA', 
+    '예술', 
+    '873325'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    784, 
+    '2023-11-09T15:50:31.853124', 
+    '2023-11-09T15:50:31.853125', 
+    6010, 
+    'GO', 
+    '물', 
+    '4f3cb9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    785, 
+    '2023-11-09T15:50:31.853305', 
+    '2023-11-09T15:50:31.853306', 
+    4313, 
+    'JAVA', 
+    '통신', 
+    '45dad0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    786, 
+    '2023-11-09T15:50:31.853352', 
+    '2023-11-09T15:50:31.853353', 
+    2987, 
+    'KOTLIN', 
+    '탐험', 
+    '39cc3d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    787, 
+    '2023-11-09T15:50:31.853394', 
+    '2023-11-09T15:50:31.853394', 
+    268, 
+    'TS', 
+    '선원', 
+    '9def69'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    788, 
+    '2023-11-09T15:50:31.853435', 
+    '2023-11-09T15:50:31.853435', 
+    2480, 
+    'GO', 
+    '과학자', 
+    '5a57c9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    789, 
+    '2023-11-09T15:50:31.853480', 
+    '2023-11-09T15:50:31.853481', 
+    7913, 
+    'JAVA', 
+    '발견', 
+    'adbebc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    790, 
+    '2023-11-09T15:50:31.853525', 
+    '2023-11-09T15:50:31.853525', 
+    5529, 
+    'JAVA', 
+    '자연', 
+    '040dc9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    791, 
+    '2023-11-09T15:50:31.853568', 
+    '2023-11-09T15:50:31.853569', 
+    9542, 
+    'KOTLIN', 
+    '빛', 
+    'bfd05a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    792, 
+    '2023-11-09T15:50:31.853615', 
+    '2023-11-09T15:50:31.853616', 
+    3971, 
+    'GO', 
+    '평화', 
+    'fa357a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    793, 
+    '2023-11-09T15:50:31.853658', 
+    '2023-11-09T15:50:31.853659', 
+    2447, 
+    'KOTLIN', 
+    '자연', 
+    '8df334'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    794, 
+    '2023-11-09T15:50:31.853703', 
+    '2023-11-09T15:50:31.853703', 
+    4353, 
+    'GO', 
+    '컴퓨터', 
+    'af30ed'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    795, 
+    '2023-11-09T15:50:31.853747', 
+    '2023-11-09T15:50:31.853748', 
+    4393, 
+    'GO', 
+    '책', 
+    'ea8f1b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    796, 
+    '2023-11-09T15:50:31.853788', 
+    '2023-11-09T15:50:31.853789', 
+    5246, 
+    'TS', 
+    '여가', 
+    'b8acd2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    797, 
+    '2023-11-09T15:50:31.853828', 
+    '2023-11-09T15:50:31.853829', 
+    3456, 
+    'JAVA', 
+    '눈', 
+    '66f038'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    798, 
+    '2023-11-09T15:50:31.853869', 
+    '2023-11-09T15:50:31.853870', 
+    773, 
+    'JAVA', 
+    '여가', 
+    'd247bb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    799, 
+    '2023-11-09T15:50:31.853920', 
+    '2023-11-09T15:50:31.853920', 
+    8981, 
+    'GO', 
+    '그림', 
+    'f2abed'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    800, 
+    '2023-11-09T15:50:31.853960', 
+    '2023-11-09T15:50:31.853961', 
+    8375, 
+    'JAVA', 
+    '바다', 
+    'bfef95'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    801, 
+    '2023-11-09T15:50:31.854', 
+    '2023-11-09T15:50:31.854001', 
+    910, 
+    'GO', 
+    '새', 
+    '6371ec'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    802, 
+    '2023-11-09T15:50:31.854046', 
+    '2023-11-09T15:50:31.854046', 
+    7837, 
+    'JAVA', 
+    '비행기', 
+    'd183e2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    803, 
+    '2023-11-09T15:50:31.854095', 
+    '2023-11-09T15:50:31.854096', 
+    9241, 
+    'GO', 
+    '컴퓨터', 
+    '56d986'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    804, 
+    '2023-11-09T15:50:31.854136', 
+    '2023-11-09T15:50:31.854137', 
+    4072, 
+    'JAVA', 
+    '자동차', 
+    '82c49b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    805, 
+    '2023-11-09T15:50:31.854176', 
+    '2023-11-09T15:50:31.854177', 
+    2051, 
+    'JAVA', 
+    '배', 
+    '58d7aa'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    806, 
+    '2023-11-09T15:50:31.854214', 
+    '2023-11-09T15:50:31.854215', 
+    4316, 
+    'KOTLIN', 
+    '자동차', 
+    '4fc68c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    807, 
+    '2023-11-09T15:50:31.854254', 
+    '2023-11-09T15:50:31.854254', 
+    4915, 
+    'TS', 
+    '친구', 
+    '236ce0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    808, 
+    '2023-11-09T15:50:31.854294', 
+    '2023-11-09T15:50:31.854294', 
+    4188, 
+    'JAVA', 
+    '그림', 
+    'a576b2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    809, 
+    '2023-11-09T15:50:31.854333', 
+    '2023-11-09T15:50:31.854334', 
+    350, 
+    'JAVA', 
+    '통신', 
+    '8be7a5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    810, 
+    '2023-11-09T15:50:31.854372', 
+    '2023-11-09T15:50:31.854372', 
+    4703, 
+    'KOTLIN', 
+    '희망', 
+    '852286'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    811, 
+    '2023-11-09T15:50:31.854411', 
+    '2023-11-09T15:50:31.854412', 
+    8933, 
+    'KOTLIN', 
+    '바다', 
+    '3b9929'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    812, 
+    '2023-11-09T15:50:31.854454', 
+    '2023-11-09T15:50:31.854455', 
+    761, 
+    'KOTLIN', 
+    '파일럿', 
+    'f7c9d2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    813, 
+    '2023-11-09T15:50:31.854494', 
+    '2023-11-09T15:50:31.854494', 
+    2861, 
+    'JAVA', 
+    '회사', 
+    '281ac8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    814, 
+    '2023-11-09T15:50:31.854534', 
+    '2023-11-09T15:50:31.854534', 
+    8, 
+    'TS', 
+    '컴퓨터', 
+    'ebc096'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    815, 
+    '2023-11-09T15:50:31.854574', 
+    '2023-11-09T15:50:31.854574', 
+    7359, 
+    'GO', 
+    '운동', 
+    '5ae85b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    816, 
+    '2023-11-09T15:50:31.854611', 
+    '2023-11-09T15:50:31.854612', 
+    3989, 
+    'TS', 
+    '회사', 
+    '001133'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    817, 
+    '2023-11-09T15:50:31.854651', 
+    '2023-11-09T15:50:31.854651', 
+    6250, 
+    'GO', 
+    '통신', 
+    '0a49a9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    818, 
+    '2023-11-09T15:50:31.854694', 
+    '2023-11-09T15:50:31.854694', 
+    243, 
+    'KOTLIN', 
+    '산', 
+    'ee3bdf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    819, 
+    '2023-11-09T15:50:31.854743', 
+    '2023-11-09T15:50:31.854743', 
+    3960, 
+    'GO', 
+    '배구', 
+    'a1c1fe'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    820, 
+    '2023-11-09T15:50:31.854784', 
+    '2023-11-09T15:50:31.854785', 
+    3409, 
+    'GO', 
+    '희망', 
+    '114135'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    821, 
+    '2023-11-09T15:50:31.854821', 
+    '2023-11-09T15:50:31.854822', 
+    5705, 
+    'KOTLIN', 
+    '빛', 
+    'c02be2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    822, 
+    '2023-11-09T15:50:31.854860', 
+    '2023-11-09T15:50:31.854860', 
+    3919, 
+    'GO', 
+    '기쁨', 
+    '97b854'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    823, 
+    '2023-11-09T15:50:31.854900', 
+    '2023-11-09T15:50:31.854901', 
+    5574, 
+    'JAVA', 
+    '파일럿', 
+    'bd6be1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    824, 
+    '2023-11-09T15:50:31.854940', 
+    '2023-11-09T15:50:31.854941', 
+    8325, 
+    'JAVA', 
+    '역사', 
+    '16dd77'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    825, 
+    '2023-11-09T15:50:31.854980', 
+    '2023-11-09T15:50:31.854980', 
+    77, 
+    'GO', 
+    '도시', 
+    'f226d5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    826, 
+    '2023-11-09T15:50:31.855016', 
+    '2023-11-09T15:50:31.855017', 
+    3631, 
+    'TS', 
+    '미래', 
+    'a20cf6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    827, 
+    '2023-11-09T15:50:31.855055', 
+    '2023-11-09T15:50:31.855056', 
+    6943, 
+    'JAVA', 
+    '스포츠', 
+    'c8cc2d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    828, 
+    '2023-11-09T15:50:31.855107', 
+    '2023-11-09T15:50:31.855108', 
+    9607, 
+    'GO', 
+    '야구', 
+    '93f274'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    829, 
+    '2023-11-09T15:50:31.855149', 
+    '2023-11-09T15:50:31.855149', 
+    5777, 
+    'TS', 
+    '현재', 
+    '23de86'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    830, 
+    '2023-11-09T15:50:31.855188', 
+    '2023-11-09T15:50:31.855188', 
+    8686, 
+    'TS', 
+    '문화', 
+    'e44f22'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    831, 
+    '2023-11-09T15:50:31.855224', 
+    '2023-11-09T15:50:31.855225', 
+    3689, 
+    'TS', 
+    '여행', 
+    'bd6e12'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    832, 
+    '2023-11-09T15:50:31.855263', 
+    '2023-11-09T15:50:31.855263', 
+    5245, 
+    'TS', 
+    '농구', 
+    '086149'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    833, 
+    '2023-11-09T15:50:31.855301', 
+    '2023-11-09T15:50:31.855301', 
+    6370, 
+    'KOTLIN', 
+    '회사', 
+    '5da5be'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    834, 
+    '2023-11-09T15:50:31.855342', 
+    '2023-11-09T15:50:31.855343', 
+    8048, 
+    'TS', 
+    '노년', 
+    '13cdf2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    835, 
+    '2023-11-09T15:50:31.855391', 
+    '2023-11-09T15:50:31.855392', 
+    9692, 
+    'JAVA', 
+    '성인', 
+    'd6a59d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    836, 
+    '2023-11-09T15:50:31.855430', 
+    '2023-11-09T15:50:31.855430', 
+    4409, 
+    'TS', 
+    '축구', 
+    'b9ca37'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    837, 
+    '2023-11-09T15:50:31.855470', 
+    '2023-11-09T15:50:31.855470', 
+    390, 
+    'GO', 
+    '비행기', 
+    'f983e9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    838, 
+    '2023-11-09T15:50:31.855509', 
+    '2023-11-09T15:50:31.855510', 
+    8376, 
+    'JAVA', 
+    '젊음', 
+    '01e521'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    839, 
+    '2023-11-09T15:50:31.855548', 
+    '2023-11-09T15:50:31.855548', 
+    7145, 
+    'JAVA', 
+    '파일럿', 
+    'a6f9f6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    840, 
+    '2023-11-09T15:50:31.855588', 
+    '2023-11-09T15:50:31.855588', 
+    3242, 
+    'JAVA', 
+    '사랑', 
+    '93e33c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    841, 
+    '2023-11-09T15:50:31.855628', 
+    '2023-11-09T15:50:31.855628', 
+    7055, 
+    'GO', 
+    '가족', 
+    'effcce'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    842, 
+    '2023-11-09T15:50:31.855669', 
+    '2023-11-09T15:50:31.855670', 
+    2882, 
+    'GO', 
+    '젊음', 
+    'a075d0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    843, 
+    '2023-11-09T15:50:31.855708', 
+    '2023-11-09T15:50:31.855709', 
+    9279, 
+    'KOTLIN', 
+    '노년', 
+    'ac2f99'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    844, 
+    '2023-11-09T15:50:31.855748', 
+    '2023-11-09T15:50:31.855748', 
+    8085, 
+    'TS', 
+    '자연', 
+    'a97bc6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    845, 
+    '2023-11-09T15:50:31.855788', 
+    '2023-11-09T15:50:31.855788', 
+    5714, 
+    'JAVA', 
+    '작가', 
+    'aa37f6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    846, 
+    '2023-11-09T15:50:31.855825', 
+    '2023-11-09T15:50:31.855826', 
+    7151, 
+    'GO', 
+    '과거', 
+    'b571e0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    847, 
+    '2023-11-09T15:50:31.855866', 
+    '2023-11-09T15:50:31.855867', 
+    9822, 
+    'GO', 
+    '물', 
+    'e257be'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    848, 
+    '2023-11-09T15:50:31.855908', 
+    '2023-11-09T15:50:31.855909', 
+    1433, 
+    'KOTLIN', 
+    '농구', 
+    '1499bb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    849, 
+    '2023-11-09T15:50:31.855948', 
+    '2023-11-09T15:50:31.855948', 
+    4749, 
+    'TS', 
+    '회사', 
+    '7577d6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    850, 
+    '2023-11-09T15:50:31.855989', 
+    '2023-11-09T15:50:31.855990', 
+    5009, 
+    'JAVA', 
+    '꽃', 
+    '9d8b48'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    851, 
+    '2023-11-09T15:50:31.856025', 
+    '2023-11-09T15:50:31.856026', 
+    9597, 
+    'KOTLIN', 
+    '변호사', 
+    'd0a7f1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    852, 
+    '2023-11-09T15:50:31.856065', 
+    '2023-11-09T15:50:31.856066', 
+    7344, 
+    'JAVA', 
+    '비', 
+    '0160ec'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    853, 
+    '2023-11-09T15:50:31.856105', 
+    '2023-11-09T15:50:31.856105', 
+    8977, 
+    'TS', 
+    '산책', 
+    '79546f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    854, 
+    '2023-11-09T15:50:31.856143', 
+    '2023-11-09T15:50:31.856144', 
+    8357, 
+    'JAVA', 
+    '노인', 
+    '021f57'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    855, 
+    '2023-11-09T15:50:31.856184', 
+    '2023-11-09T15:50:31.856185', 
+    8540, 
+    'JAVA', 
+    '책', 
+    'a65638'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    856, 
+    '2023-11-09T15:50:31.856221', 
+    '2023-11-09T15:50:31.856222', 
+    1474, 
+    'TS', 
+    '달', 
+    '061962'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    857, 
+    '2023-11-09T15:50:31.856263', 
+    '2023-11-09T15:50:31.856263', 
+    8757, 
+    'GO', 
+    '산', 
+    '57bbb7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    858, 
+    '2023-11-09T15:50:31.856510', 
+    '2023-11-09T15:50:31.856511', 
+    9174, 
+    'GO', 
+    '과일', 
+    '3daaee'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    859, 
+    '2023-11-09T15:50:31.857433', 
+    '2023-11-09T15:50:31.857446', 
+    4989, 
+    'GO', 
+    '배구', 
+    '1e4eb9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    860, 
+    '2023-11-09T15:50:31.857593', 
+    '2023-11-09T15:50:31.857593', 
+    309, 
+    'TS', 
+    '가족', 
+    'c0a9cb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    861, 
+    '2023-11-09T15:50:31.857636', 
+    '2023-11-09T15:50:31.857636', 
+    9630, 
+    'KOTLIN', 
+    '현재', 
+    '877d1f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    862, 
+    '2023-11-09T15:50:31.857680', 
+    '2023-11-09T15:50:31.857681', 
+    947, 
+    'TS', 
+    '영화', 
+    'e3b448'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    863, 
+    '2023-11-09T15:50:31.857726', 
+    '2023-11-09T15:50:31.857727', 
+    2019, 
+    'GO', 
+    '마을', 
+    '25217c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    864, 
+    '2023-11-09T15:50:31.857769', 
+    '2023-11-09T15:50:31.857770', 
+    9692, 
+    'GO', 
+    '교통', 
+    'ea6241'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    865, 
+    '2023-11-09T15:50:31.857813', 
+    '2023-11-09T15:50:31.857814', 
+    9727, 
+    'KOTLIN', 
+    '미소', 
+    '36b9b1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    866, 
+    '2023-11-09T15:50:31.857897', 
+    '2023-11-09T15:50:31.857898', 
+    7268, 
+    'GO', 
+    '강', 
+    'bef01b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    867, 
+    '2023-11-09T15:50:31.857943', 
+    '2023-11-09T15:50:31.857944', 
+    544, 
+    'JAVA', 
+    '친구', 
+    '8ca797'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    868, 
+    '2023-11-09T15:50:31.857989', 
+    '2023-11-09T15:50:31.857989', 
+    6045, 
+    'GO', 
+    '비행기', 
+    '81b7b6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    869, 
+    '2023-11-09T15:50:31.858033', 
+    '2023-11-09T15:50:31.858033', 
+    3951, 
+    'GO', 
+    '소방관', 
+    'ab327b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    870, 
+    '2023-11-09T15:50:31.858077', 
+    '2023-11-09T15:50:31.858078', 
+    3676, 
+    'JAVA', 
+    '바다', 
+    'f805c5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    871, 
+    '2023-11-09T15:50:31.858119', 
+    '2023-11-09T15:50:31.858119', 
+    2093, 
+    'TS', 
+    '우주', 
+    '56d17d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    872, 
+    '2023-11-09T15:50:31.858162', 
+    '2023-11-09T15:50:31.858162', 
+    2195, 
+    'GO', 
+    '직장', 
+    '54e6b3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    873, 
+    '2023-11-09T15:50:31.858208', 
+    '2023-11-09T15:50:31.858208', 
+    1817, 
+    'GO', 
+    '학생', 
+    'fa241b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    874, 
+    '2023-11-09T15:50:31.858251', 
+    '2023-11-09T15:50:31.858251', 
+    2540, 
+    'KOTLIN', 
+    '과학자', 
+    '5e4960'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    875, 
+    '2023-11-09T15:50:31.858295', 
+    '2023-11-09T15:50:31.858296', 
+    3987, 
+    'TS', 
+    '여가', 
+    'd63396'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    876, 
+    '2023-11-09T15:50:31.858337', 
+    '2023-11-09T15:50:31.858337', 
+    2249, 
+    'JAVA', 
+    '학생', 
+    'e90f9c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    877, 
+    '2023-11-09T15:50:31.858375', 
+    '2023-11-09T15:50:31.858377', 
+    5855, 
+    'KOTLIN', 
+    '요리', 
+    'ebae70'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    878, 
+    '2023-11-09T15:50:31.858415', 
+    '2023-11-09T15:50:31.858416', 
+    7551, 
+    'TS', 
+    '구름', 
+    'bd6fa4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    879, 
+    '2023-11-09T15:50:31.858454', 
+    '2023-11-09T15:50:31.858455', 
+    3985, 
+    'JAVA', 
+    '변호사', 
+    '33fbf2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    880, 
+    '2023-11-09T15:50:31.858492', 
+    '2023-11-09T15:50:31.858493', 
+    5075, 
+    'TS', 
+    '채소', 
+    '17de14'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    881, 
+    '2023-11-09T15:50:31.858528', 
+    '2023-11-09T15:50:31.858528', 
+    7015, 
+    'GO', 
+    '나라', 
+    'a14803'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    882, 
+    '2023-11-09T15:50:31.858571', 
+    '2023-11-09T15:50:31.858571', 
+    8582, 
+    'KOTLIN', 
+    '직장', 
+    '1797a2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    883, 
+    '2023-11-09T15:50:31.858609', 
+    '2023-11-09T15:50:31.858610', 
+    1757, 
+    'JAVA', 
+    '희망', 
+    '834186'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    884, 
+    '2023-11-09T15:50:31.858647', 
+    '2023-11-09T15:50:31.858648', 
+    4854, 
+    'GO', 
+    '별', 
+    '70d514'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    885, 
+    '2023-11-09T15:50:31.858685', 
+    '2023-11-09T15:50:31.858686', 
+    8631, 
+    'KOTLIN', 
+    '청소년', 
+    'f8e0ad'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    886, 
+    '2023-11-09T15:50:31.858722', 
+    '2023-11-09T15:50:31.858722', 
+    1435, 
+    'JAVA', 
+    '과학', 
+    '31a534'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    887, 
+    '2023-11-09T15:50:31.858760', 
+    '2023-11-09T15:50:31.858761', 
+    5586, 
+    'GO', 
+    '탐험', 
+    '8be66a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    888, 
+    '2023-11-09T15:50:31.858799', 
+    '2023-11-09T15:50:31.858799', 
+    5545, 
+    'JAVA', 
+    '노년', 
+    'abbb24'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    889, 
+    '2023-11-09T15:50:31.858838', 
+    '2023-11-09T15:50:31.858838', 
+    4119, 
+    'JAVA', 
+    '경찰', 
+    'bf6c55'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    890, 
+    '2023-11-09T15:50:31.858876', 
+    '2023-11-09T15:50:31.858877', 
+    2574, 
+    'KOTLIN', 
+    '열차', 
+    '7465c7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    891, 
+    '2023-11-09T15:50:31.858912', 
+    '2023-11-09T15:50:31.858913', 
+    9937, 
+    'TS', 
+    '선생님', 
+    'd6392f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    892, 
+    '2023-11-09T15:50:31.858951', 
+    '2023-11-09T15:50:31.858952', 
+    4718, 
+    'GO', 
+    '도전', 
+    '46a41b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    893, 
+    '2023-11-09T15:50:31.858990', 
+    '2023-11-09T15:50:31.858990', 
+    2457, 
+    'JAVA', 
+    '변호사', 
+    '162bf9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    894, 
+    '2023-11-09T15:50:31.859028', 
+    '2023-11-09T15:50:31.859028', 
+    6286, 
+    'GO', 
+    '희망', 
+    '6b9667'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    895, 
+    '2023-11-09T15:50:31.859066', 
+    '2023-11-09T15:50:31.859067', 
+    4935, 
+    'TS', 
+    '발견', 
+    '97e925'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    896, 
+    '2023-11-09T15:50:31.859102', 
+    '2023-11-09T15:50:31.859102', 
+    2308, 
+    'GO', 
+    '과일', 
+    '7e6c26'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    897, 
+    '2023-11-09T15:50:31.859140', 
+    '2023-11-09T15:50:31.859141', 
+    864, 
+    'KOTLIN', 
+    '가족', 
+    '7b56d9'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    898, 
+    '2023-11-09T15:50:31.859185', 
+    '2023-11-09T15:50:31.859186', 
+    3172, 
+    'KOTLIN', 
+    '문화', 
+    '6954ac'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    899, 
+    '2023-11-09T15:50:31.859224', 
+    '2023-11-09T15:50:31.859225', 
+    4016, 
+    'JAVA', 
+    '바다', 
+    '8929bd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    900, 
+    '2023-11-09T15:50:31.859264', 
+    '2023-11-09T15:50:31.859265', 
+    9289, 
+    'TS', 
+    '게임', 
+    '8857cb'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    901, 
+    '2023-11-09T15:50:31.859300', 
+    '2023-11-09T15:50:31.859301', 
+    9689, 
+    'JAVA', 
+    '통신', 
+    'c98511'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    902, 
+    '2023-11-09T15:50:31.859343', 
+    '2023-11-09T15:50:31.859343', 
+    5243, 
+    'JAVA', 
+    '산', 
+    '66bcf1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    903, 
+    '2023-11-09T15:50:31.859380', 
+    '2023-11-09T15:50:31.859381', 
+    613, 
+    'JAVA', 
+    '수학', 
+    'ad5dd5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    904, 
+    '2023-11-09T15:50:31.859419', 
+    '2023-11-09T15:50:31.859419', 
+    8732, 
+    'KOTLIN', 
+    '선원', 
+    'b29174'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    905, 
+    '2023-11-09T15:50:31.859457', 
+    '2023-11-09T15:50:31.859458', 
+    2728, 
+    'GO', 
+    '직장', 
+    '912296'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    906, 
+    '2023-11-09T15:50:31.859492', 
+    '2023-11-09T15:50:31.859493', 
+    9815, 
+    'TS', 
+    '새', 
+    '28a238'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    907, 
+    '2023-11-09T15:50:31.859533', 
+    '2023-11-09T15:50:31.859534', 
+    3603, 
+    'JAVA', 
+    '배구', 
+    '378e83'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    908, 
+    '2023-11-09T15:50:31.859573', 
+    '2023-11-09T15:50:31.859573', 
+    1584, 
+    'GO', 
+    '축제', 
+    '970f3c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    909, 
+    '2023-11-09T15:50:31.859613', 
+    '2023-11-09T15:50:31.859614', 
+    7471, 
+    'TS', 
+    '채소', 
+    'eda23c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    910, 
+    '2023-11-09T15:50:31.859651', 
+    '2023-11-09T15:50:31.859651', 
+    4178, 
+    'JAVA', 
+    '꿈', 
+    '70952e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    911, 
+    '2023-11-09T15:50:31.859687', 
+    '2023-11-09T15:50:31.859687', 
+    3796, 
+    'JAVA', 
+    '젊음', 
+    'c427f5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    912, 
+    '2023-11-09T15:50:31.859728', 
+    '2023-11-09T15:50:31.859728', 
+    5115, 
+    'KOTLIN', 
+    '건축가', 
+    '8ea0af'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    913, 
+    '2023-11-09T15:50:31.859768', 
+    '2023-11-09T15:50:31.859768', 
+    9651, 
+    'KOTLIN', 
+    '사랑', 
+    '753a53'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    914, 
+    '2023-11-09T15:50:31.859811', 
+    '2023-11-09T15:50:31.859812', 
+    2391, 
+    'KOTLIN', 
+    '엔지니어', 
+    '37fa75'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    915, 
+    '2023-11-09T15:50:31.859850', 
+    '2023-11-09T15:50:31.859851', 
+    5009, 
+    'TS', 
+    '문화', 
+    '366baa'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    916, 
+    '2023-11-09T15:50:31.859894', 
+    '2023-11-09T15:50:31.859894', 
+    4299, 
+    'JAVA', 
+    '눈', 
+    'f40f27'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    917, 
+    '2023-11-09T15:50:31.859934', 
+    '2023-11-09T15:50:31.859934', 
+    9319, 
+    'GO', 
+    '도시', 
+    '4284e6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    918, 
+    '2023-11-09T15:50:31.859974', 
+    '2023-11-09T15:50:31.859974', 
+    3764, 
+    'KOTLIN', 
+    '마을', 
+    '41dca0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    919, 
+    '2023-11-09T15:50:31.860017', 
+    '2023-11-09T15:50:31.860018', 
+    5113, 
+    'GO', 
+    '교통', 
+    '8151f4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    920, 
+    '2023-11-09T15:50:31.860058', 
+    '2023-11-09T15:50:31.860058', 
+    1592, 
+    'TS', 
+    '스포츠', 
+    'ebec83'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    921, 
+    '2023-11-09T15:50:31.860093', 
+    '2023-11-09T15:50:31.860094', 
+    812, 
+    'GO', 
+    '마을', 
+    'ac4d62'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    922, 
+    '2023-11-09T15:50:31.860131', 
+    '2023-11-09T15:50:31.860132', 
+    7375, 
+    'KOTLIN', 
+    '여행', 
+    '1bb08b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    923, 
+    '2023-11-09T15:50:31.860169', 
+    '2023-11-09T15:50:31.860171', 
+    754, 
+    'JAVA', 
+    '물', 
+    'c06127'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    924, 
+    '2023-11-09T15:50:31.860210', 
+    '2023-11-09T15:50:31.860210', 
+    8362, 
+    'KOTLIN', 
+    '군인', 
+    '1719c2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    925, 
+    '2023-11-09T15:50:31.860249', 
+    '2023-11-09T15:50:31.860249', 
+    2599, 
+    'TS', 
+    '구름', 
+    '959473'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    926, 
+    '2023-11-09T15:50:31.860284', 
+    '2023-11-09T15:50:31.860284', 
+    8206, 
+    'JAVA', 
+    '운동', 
+    '945d06'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    927, 
+    '2023-11-09T15:50:31.860322', 
+    '2023-11-09T15:50:31.860322', 
+    8150, 
+    'JAVA', 
+    '구름', 
+    'a3dac6'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    928, 
+    '2023-11-09T15:50:31.860361', 
+    '2023-11-09T15:50:31.860361', 
+    3736, 
+    'TS', 
+    '음식', 
+    'a9a5f2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    929, 
+    '2023-11-09T15:50:31.860399', 
+    '2023-11-09T15:50:31.860400', 
+    25, 
+    'KOTLIN', 
+    '기쁨', 
+    'dba41c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    930, 
+    '2023-11-09T15:50:31.860440', 
+    '2023-11-09T15:50:31.860440', 
+    8015, 
+    'KOTLIN', 
+    '열차', 
+    '4ff035'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    931, 
+    '2023-11-09T15:50:31.860478', 
+    '2023-11-09T15:50:31.860478', 
+    2664, 
+    'JAVA', 
+    '학교', 
+    'c65873'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    932, 
+    '2023-11-09T15:50:31.860518', 
+    '2023-11-09T15:50:31.860518', 
+    4891, 
+    'GO', 
+    '비행기', 
+    '2f6165'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    933, 
+    '2023-11-09T15:50:31.860585', 
+    '2023-11-09T15:50:31.860586', 
+    6955, 
+    'GO', 
+    '경찰', 
+    '1da981'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    934, 
+    '2023-11-09T15:50:31.860624', 
+    '2023-11-09T15:50:31.860625', 
+    8846, 
+    'JAVA', 
+    '통신', 
+    '4fb5d8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    935, 
+    '2023-11-09T15:50:31.860664', 
+    '2023-11-09T15:50:31.860665', 
+    9917, 
+    'KOTLIN', 
+    '자동차', 
+    '9cf8e5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    936, 
+    '2023-11-09T15:50:31.860701', 
+    '2023-11-09T15:50:31.860701', 
+    778, 
+    'GO', 
+    '운동', 
+    'c46b44'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    937, 
+    '2023-11-09T15:50:31.860739', 
+    '2023-11-09T15:50:31.860740', 
+    2790, 
+    'TS', 
+    '취미', 
+    'dd14b3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    938, 
+    '2023-11-09T15:50:31.860778', 
+    '2023-11-09T15:50:31.860778', 
+    3390, 
+    'JAVA', 
+    '산', 
+    'f9a3d5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    939, 
+    '2023-11-09T15:50:31.860815', 
+    '2023-11-09T15:50:31.860816', 
+    2298, 
+    'KOTLIN', 
+    '현재', 
+    '2db3e8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    940, 
+    '2023-11-09T15:50:31.860860', 
+    '2023-11-09T15:50:31.860860', 
+    1434, 
+    'KOTLIN', 
+    '수학', 
+    '3517f0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    941, 
+    '2023-11-09T15:50:31.860910', 
+    '2023-11-09T15:50:31.860911', 
+    7672, 
+    'GO', 
+    '올림픽', 
+    'f047d2'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    942, 
+    '2023-11-09T15:50:31.862287', 
+    '2023-11-09T15:50:31.862287', 
+    3190, 
+    'TS', 
+    '군인', 
+    '17ff5e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    943, 
+    '2023-11-09T15:50:31.864563', 
+    '2023-11-09T15:50:31.864563', 
+    5027, 
+    'TS', 
+    '예술', 
+    '0611e3'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    944, 
+    '2023-11-09T15:50:31.865196', 
+    '2023-11-09T15:50:31.865196', 
+    2039, 
+    'GO', 
+    '나무', 
+    'b6d914'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    945, 
+    '2023-11-09T15:50:31.865238', 
+    '2023-11-09T15:50:31.865239', 
+    3577, 
+    'KOTLIN', 
+    '연구', 
+    '2622c4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    946, 
+    '2023-11-09T15:50:31.865283', 
+    '2023-11-09T15:50:31.865284', 
+    7894, 
+    'GO', 
+    '바람', 
+    '683c2b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    947, 
+    '2023-11-09T15:50:31.865323', 
+    '2023-11-09T15:50:31.865323', 
+    6121, 
+    'KOTLIN', 
+    '눈', 
+    'cb1858'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    948, 
+    '2023-11-09T15:50:31.865362', 
+    '2023-11-09T15:50:31.865363', 
+    3690, 
+    'GO', 
+    '가족', 
+    'd24c85'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    949, 
+    '2023-11-09T15:50:31.865403', 
+    '2023-11-09T15:50:31.865404', 
+    9441, 
+    'JAVA', 
+    '교통', 
+    '560091'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    950, 
+    '2023-11-09T15:50:31.865445', 
+    '2023-11-09T15:50:31.865446', 
+    774, 
+    'KOTLIN', 
+    '여행', 
+    '19fdc0'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    951, 
+    '2023-11-09T15:50:31.865482', 
+    '2023-11-09T15:50:31.865483', 
+    797, 
+    'TS', 
+    '희망', 
+    '874986'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    952, 
+    '2023-11-09T15:50:31.865521', 
+    '2023-11-09T15:50:31.865522', 
+    6056, 
+    'KOTLIN', 
+    '문화', 
+    'b52a34'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    953, 
+    '2023-11-09T15:50:31.865560', 
+    '2023-11-09T15:50:31.865561', 
+    5415, 
+    'TS', 
+    '올림픽', 
+    '462b62'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    954, 
+    '2023-11-09T15:50:31.865599', 
+    '2023-11-09T15:50:31.865600', 
+    453, 
+    'GO', 
+    '도시', 
+    '3e89b4'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    955, 
+    '2023-11-09T15:50:31.865638', 
+    '2023-11-09T15:50:31.865639', 
+    2650, 
+    'GO', 
+    '통신', 
+    '923779'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    956, 
+    '2023-11-09T15:50:31.865674', 
+    '2023-11-09T15:50:31.865675', 
+    6502, 
+    'JAVA', 
+    '배', 
+    'c0efee'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    957, 
+    '2023-11-09T15:50:31.865713', 
+    '2023-11-09T15:50:31.865714', 
+    1416, 
+    'KOTLIN', 
+    '작가', 
+    '50697e'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    958, 
+    '2023-11-09T15:50:31.865752', 
+    '2023-11-09T15:50:31.865752', 
+    5712, 
+    'TS', 
+    '그림', 
+    'e4a03b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    959, 
+    '2023-11-09T15:50:31.865790', 
+    '2023-11-09T15:50:31.865791', 
+    933, 
+    'GO', 
+    '음악', 
+    '9663ff'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    960, 
+    '2023-11-09T15:50:31.865830', 
+    '2023-11-09T15:50:31.865831', 
+    2054, 
+    'TS', 
+    '산', 
+    '90f576'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    961, 
+    '2023-11-09T15:50:31.865866', 
+    '2023-11-09T15:50:31.865867', 
+    7223, 
+    'JAVA', 
+    '평화', 
+    '7613c1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    962, 
+    '2023-11-09T15:50:31.865908', 
+    '2023-11-09T15:50:31.865908', 
+    5692, 
+    'GO', 
+    '야구', 
+    'f10fba'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    963, 
+    '2023-11-09T15:50:31.865946', 
+    '2023-11-09T15:50:31.865946', 
+    31, 
+    'GO', 
+    '연구', 
+    '5b0b2b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    964, 
+    '2023-11-09T15:50:31.865994', 
+    '2023-11-09T15:50:31.865995', 
+    803, 
+    'JAVA', 
+    '노년', 
+    'fdebea'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    965, 
+    '2023-11-09T15:50:31.866033', 
+    '2023-11-09T15:50:31.866033', 
+    9332, 
+    'JAVA', 
+    '엔지니어', 
+    'dc7116'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    966, 
+    '2023-11-09T15:50:31.866069', 
+    '2023-11-09T15:50:31.866070', 
+    5273, 
+    'TS', 
+    '통신', 
+    'e78239'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    967, 
+    '2023-11-09T15:50:31.866108', 
+    '2023-11-09T15:50:31.866108', 
+    461, 
+    'GO', 
+    '나라', 
+    '3f4281'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    968, 
+    '2023-11-09T15:50:31.866164', 
+    '2023-11-09T15:50:31.866165', 
+    9823, 
+    'GO', 
+    '여가', 
+    '33c44d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    969, 
+    '2023-11-09T15:50:31.866203', 
+    '2023-11-09T15:50:31.866204', 
+    6790, 
+    'TS', 
+    '학생', 
+    '677b56'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    970, 
+    '2023-11-09T15:50:31.866242', 
+    '2023-11-09T15:50:31.866242', 
+    9647, 
+    'KOTLIN', 
+    '농구', 
+    '96f4cd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    971, 
+    '2023-11-09T15:50:31.866278', 
+    '2023-11-09T15:50:31.866279', 
+    1100, 
+    'TS', 
+    '아동', 
+    '4b996d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    972, 
+    '2023-11-09T15:50:31.866317', 
+    '2023-11-09T15:50:31.866318', 
+    5942, 
+    'JAVA', 
+    '변호사', 
+    '36236a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    973, 
+    '2023-11-09T15:50:31.866356', 
+    '2023-11-09T15:50:31.866357', 
+    4839, 
+    'GO', 
+    '우주', 
+    '7dfd16'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    974, 
+    '2023-11-09T15:50:31.866396', 
+    '2023-11-09T15:50:31.866396', 
+    1326, 
+    'KOTLIN', 
+    '미소', 
+    'ba2f19'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    975, 
+    '2023-11-09T15:50:31.866434', 
+    '2023-11-09T15:50:31.866435', 
+    813, 
+    'TS', 
+    '책', 
+    '5e44dc'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    976, 
+    '2023-11-09T15:50:31.866469', 
+    '2023-11-09T15:50:31.866470', 
+    6295, 
+    'KOTLIN', 
+    '책', 
+    '1b0edd'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    977, 
+    '2023-11-09T15:50:31.866508', 
+    '2023-11-09T15:50:31.866508', 
+    3207, 
+    'JAVA', 
+    '연구', 
+    'ad841f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    978, 
+    '2023-11-09T15:50:31.866557', 
+    '2023-11-09T15:50:31.866558', 
+    7801, 
+    'JAVA', 
+    '발명', 
+    '8a2598'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    979, 
+    '2023-11-09T15:50:31.866595', 
+    '2023-11-09T15:50:31.866596', 
+    6810, 
+    'KOTLIN', 
+    '달', 
+    '78d10f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    980, 
+    '2023-11-09T15:50:31.866634', 
+    '2023-11-09T15:50:31.866634', 
+    3295, 
+    'KOTLIN', 
+    '청소년', 
+    '04716a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    981, 
+    '2023-11-09T15:50:31.866669', 
+    '2023-11-09T15:50:31.866670', 
+    4860, 
+    'JAVA', 
+    '발견', 
+    'ec133a'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    982, 
+    '2023-11-09T15:50:31.866709', 
+    '2023-11-09T15:50:31.866709', 
+    5052, 
+    'GO', 
+    '게임', 
+    '7720d1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    983, 
+    '2023-11-09T15:50:31.866747', 
+    '2023-11-09T15:50:31.866748', 
+    4997, 
+    'JAVA', 
+    '학교', 
+    'ccc06f'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    984, 
+    '2023-11-09T15:50:31.866785', 
+    '2023-11-09T15:50:31.866786', 
+    5563, 
+    'KOTLIN', 
+    '젊음', 
+    '4c4c3d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    985, 
+    '2023-11-09T15:50:31.866823', 
+    '2023-11-09T15:50:31.866824', 
+    4512, 
+    'JAVA', 
+    '하늘', 
+    'ee433b'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    986, 
+    '2023-11-09T15:50:31.866860', 
+    '2023-11-09T15:50:31.866861', 
+    5243, 
+    'GO', 
+    '자연', 
+    '9f0dba'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    987, 
+    '2023-11-09T15:50:31.866900', 
+    '2023-11-09T15:50:31.866900', 
+    8965, 
+    'GO', 
+    '건축가', 
+    '8d8d1c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    988, 
+    '2023-11-09T15:50:31.866937', 
+    '2023-11-09T15:50:31.866938', 
+    5358, 
+    'JAVA', 
+    '축제', 
+    '6d951c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    989, 
+    '2023-11-09T15:50:31.866976', 
+    '2023-11-09T15:50:31.866977', 
+    8255, 
+    'JAVA', 
+    '물', 
+    'ddc7b7'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    990, 
+    '2023-11-09T15:50:31.867017', 
+    '2023-11-09T15:50:31.867018', 
+    1703, 
+    'KOTLIN', 
+    '스마트폰', 
+    '571894'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    991, 
+    '2023-11-09T15:50:31.867053', 
+    '2023-11-09T15:50:31.867054', 
+    1706, 
+    'KOTLIN', 
+    '아동', 
+    'e461f1'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    992, 
+    '2023-11-09T15:50:31.867091', 
+    '2023-11-09T15:50:31.867092', 
+    7113, 
+    'TS', 
+    '노년', 
+    'e9ce91'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    993, 
+    '2023-11-09T15:50:31.867129', 
+    '2023-11-09T15:50:31.867129', 
+    3113, 
+    'TS', 
+    '직장', 
+    'ad6ab8'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    994, 
+    '2023-11-09T15:50:31.867169', 
+    '2023-11-09T15:50:31.867170', 
+    1968, 
+    'KOTLIN', 
+    '과학', 
+    'db435c'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    995, 
+    '2023-11-09T15:50:31.867207', 
+    '2023-11-09T15:50:31.867208', 
+    8780, 
+    'KOTLIN', 
+    '빛', 
+    '5510c5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    996, 
+    '2023-11-09T15:50:31.867244', 
+    '2023-11-09T15:50:31.867245', 
+    3713, 
+    'JAVA', 
+    '역사', 
+    '50064d'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    997, 
+    '2023-11-09T15:50:31.867282', 
+    '2023-11-09T15:50:31.867283', 
+    6818, 
+    'JAVA', 
+    '운동', 
+    'edd0bf'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    998, 
+    '2023-11-09T15:50:31.867321', 
+    '2023-11-09T15:50:31.867322', 
+    8615, 
+    'KOTLIN', 
+    '취미', 
+    'a6fbd5'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    999, 
+    '2023-11-09T15:50:31.867361', 
+    '2023-11-09T15:50:31.867361', 
+    999, 
+    'KOTLIN', 
+    '구름', 
+    'b2fc85'
+);
+insert into post (id, created_at, modified_at, user_id, post_category, title, content) 
+values (
+    1000, 
+    '2023-11-09T15:50:31.867398', 
+    '2023-11-09T15:50:31.867399', 
+    8219, 
+    'JAVA', 
+    '행복', 
+    'e82607'
+);
